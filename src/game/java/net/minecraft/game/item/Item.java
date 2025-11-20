@@ -73,6 +73,7 @@ public class Item {
 	public static Item porkRaw;
 	public static Item porkCooked;
 	public static Item painting;
+	public static Item dyeBlack;
 	public final int shiftedIndex;
 	protected int maxStackSize = 64;
 	protected int maxDamage = 32;
@@ -460,5 +461,10 @@ public class Item {
 		ItemPainting var14 = var26;
 		var14.iconIndex = var1;
 		painting = var14;
+		var20 = new Item(66);
+		var1 = 11;
+		var7 = var20;
+		var7.iconIndex = var1;
+		dyeBlack = var7;
 	}
 }
