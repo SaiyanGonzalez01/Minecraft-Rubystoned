@@ -20,3 +20,9 @@ Run the `CompileClient` script to build the JavaScript and WASM-GC clients. The 
 
 ## Forking
 You are free to fork this project as long as you properly credit both [SaiyanGonzalez01](https://github.com/SaiyanGonzalez01) & [Colbster937](https://github.com/colbster937)
+
+## Contributions
+
+SaiyanGonzalez01 - Project Owner (Created most of the modded additions)
+
+Colbster937 - Original Indev Porter & Contributer (Ported the heavy additions, like the Profile GUI)
