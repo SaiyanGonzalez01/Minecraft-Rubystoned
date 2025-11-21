@@ -92,6 +92,7 @@ public class Block {
 	public static final Block tilledField;
 	public static final Block stoneOvenIdle;
 	public static final Block stoneOvenActive;
+	public static final Block oreRuby;
 	public int blockIndexInTexture;
 	public final int blockID;
 	private float hardness;
@@ -710,6 +711,11 @@ public class Block {
 		var0 = var10000;
 		var0.stepSound = var1;
 		stoneOvenActive = var0.setLightValue(14.0F / 16.0F);
+		var10000 = (new BlockOre(63, 96)).setHardness(3.0F).setResistance(5.0F);
+		var1 = soundStoneFootstep;
+		var0 = var10000;
+		var0.stepSound = var1;
+		oreRuby = var0;
 
 		for(int var2 = 0; var2 < 256; ++var2) {
 			if(blocksList[var2] != null) {
