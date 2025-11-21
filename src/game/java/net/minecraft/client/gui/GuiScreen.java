@@ -61,7 +61,7 @@ public class GuiScreen extends Gui {
 	public void initGui() {
 	}
 
-	public final void handleMouseInput() {
+	public void handleMouseInput() {
 		if(Mouse.getEventButtonState()) {
 			int var1 = Mouse.getEventX() * this.width / this.mc.displayWidth;
 			int var2 = this.height - Mouse.getEventY() * this.height / this.mc.displayHeight - 1;

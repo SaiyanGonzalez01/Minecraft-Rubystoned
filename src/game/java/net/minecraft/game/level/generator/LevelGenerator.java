@@ -339,7 +339,8 @@ public final class LevelGenerator {
 		int var44 = this.populateOre(Block.oreIron.blockID, 800, 8, var4 * 3 / 5);
 		var45 = this.populateOre(Block.oreGold.blockID, 500, 6, (var4 << 1) / 5);
 		var5 = this.populateOre(Block.oreDiamond.blockID, 800, 2, var4 / 5);
-		System.out.println("Coal: " + var7 + ", Iron: " + var44 + ", Gold: " + var45 + ", Diamond: " + var5);
+		int ruby = this.populateOre(Block.oreRuby.blockID, 500, 2, var4 / 5);
+		System.out.println("Coal: " + var7 + ", Iron: " + var44 + ", Gold: " + var45 + ", Diamond: " + var5 + ", Ruby: " + ruby);
 		this.guiLoading.displayLoadingString("Melting..");
 		this.loadingBar();
 		this.lavaGen();

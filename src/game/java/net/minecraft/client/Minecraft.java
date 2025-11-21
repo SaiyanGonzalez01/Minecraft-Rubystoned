@@ -5,6 +5,7 @@ import net.lax1dude.eaglercraft.EagUtils;
 import net.lax1dude.eaglercraft.internal.PlatformApplication;
 import net.lax1dude.eaglercraft.internal.buffer.IntBuffer;
 import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
+import net.lax1dude.eaglercraft.profile.GuiScreenEditProfile;
 import net.minecraft.client.controller.PlayerController;
 import net.minecraft.client.controller.PlayerControllerCreative;
 import net.minecraft.client.controller.PlayerControllerSP;
@@ -46,7 +47,7 @@ import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
 
-import dev.colbster937.eaglercraft.LevelUtils;
+import dev.colbster937.eaglercraft.utils.LevelUtils;
 
 public final class Minecraft implements Runnable {
 	public PlayerController playerController = new PlayerControllerSP(this);
@@ -87,6 +88,7 @@ public final class Minecraft implements Runnable {
 	public boolean inGameHasFocus;
 
 	private static Minecraft mc;
+	private GuiMainMenu menu = new GuiMainMenu();
 
 	public Minecraft() {
 		new ModelBiped(0.0F);
@@ -132,7 +134,7 @@ public final class Minecraft implements Runnable {
 			}
 
 			if(var1 == null && this.theWorld == null) {
-				var1 = new GuiMainMenu();
+				var1 = this.menu;
 			} else if(var1 == null && this.thePlayer.health <= 0) {
 				var1 = new GuiGameOver();
 			}
@@ -204,7 +206,7 @@ public final class Minecraft implements Runnable {
 				var31.generate(8, 8, 8, new byte[512], new byte[512]);
 				this.setLevel(var31);
 			} else if(this.theWorld == null) {
-				this.displayGuiScreen(new GuiMainMenu());
+				this.displayGuiScreen(new GuiScreenEditProfile(this.menu));
 			}
 
 			this.effectRenderer = new EffectRenderer(this.theWorld, this.renderEngine);

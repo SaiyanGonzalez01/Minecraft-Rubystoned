@@ -1,4 +1,4 @@
-package dev.colbster937.eaglercraft;
+package dev.colbster937.eaglercraft.utils;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

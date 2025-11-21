@@ -6,6 +6,8 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.zip.GZIPInputStream;
+
+import net.lax1dude.eaglercraft.EaglerZLIB;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.render.Tessellator;
 import org.lwjgl.opengl.Display;
@@ -112,7 +114,7 @@ public class LoadingScreenRenderer implements IProgressUpdate {
 	}
 
 	public static NBTTagCompound writeLevelTags(InputStream var0) throws IOException {
-		DataInputStream var4 = new DataInputStream(new GZIPInputStream(var0));
+		DataInputStream var4 = new DataInputStream(EaglerZLIB.newGZIPInputStream(var0));
 
 		NBTTagCompound var5;
 		try {

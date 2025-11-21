@@ -1,6 +1,7 @@
 package net.minecraft.client;
 
 import net.lax1dude.eaglercraft.EagRuntime;
+import net.lax1dude.eaglercraft.profile.GuiScreenEditProfile;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiNewLevel;
 import net.minecraft.client.gui.GuiOptions;
@@ -9,7 +10,7 @@ import net.minecraft.client.render.Tessellator;
 import org.lwjgl.opengl.GL11;
 
 import dev.colbster937.eaglercraft.EaglercraftVersion;
-import dev.colbster937.eaglercraft.LevelUtils;
+import dev.colbster937.eaglercraft.utils.LevelUtils;
 import util.MathHelper;
 
 public final class GuiMainMenu extends GuiScreen {
@@ -34,7 +35,7 @@ public final class GuiMainMenu extends GuiScreen {
 		this.controlList.add(b = new GuiButton(3, this.width / 2 - 100, this.height / 4 + 96, "Import level.."));
 		// b.enabled = false;
 		this.controlList.add(b = new GuiButton(0, this.width / 2 - 100, this.height / 4 + 120, 98, 20, "Options..."));
-		this.controlList.add(b = new GuiButton(4, this.width / 2 + 2, this.height / 4 + 120, 98, 20, "Github"));
+		this.controlList.add(b = new GuiButton(4, this.width / 2 + 2, this.height / 4 + 120, 98, 20, "Edit Profile"));
 		/* ((GuiButton)this.controlList.get(2)).enabled = false;
 		if(this.mc.session == null) {
 			((GuiButton)this.controlList.get(1)).enabled = false;
@@ -60,7 +61,7 @@ public final class GuiMainMenu extends GuiScreen {
 		}
 
 		if(var1.id == 4) {
-			EagRuntime.openLink(EaglercraftVersion.PROJECT_GITHUB);
+			this.mc.displayGuiScreen(new GuiScreenEditProfile(this));
 		}
 
 	}

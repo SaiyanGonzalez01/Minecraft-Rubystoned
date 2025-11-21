@@ -46,14 +46,18 @@ public class ModelBiped extends ModelBase {
 	}
 
 	public final void render(float var1, float var2, float var3, float var4, float var5, float var6) {
-		this.setRotationAngles(var1, var2, var3, var4, var5, 1.0F);
-		this.bipedHead.render(1.0F);
-		this.bipedBody.render(1.0F);
-		this.bipedRightArm.render(1.0F);
-		this.bipedLeftArm.render(1.0F);
-		this.bipedRightLeg.render(1.0F);
-		this.bipedLeftLeg.render(1.0F);
-		this.bipedHeadwear.render(1.0F);
+		this.render(var1, var2, var3, var4, var5, var6, 1.0F);
+	}
+
+	public final void render(float var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+		this.setRotationAngles(var1, var2, var3, var4, var5, var7);
+		this.bipedHead.render(var7);
+		this.bipedBody.render(var7);
+		this.bipedRightArm.render(var7);
+		this.bipedLeftArm.render(var7);
+		this.bipedRightLeg.render(var7);
+		this.bipedLeftLeg.render(var7);
+		this.bipedHeadwear.render(var7);
 	}
 
 	public void setRotationAngles(float var1, float var2, float var3, float var4, float var5, float var6) {
