@@ -19,4 +19,4 @@ Minecraft Rubystoned title screen preview.
 Run the `CompileClient` script to build the JavaScript and WASM-GC clients. The results will be in the `client` folder.
 
 ## Forking
-You are free to fork this project as long as you properly credit [Colbster937](https://github.com/colbster937)
+You are free to fork this project as long as you properly credit both [SaiyanGonzalez01](https://github.com/SaiyanGonzalez01) & [Colbster937](https://github.com/colbster937)
