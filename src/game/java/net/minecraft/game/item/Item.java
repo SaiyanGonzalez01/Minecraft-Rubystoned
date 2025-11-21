@@ -75,6 +75,9 @@ public class Item {
 	public static Item painting;
 	public static Item ruby;
 	public static Item dyeBlack;
+	public static Item dyeRed;
+	public static Item dyeOrange;
+	public static Item dyeYellow;
 	public final int shiftedIndex;
 	protected int maxStackSize = 64;
 	protected int maxDamage = 32;
@@ -472,5 +475,20 @@ public class Item {
 		var7 = var20;
 		var7.iconIndex = var1;
 		dyeBlack = var7;
+		var20 = new Item(68);
+		var1 = 13;
+		var7 = var20;
+		var7.iconIndex = var1;
+		dyeRed = var7;
+		var20 = new Item(69);
+		var1 = 14;
+		var7 = var20;
+		var7.iconIndex = var1;
+		dyeOrange = var7;
+		var20 = new Item(70);
+		var1 = 27;
+		var7 = var20;
+		var7.iconIndex = var1;
+		dyeYellow = var7;
 	}
 }
