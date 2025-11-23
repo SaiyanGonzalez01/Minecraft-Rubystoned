@@ -47,6 +47,16 @@ public final class CraftingManager {
 		this.addRecipe(new ItemStack(Item.dyeYellow, 2), new Object[]{"#", Character.valueOf('#'), Block.plantYellow});
 		this.addRecipe(new ItemStack(Block.clothYellow, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeYellow, Character.valueOf('X'), Block.clothWhite});
 		this.addRecipe(new ItemStack(Block.rubystone), new Object[]{"###", "#X#", "###", Character.valueOf('#'), Item.ruby, Character.valueOf('X'), Block.obsidian});
+		this.addRecipe(new ItemStack(Item.dyeChartreuse, 2), new Object[]{"#X", Character.valueOf('#'), Item.dyeYellow, Character.valueOf('X'), Item.dyeGreen});
+		this.addRecipe(new ItemStack(Block.clothChartreuse, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeChartreuse, Character.valueOf('X'), Block.clothWhite});
+		this.addRecipe(new ItemStack(Item.dyeGreen, 2), new Object[]{"#X", Character.valueOf('#'), Item.dyeYellow, Character.valueOf('X'), Item.dyeCapri});
+		this.addRecipe(new ItemStack(Block.clothGreen, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeGreen, Character.valueOf('X'), Block.clothWhite});
+		this.addRecipe(new ItemStack(Item.dyeSpringGreen, 2), new Object[]{"#X", Character.valueOf('#'), Item.dyeGreen, Character.valueOf('X'), Item.dyeCyan});
+		this.addRecipe(new ItemStack(Block.clothSpringGreen, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeSpringGreen, Character.valueOf('X'), Block.clothWhite});
+		this.addRecipe(new ItemStack(Item.dyeCyan, 2), new Object[]{"#X", Character.valueOf('#'), Item.dyeCapri, Character.valueOf('X'), Item.dyeGreen});
+		this.addRecipe(new ItemStack(Block.clothCyan, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeCyan, Character.valueOf('X'), Block.clothWhite});
+		this.addRecipe(new ItemStack(Item.dyeCapri, 2), new Object[]{"#", Character.valueOf('#'), Item.diamond});
+		this.addRecipe(new ItemStack(Block.clothCapri, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeCapri, Character.valueOf('X'), Block.clothWhite});
 			
 		Collections.sort(this.recipes, new RecipeSorter(this));
 		System.out.println(this.recipes.size() + " recipes");
