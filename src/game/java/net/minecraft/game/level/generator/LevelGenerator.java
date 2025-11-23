@@ -447,9 +447,9 @@ public final class LevelGenerator {
 		this.loadingBar();
 		this.populateFlowersAndMushrooms(var6, Block.plantCapri, var43);
 		this.loadingBar();
-		this.populateFlowersAndMushrooms(var6, Block.plantViolet, 10);
+		this.populateFlowersAndMushrooms(var6, Block.plantViolet, var43);
 		this.loadingBar();
-		this.populateFlowersAndMushrooms(var6, Block.plantBlue, 15);
+		this.populateFlowersAndMushrooms(var6, Block.plantBlue, var43);
 		this.loadingBar();
 		this.populateFlowersAndMushrooms(var6, Block.plantGrey, var43);
 		this.loadingBar();
