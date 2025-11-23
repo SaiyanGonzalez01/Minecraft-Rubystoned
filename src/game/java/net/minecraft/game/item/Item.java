@@ -89,7 +89,7 @@ public class Item {
 	public static Item dyeMagenta;
 	public static Item dyeRose;
 	public static Item dyeGrey;
-	public static Item dyeWhite
+	public static Item dyeWhite;
 	public final int shiftedIndex;
 	protected int maxStackSize = 64;
 	protected int maxDamage = 32;
