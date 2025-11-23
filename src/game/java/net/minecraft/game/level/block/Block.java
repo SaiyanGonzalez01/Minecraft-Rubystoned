@@ -743,7 +743,7 @@ public class Block {
 		var0 = var10000;
 		var0.stepSound = var1;
 		plantBlue = (BlockFlower)var0;
-		var10000 = (new BlockFlower(67, 102, "Oxeye Daisy")).setHardness(0.0F);
+		var10000 = (new BlockFlower(68, 103, "Oxeye Daisy")).setHardness(0.0F);
 		var1 = soundGrassFootstep;
 		var0 = var10000;
 		var0.stepSound = var1;
