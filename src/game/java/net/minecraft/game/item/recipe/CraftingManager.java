@@ -68,7 +68,7 @@ public final class CraftingManager {
 		this.addRecipe(new ItemStack(Item.dyeRose, 2), new Object[]{"#X", Character.valueOf('#'), Item.dyeRed, Character.valueOf('X'), Item.dyeMagenta});
 		this.addRecipe(new ItemStack(Block.clothRose, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeRose, Character.valueOf('X'), Block.clothWhite});
 		this.addRecipe(new ItemStack(Item.dyeGrey, 2), new Object[]{"#", Character.valueOf('#'), Block.plantGrey});
-		this.addRecipe(new ItemStack(Block.clothGrey, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeGrey, Character.valueOf('X'), Block.clothWhite});
+		this.addRecipe(new ItemStack(Block.clothGray, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeGrey, Character.valueOf('X'), Block.clothWhite});
 			
 		Collections.sort(this.recipes, new RecipeSorter(this));
 		System.out.println(this.recipes.size() + " recipes");
