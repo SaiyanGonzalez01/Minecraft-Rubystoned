@@ -94,6 +94,7 @@ public class Block {
 	public static final Block stoneOvenActive;
 	public static final Block oreRuby;
 	public static final Block rubystone;
+	public static final BlockFlower plantCapri;
 	public int blockIndexInTexture;
 	public final int blockID;
 	private float hardness;
@@ -722,6 +723,11 @@ public class Block {
 		var0 = var10000;
 		var0.stepSound = var1;
 		rubystone = var0;
+		var10000 = (new BlockFlower(65, 47)).setHardness(0.0F);
+		var1 = soundGrassFootstep;
+		var0 = var10000;
+		var0.stepSound = var1;
+		plantCapri = (BlockFlower)var0;
 
 		for(int var2 = 0; var2 < 256; ++var2) {
 			if(blocksList[var2] != null) {
