@@ -39,7 +39,7 @@ public final class LevelGenerator {
 			var5 = (var4 - 64) / 48 + 1;
 		}
 
-		this.phases = 14 + var5 * 4;
+		this.phases = 17 + var5 * 4;
 		this.guiLoading.displayProgressMessage("Generating level");
 		World var6 = new World();
 		var6.waterLevel = this.waterLevel;
@@ -446,6 +446,12 @@ public final class LevelGenerator {
 		this.populateFlowersAndMushrooms(var6, Block.plantRed, var43);
 		this.loadingBar();
 		this.populateFlowersAndMushrooms(var6, Block.plantCapri, var43);
+		this.loadingBar();
+		this.populateFlowersAndMushrooms(var6, Block.plantViolet, 10);
+		this.loadingBar();
+		this.populateFlowersAndMushrooms(var6, Block.plantBlue, 15);
+		this.loadingBar();
+		this.populateFlowersAndMushrooms(var6, Block.plantGrey, var43);
 		this.loadingBar();
 		this.populateFlowersAndMushrooms(var6, Block.mushroomBrown, 50);
 		this.loadingBar();
