@@ -57,8 +57,18 @@ public final class CraftingManager {
 		this.addRecipe(new ItemStack(Block.clothCyan, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeCyan, Character.valueOf('X'), Block.clothWhite});
 		this.addRecipe(new ItemStack(Item.dyeCapri, 2), new Object[]{"#", Character.valueOf('#'), Block.plantCapri});
 		this.addRecipe(new ItemStack(Block.clothCapri, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeCapri, Character.valueOf('X'), Block.clothWhite});
-		this.addRecipe(new ItemStack(Item.dyeUltramarine, 2), new Object[]{"#", Character.valueOf('#'), Item.diamond});
+		this.addRecipe(new ItemStack(Item.dyeUltramarine, 2), new Object[]{"#", Character.valueOf('#'), Block.plantBlue});
 		this.addRecipe(new ItemStack(Block.clothUltramarine, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeUltramarine, Character.valueOf('X'), Block.clothWhite});
+		this.addRecipe(new ItemStack(Item.dyeViolet, 2), new Object[]{"#", Character.valueOf('#'), Block.plantViolet});
+		this.addRecipe(new ItemStack(Block.clothViolet, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeViolet, Character.valueOf('X'), Block.clothWhite});
+		this.addRecipe(new ItemStack(Item.dyePurple, 2), new Object[]{"#X", Character.valueOf('#'), Item.dyeUltramarine, Character.valueOf('X'), Item.dyeViolet});
+		this.addRecipe(new ItemStack(Block.clothPurple, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyePurple, Character.valueOf('X'), Block.clothWhite});
+		this.addRecipe(new ItemStack(Item.dyeMagenta, 2), new Object[]{"#X", Character.valueOf('#'), Item.dyePurple, Character.valueOf('X'), Item.dyeViolet});
+		this.addRecipe(new ItemStack(Block.clothMagenta, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeMagenta, Character.valueOf('X'), Block.clothWhite});
+		this.addRecipe(new ItemStack(Item.dyeRose, 2), new Object[]{"#X", Character.valueOf('#'), Item.dyeRed, Character.valueOf('X'), Item.dyeMagenta});
+		this.addRecipe(new ItemStack(Block.clothRose, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeRose, Character.valueOf('X'), Block.clothWhite});
+		this.addRecipe(new ItemStack(Item.dyeGrey, 2), new Object[]{"#", Character.valueOf('#'), Block.plantGrey});
+		this.addRecipe(new ItemStack(Block.clothGrey, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeGrey, Character.valueOf('X'), Block.clothWhite});
 			
 		Collections.sort(this.recipes, new RecipeSorter(this));
 		System.out.println(this.recipes.size() + " recipes");
