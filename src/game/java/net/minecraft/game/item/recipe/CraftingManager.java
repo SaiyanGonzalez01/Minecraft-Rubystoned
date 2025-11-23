@@ -55,8 +55,10 @@ public final class CraftingManager {
 		this.addRecipe(new ItemStack(Block.clothSpringGreen, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeSpringGreen, Character.valueOf('X'), Block.clothWhite});
 		this.addRecipe(new ItemStack(Item.dyeCyan, 2), new Object[]{"#X", Character.valueOf('#'), Item.dyeCapri, Character.valueOf('X'), Item.dyeGreen});
 		this.addRecipe(new ItemStack(Block.clothCyan, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeCyan, Character.valueOf('X'), Block.clothWhite});
-		this.addRecipe(new ItemStack(Item.dyeCapri, 2), new Object[]{"#", Character.valueOf('#'), Item.diamond});
+		this.addRecipe(new ItemStack(Item.dyeCapri, 2), new Object[]{"#", Character.valueOf('#'), Block.plantCapri});
 		this.addRecipe(new ItemStack(Block.clothCapri, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeCapri, Character.valueOf('X'), Block.clothWhite});
+		this.addRecipe(new ItemStack(Item.dyeUltramarine, 2), new Object[]{"#", Character.valueOf('#'), Item.diamond});
+		this.addRecipe(new ItemStack(Block.clothUltramarine, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeUltramarine, Character.valueOf('X'), Block.clothWhite});
 			
 		Collections.sort(this.recipes, new RecipeSorter(this));
 		System.out.println(this.recipes.size() + " recipes");
