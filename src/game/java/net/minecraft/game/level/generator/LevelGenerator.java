@@ -39,7 +39,7 @@ public final class LevelGenerator {
 			var5 = (var4 - 64) / 48 + 1;
 		}
 
-		this.phases = 13 + var5 * 4;
+		this.phases = 14 + var5 * 4;
 		this.guiLoading.displayProgressMessage("Generating level");
 		World var6 = new World();
 		var6.waterLevel = this.waterLevel;
