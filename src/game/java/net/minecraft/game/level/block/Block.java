@@ -723,7 +723,7 @@ public class Block {
 		var0 = var10000;
 		var0.stepSound = var1;
 		rubystone = var0;
-		var10000 = (new BlockFlower(65, 48)).setHardness(0.0F);
+		var10000 = (new BlockFlower(65, 85)).setHardness(0.0F);
 		var1 = soundGrassFootstep;
 		var0 = var10000;
 		var0.stepSound = var1;
