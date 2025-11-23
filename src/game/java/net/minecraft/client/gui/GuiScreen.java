@@ -99,7 +99,7 @@ public class GuiScreen extends Gui {
 			GL11.glDisable(GL11.GL_LIGHTING);
 			GL11.glDisable(GL11.GL_FOG);
 			Tessellator var2 = Tessellator.instance;
-			GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.mc.renderEngine.getTexture("/dirt.png"));
+			GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.mc.renderEngine.getTexture("/options_background.png"));
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 			var2.startDrawingQuads();
 			var2.setColorOpaque_I(4210752);

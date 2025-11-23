@@ -6,7 +6,7 @@ import net.minecraft.game.level.material.Material;
 
 public final class BlockWorkbench extends Block {
 	protected BlockWorkbench(int var1) {
-		super(58, Material.wood);
+		super(58, Material.wood, "Crafting Table");
 		this.blockIndexInTexture = 59;
 	}
 

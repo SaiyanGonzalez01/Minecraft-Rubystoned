@@ -11,8 +11,8 @@ public final class BlockFlowing extends BlockFluid {
 	private Random rand = new Random();
 	private int[] liquidIntArray = new int[]{0, 1, 2, 3};
 
-	protected BlockFlowing(int var1, Material var2) {
-		super(var1, var2);
+	protected BlockFlowing(int var1, Material var2, String var3) {
+		super(var1, var2, var3);
 		this.blockIndexInTexture = 14;
 		if(var2 == Material.lava) {
 			this.blockIndexInTexture = 30;

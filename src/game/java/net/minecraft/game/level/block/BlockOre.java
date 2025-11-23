@@ -5,8 +5,8 @@ import net.minecraft.game.item.Item;
 import net.minecraft.game.level.material.Material;
 
 public final class BlockOre extends Block {
-	public BlockOre(int var1, int var2) {
-		super(var1, var2, Material.rock);
+	public BlockOre(int var1, int var2, String var3) {
+		super(var1, var2, Material.rock, var3);
 	}
 
 	public final int idDropped(int var1, Random var2) {

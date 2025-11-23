@@ -6,8 +6,8 @@ import net.minecraft.game.level.material.Material;
 import net.minecraft.game.physics.AxisAlignedBB;
 
 public class BlockFlower extends Block {
-	protected BlockFlower(int var1, int var2) {
-		super(var1, Material.plants);
+	protected BlockFlower(int var1, int var2, String var3) {
+		super(var1, Material.plants, var3);
 		this.blockIndexInTexture = var2;
 		this.setTickOnLoad(true);
 		this.setBlockBounds(0.3F, 0.0F, 0.3F, 0.7F, 0.6F, 0.7F);

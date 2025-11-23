@@ -75,7 +75,7 @@ public class LoadingScreenRenderer implements IProgressUpdate {
 				GL11.glTranslatef(0.0F, 0.0F, -200.0F);
 				GL11.glClear(GL11.GL_DEPTH_BUFFER_BIT | GL11.GL_COLOR_BUFFER_BIT);
 				Tessellator var4 = Tessellator.instance;
-				int var5 = this.mc.renderEngine.getTexture("/dirt.png");
+				int var5 = this.mc.renderEngine.getTexture("/options_background.png");
 				GL11.glBindTexture(GL11.GL_TEXTURE_2D, var5);
 				var4.startDrawingQuads();
 				var4.setColorOpaque_I(4210752);

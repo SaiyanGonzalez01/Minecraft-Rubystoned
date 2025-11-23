@@ -4,8 +4,8 @@ import net.minecraft.game.entity.EntityPainting;
 import net.minecraft.game.level.World;
 
 public final class ItemPainting extends Item {
-	public ItemPainting(int var1) {
-		super(65);
+	public ItemPainting(int var1, String var2) {
+		super(65, var2);
 		this.maxDamage = 64;
 	}
 

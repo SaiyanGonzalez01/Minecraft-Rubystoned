@@ -81,4 +81,9 @@ public final class ItemStack {
 		}
 
 	}
+
+	public final String getName() {
+		if (this.itemID > 256) return Item.itemsList[this.itemID].name;
+		else return Block.blocksList[this.itemID].name;
+	}
 }

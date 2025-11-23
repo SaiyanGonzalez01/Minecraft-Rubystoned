@@ -5,7 +5,7 @@ import net.minecraft.game.level.World;
 
 public final class BlockSapling extends BlockFlower {
 	protected BlockSapling(int var1, int var2) {
-		super(6, 15);
+		super(6, 15, "Sapling");
 		this.setBlockBounds(10.0F * 0.01F, 0.0F, 10.0F * 0.01F, 0.9F, 0.8F, 0.9F);
 	}
 

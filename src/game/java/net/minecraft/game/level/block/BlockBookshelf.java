@@ -4,8 +4,8 @@ import java.util.Random;
 import net.minecraft.game.level.material.Material;
 
 public final class BlockBookshelf extends Block {
-	public BlockBookshelf(int var1, int var2) {
-		super(47, 35, Material.wood);
+	public BlockBookshelf(int var1, int var2, String var3) {
+		super(47, 35, Material.wood, var3);
 	}
 
 	public final int getBlockTextureFromSide(int var1) {

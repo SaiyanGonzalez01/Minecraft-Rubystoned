@@ -25,4 +25,4 @@ You are free to fork this project as long as you properly credit both [SaiyanGon
 
 SaiyanGonzalez01 - Project Owner (Created most of the modded additions)
 
-Colbster937 - Original Indev Porter & Contributer (Ported the heavy additions, like the Profile GUI)
+Colbster937 - Original Indev Porter & Contributer (Added the more complex additions, like the Profile GUI, item tooltips, ~~and multiplayer~~)

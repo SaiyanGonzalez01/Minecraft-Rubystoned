@@ -32,6 +32,8 @@ public abstract class GuiContainer extends GuiScreen {
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 		GL11.glEnable(GL11.GL_NORMALIZE);
 
+		Slot h = null;
+
 		for(int var5 = 0; var5 < this.inventorySlots.size(); ++var5) {
 			Slot var6;
 			label24: {
@@ -57,6 +59,7 @@ public abstract class GuiContainer extends GuiScreen {
 			}
 
 			if(var6.isAtCursorPos(var1, var2)) {
+				h = var6;
 				GL11.glDisable(GL11.GL_LIGHTING);
 				GL11.glDisable(GL11.GL_DEPTH_TEST);
 				int var7 = var6.xPos;
@@ -78,6 +81,22 @@ public abstract class GuiContainer extends GuiScreen {
 		GL11.glDisable(GL11.GL_LIGHTING);
 		GL11.glDisable(GL11.GL_DEPTH_TEST);
 		this.drawGuiContainerForegroundLayer();
+		if(this.itemStack == null && h != null) {
+			ItemStack stack = h.inventory.getStackInSlot(h.slotIndex);
+			if(stack != null) {
+				String name = stack.getName();
+				if(name != null) {
+					name = name.trim();
+				}
+				if(name != null && name.length() > 0) {
+					int tooltipX = var1 - var13 + 12;
+					int tooltipY = var2 - var4 - 12;
+					int w = this.fontRenderer.getStringWidth(name);
+					this.drawGradientRect(tooltipX - 3, tooltipY - 3, tooltipX + w + 3, tooltipY + 8 + 3, -1073741824, -1073741824);
+					this.fontRenderer.drawStringWithShadow(name, tooltipX, tooltipY, -1);
+				}
+			}
+		}
 		GL11.glEnable(GL11.GL_LIGHTING);
 		GL11.glEnable(GL11.GL_DEPTH_TEST);
 		GL11.glPopMatrix();

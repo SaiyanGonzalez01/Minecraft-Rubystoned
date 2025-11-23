@@ -6,8 +6,8 @@ import net.minecraft.game.level.block.Block;
 public final class ItemSeeds extends Item {
 	private int blockType;
 
-	public ItemSeeds(int var1, int var2) {
-		super(39);
+	public ItemSeeds(int var1, int var2, String var3) {
+		super(39, var3);
 		this.blockType = var2;
 	}
 

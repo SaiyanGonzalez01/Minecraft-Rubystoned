@@ -7,8 +7,8 @@ public final class ItemArmor extends Item {
 	public final int damageReduceAmount;
 	public final int renderIndex;
 
-	public ItemArmor(int var1, int var2, int var3, int var4) {
-		super(var1);
+	public ItemArmor(int var1, int var2, int var3, int var4, String var5) {
+		super(var1, var5);
 		this.armorType = var4;
 		this.renderIndex = var3;
 		this.damageReduceAmount = damageReduceAmountArray[var4];

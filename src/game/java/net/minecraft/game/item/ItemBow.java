@@ -5,8 +5,8 @@ import net.minecraft.game.entity.projectile.EntityArrow;
 import net.minecraft.game.level.World;
 
 public final class ItemBow extends Item {
-	public ItemBow(int var1) {
-		super(5);
+	public ItemBow(int var1, String var2) {
+		super(5, var2);
 		this.maxStackSize = 1;
 	}
 

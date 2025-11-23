@@ -4,8 +4,8 @@ import java.util.Random;
 import net.minecraft.game.level.material.Material;
 
 public final class BlockLog extends Block {
-	protected BlockLog(int var1) {
-		super(17, Material.wood);
+	protected BlockLog(int var1, String var2) {
+		super(17, Material.wood, var2);
 		this.blockIndexInTexture = 20;
 	}
 

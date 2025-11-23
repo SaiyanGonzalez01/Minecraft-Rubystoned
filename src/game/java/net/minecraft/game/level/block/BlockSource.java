@@ -7,8 +7,8 @@ import net.minecraft.game.level.material.Material;
 public final class BlockSource extends Block {
 	private int fluid;
 
-	protected BlockSource(int var1, int var2) {
-		super(var1, Block.blocksList[var2].blockIndexInTexture, Material.water);
+	protected BlockSource(int var1, int var2, String var3) {
+		super(var1, Block.blocksList[var2].blockIndexInTexture, Material.water, var3);
 		this.fluid = var2;
 		this.setTickOnLoad(true);
 	}

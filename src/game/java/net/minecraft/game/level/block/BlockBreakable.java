@@ -6,8 +6,8 @@ import net.minecraft.game.level.material.Material;
 public class BlockBreakable extends Block {
 	private boolean localFlag;
 
-	protected BlockBreakable(int var1, int var2, Material var3, boolean var4) {
-		super(var1, var2, var3);
+	protected BlockBreakable(int var1, int var2, Material var3, boolean var4, String var5) {
+		super(var1, var2, var3, var5);
 		this.localFlag = var4;
 	}
 

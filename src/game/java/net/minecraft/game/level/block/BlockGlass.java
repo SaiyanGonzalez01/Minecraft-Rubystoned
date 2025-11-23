@@ -4,8 +4,8 @@ import java.util.Random;
 import net.minecraft.game.level.material.Material;
 
 public final class BlockGlass extends BlockBreakable {
-	public BlockGlass(int var1, int var2, Material var3, boolean var4) {
-		super(20, 49, var3, false);
+	public BlockGlass(int var1, int var2, Material var3, boolean var4, String var5) {
+		super(20, 49, var3, false, var5);
 	}
 
 	public final int quantityDropped(Random var1) {
