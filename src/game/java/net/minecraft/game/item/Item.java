@@ -90,6 +90,7 @@ public class Item {
 	public static Item dyeRose;
 	public static Item dyeGrey;
 	public static Item dyeWhite;
+	public static Item clay;
 	public final int shiftedIndex;
 	protected int maxStackSize = 64;
 	protected int maxDamage = 32;
@@ -564,6 +565,11 @@ public class Item {
 		var7 = var20;
 		var7.iconIndex = var1;
 		dyeWhite = var7;
+		var20 = new Item(83, "Clay");
+		var1 = 62;
+		var7 = var20;
+		var7.iconIndex = var1;
+		clay = var7;
 		
 	}
 }
