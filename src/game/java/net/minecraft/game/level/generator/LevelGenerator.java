@@ -263,6 +263,7 @@ public final class LevelGenerator {
 						int var69 = -1;
 						if(var25 <= var56 && var60) {
 							var69 = Block.sand.blockID;
+							var69 = Block.clay.blockID
 							if(var9.levelType == 1) {
 								var69 = Block.grass.blockID;
 							}
