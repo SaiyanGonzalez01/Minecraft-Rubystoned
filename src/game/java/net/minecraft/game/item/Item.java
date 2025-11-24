@@ -566,7 +566,7 @@ public class Item {
 		var7.iconIndex = var1;
 		dyeWhite = var7;
 		var20 = new Item(83, "Clay");
-		var1 = 62;
+		var1 = 57;
 		var7 = var20;
 		var7.iconIndex = var1;
 		clay = var7;
