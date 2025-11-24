@@ -98,6 +98,7 @@ public class Block {
 	public static final BlockFlower plantViolet;
 	public static final BlockFlower plantBlue;
 	public static final BlockFlower plantGrey;
+	public static final Block clay;
 	public int blockIndexInTexture;
 	public final int blockID;
 	private float hardness;
@@ -748,7 +749,11 @@ public class Block {
 		var0 = var10000;
 		var0.stepSound = var1;
 		plantGrey = (BlockFlower)var0;
-
+		var10000 = (new BlockClay(69, 53, "Clay")).setHardness(0.5F);
+		var1 = soundGravelFootstep;
+		var0 = var10000;
+		var0.stepSound = var1;
+		clay = var0;
 		for(int var2 = 0; var2 < 256; ++var2) {
 			if(blocksList[var2] != null) {
 				Item.itemsList[var2] = new ItemBlock(var2 - 256, blocksList[var2].name);
