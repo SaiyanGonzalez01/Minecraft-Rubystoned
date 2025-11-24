@@ -1,5 +1,7 @@
 package net.minecraft.game.level.block;
 
+import net.lax1dude.eaglercraft.Random;
+import net.minecraft.game.item.Item;
 import net.minecraft.game.level.material.Material;
 
 public final class BlockClay extends Block {
