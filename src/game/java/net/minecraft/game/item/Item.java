@@ -91,6 +91,7 @@ public class Item {
 	public static Item dyeGrey;
 	public static Item dyeWhite;
 	public static Item clay;
+	public static Item brick;
 	public final int shiftedIndex;
 	protected int maxStackSize = 64;
 	protected int maxDamage = 32;
@@ -280,7 +281,7 @@ public class Item {
 		var7 = var20;
 		var7.iconIndex = var1;
 		bowlEmpty = var7;
-		ItemSoup var22 = new ItemSoup(26, 10, "Bowl of Soup");
+		ItemSoup var22 = new ItemSoup(26, 10, "Mushroom Soup");
 		var1 = 72;
 		ItemSoup var9 = var22;
 		var9.iconIndex = var1;
@@ -570,6 +571,11 @@ public class Item {
 		var7 = var20;
 		var7.iconIndex = var1;
 		clay = var7;
+		var20 = new Item(84, "Brick");
+		var1 = 73;
+		var7 = var20;
+		var7.iconIndex = var1;
+		brick = var7;
 		
 	}
 }
