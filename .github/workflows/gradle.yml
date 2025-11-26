@@ -49,8 +49,8 @@ jobs:
           zip -r dist/dist.zip client
           mkdir -p dist/rel
           cp dist/dist.zip dist/rel/dist_${{ steps.vars.outputs.hash }}.zip
-          cp client/Eaglercraft_Offline_JS.html dist/rel/Eaglercraft_Offline_JS.html
-          cp client/Eaglercraft_Offline_WASM.html dist/rel/Eaglercraft_Offline_WASM.html
+          cp client/Rubystoned_Offline_JS.html dist/rel/Rubystoned_Offline_JS.html
+          cp client/Rubystoned_Offline_WASM.html dist/rel/Rubystoned_Offline_WASM.html
           mkdir -p dist/web
           cp client/index.html dist/web/index.html
           cp client/classes.js dist/web/classes.js
