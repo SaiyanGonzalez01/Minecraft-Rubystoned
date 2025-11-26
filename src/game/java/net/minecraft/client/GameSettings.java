@@ -29,13 +29,15 @@ public final class GameSettings {
 	public KeyBinding[] keyBindings = new KeyBinding[]{this.keyBindForward, this.keyBindLeft, this.keyBindBack, this.keyBindRight, this.keyBindJump, this.keyBindDrop, this.keyBindInventory, this.keyBindZoom};
 	private Minecraft mc;
 	private VFile2 optionsFile;
-	public int numberOfOptions = 11;
+	public int numberOfOptions = 12;
 	public int difficulty = 2;
 	public boolean thirdPersonView = false;
 
 	public boolean vsync = true;
 	public boolean showFramerate = true;
 	public boolean showCoords = true;
+	
+	public boolean darkGUI = true;
 
 	public GameSettings(Minecraft var1, VFile2 var2) {
 		this.mc = var1;
@@ -100,11 +102,15 @@ public final class GameSettings {
 			this.showCoords = !this.showCoords;
 		}
 
+		if(var1 == 11) {
+			this.darkGUI = !this.darkGUI;
+		}
+
 		this.saveOptions();
 	}
 
 	public final String setOptionString(int var1) {
-		return var1 == 0 ? "Music: " + (this.music ? "ON" : "OFF") : (var1 == 1 ? "Sound: " + (this.sound ? "ON" : "OFF") : (var1 == 2 ? "Invert mouse: " + (this.invertMouse ? "ON" : "OFF") : (var1 == 3 ? "Debug Info: " + (this.showFPS ? "ON" : "OFF") : (var1 == 4 ? "Render distance: " + RENDER_DISTANCES[this.renderDistance] : (var1 == 5 ? "View bobbing: " + (this.fancyGraphics ? "ON" : "OFF") : (var1 == 6 ? "3d anaglyph: " + (this.anaglyph ? "ON" : "OFF") : (var1 == 7 ? "Use VSync: " + (this.vsync ? "ON" : "OFF") : (var1 == 8 ? "Difficulty: " + DIFFICULTIES[this.difficulty] : (var1 == 9 ? "Show FPS: " + (this.showFramerate ? "ON" : "OFF") : (var1 == 10 ? "Show Coordinates: " + (this.showCoords ? "ON" : "OFF") : ""))))))))));
+		return var1 == 0 ? "Music: " + (this.music ? "ON" : "OFF") : (var1 == 1 ? "Sound: " + (this.sound ? "ON" : "OFF") : (var1 == 2 ? "Invert mouse: " + (this.invertMouse ? "ON" : "OFF") : (var1 == 3 ? "Debug Info: " + (this.showFPS ? "ON" : "OFF") : (var1 == 4 ? "Render distance: " + RENDER_DISTANCES[this.renderDistance] : (var1 == 5 ? "View bobbing: " + (this.fancyGraphics ? "ON" : "OFF") : (var1 == 6 ? "3d anaglyph: " + (this.anaglyph ? "ON" : "OFF") : (var1 == 7 ? "Use VSync: " + (this.vsync ? "ON" : "OFF") : (var1 == 8 ? "Difficulty: " + DIFFICULTIES[this.difficulty] : (var1 == 9 ? "Show FPS: " + (this.showFramerate ? "ON" : "OFF") : (var1 == 10 ? "Show Coordinates: " + (this.showCoords ? "ON" : "OFF") : (var1 == 11 ? "Dark GUI: " + (this.darkGUI ? "ON" : "OFF") : "")))))))))));
 	}
 
 	private void loadOptions() {
@@ -156,6 +162,18 @@ public final class GameSettings {
 						this.difficulty = Integer.parseInt(var5[1]);
 					}
 
+					if(var5[0].equals("showFramerate")) {
+						this.showFramerate = var5[1].equals("true");
+					}
+
+					if(var5[0].equals("showCoords")) {
+						this.showCoords = var5[1].equals("true");
+					}
+
+					if(var5[0].equals("darkGUI")) {
+						this.darkGUI = var5[1].equals("true");
+					}
+
 					for(int var3 = 0; var3 < this.keyBindings.length; ++var3) {
 						if(var5[0].equals("key_" + this.keyBindings[var3].keyDescription)) {
 							this.keyBindings[var3].keyCode = Integer.parseInt(var5[1]);
@@ -181,6 +199,9 @@ public final class GameSettings {
 			var1.println("anaglyph3d:" + this.anaglyph);
 			var1.println("vsync:" + this.vsync);
 			var1.println("difficulty:" + this.difficulty);
+			var1.println("showFramerate:" + this.showFramerate);
+			var1.println("showCoords:" + this.showCoords);
+			var1.println("darkGUI:" + this.darkGUI);
 
 			for(int var2 = 0; var2 < this.keyBindings.length; ++var2) {
 				var1.println("key_" + this.keyBindings[var2].keyDescription + ":" + this.keyBindings[var2].keyCode);

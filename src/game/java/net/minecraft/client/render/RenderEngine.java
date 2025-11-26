@@ -15,6 +15,8 @@ import util.GLAllocation;
 
 import org.lwjgl.opengl.GL11;
 
+import dev.colbster937.eaglercraft.utils.ScuffedUtils;
+
 public class RenderEngine {
 	private HashMap textureMap = new HashMap();
 	private HashMap textureContentsMap = new HashMap();
@@ -29,6 +31,7 @@ public class RenderEngine {
 	}
 
 	public final int getTexture(String var1) {
+		var1 = ScuffedUtils.getDarkGUI(var1);
 		Integer var2 = (Integer)this.textureMap.get(var1);
 		if(var2 != null) {
 			return var2.intValue();
