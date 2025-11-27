@@ -5,8 +5,8 @@ import net.minecraft.game.level.World;
 import net.minecraft.game.level.material.Material;
 
 public final class BlockLeaves extends BlockLeavesBase {
-	protected BlockLeaves(int var1, int var2) {
-		super(18, 52, Material.leaves, true);
+	protected BlockLeaves(int var1, int var2, String var3) {
+		super(18, 52, Material.leaves, true, var3);
 		this.setTickOnLoad(true);
 	}
 

@@ -5,8 +5,8 @@ import net.minecraft.game.level.World;
 import net.minecraft.game.level.material.Material;
 
 public class BlockSand extends Block {
-	public BlockSand(int var1, int var2) {
-		super(var1, var2, Material.sand);
+	public BlockSand(int var1, int var2, String var3) {
+		super(var1, var2, Material.sand, var3);
 		new Random();
 	}
 

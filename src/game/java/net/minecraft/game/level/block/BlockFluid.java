@@ -9,8 +9,8 @@ public class BlockFluid extends Block {
 	protected int stillId;
 	protected int movingId;
 
-	protected BlockFluid(int var1, Material var2) {
-		super(var1, var2);
+	protected BlockFluid(int var1, Material var2, String var3) {
+		super(var1, var2, var3);
 		this.blockIndexInTexture = 14;
 		if(var2 == Material.lava) {
 			this.blockIndexInTexture = 30;

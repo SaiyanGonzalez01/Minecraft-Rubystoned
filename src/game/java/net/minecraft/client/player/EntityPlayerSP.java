@@ -15,6 +15,7 @@ import net.minecraft.game.entity.player.InventoryPlayer;
 import net.minecraft.game.item.ItemStack;
 import net.minecraft.game.level.World;
 import net.minecraft.game.level.block.tileentity.TileEntityFurnace;
+import rubystoned.gui.GuiStonecutter;
 
 public class EntityPlayerSP extends EntityPlayer {
 	public MovementInput movementInput;
@@ -103,6 +104,10 @@ public class EntityPlayerSP extends EntityPlayer {
 
 	public final void displayWorkbenchGUI() {
 		this.mc.displayGuiScreen(new GuiCrafting(this.inventory));
+	}
+
+	public final void displayStonecutterGUI() {
+		this.mc.displayGuiScreen(new GuiStonecutter(this.inventory));
 	}
 
 	public final void displayGUIFurnace(TileEntityFurnace var1) {

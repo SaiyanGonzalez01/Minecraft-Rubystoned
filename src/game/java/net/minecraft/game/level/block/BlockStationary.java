@@ -5,8 +5,8 @@ import net.minecraft.game.level.World;
 import net.minecraft.game.level.material.Material;
 
 public final class BlockStationary extends BlockFluid {
-	protected BlockStationary(int var1, Material var2) {
-		super(var1, var2);
+	protected BlockStationary(int var1, Material var2, String var3) {
+		super(var1, var2, var3);
 		this.movingId = var1 - 1;
 		this.stillId = var1;
 		this.setTickOnLoad(false);

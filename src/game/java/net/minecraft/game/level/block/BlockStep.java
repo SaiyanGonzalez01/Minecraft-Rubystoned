@@ -7,8 +7,8 @@ import net.minecraft.game.level.material.Material;
 public final class BlockStep extends Block {
 	private boolean blockType;
 
-	public BlockStep(int var1, boolean var2) {
-		super(var1, 6, Material.rock);
+	public BlockStep(int var1, boolean var2, String var3) {
+		super(var1, 6, Material.rock, var3);
 		this.blockType = var2;
 		if(!var2) {
 			this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);

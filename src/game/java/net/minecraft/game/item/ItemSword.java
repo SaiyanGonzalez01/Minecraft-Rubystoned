@@ -5,8 +5,8 @@ import net.minecraft.game.level.block.Block;
 public final class ItemSword extends Item {
 	private int weaponDamage;
 
-	public ItemSword(int var1, int var2) {
-		super(var1);
+	public ItemSword(int var1, int var2, String var3) {
+		super(var1, var3);
 		this.maxStackSize = 1;
 		this.maxDamage = 32 << var2;
 		this.weaponDamage = 4 + (var2 << 1);

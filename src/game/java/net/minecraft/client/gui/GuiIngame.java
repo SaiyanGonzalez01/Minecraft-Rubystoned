@@ -153,7 +153,7 @@ public final class GuiIngame extends Gui {
 		RenderHelper.disableStandardItemLighting();
 		GL11.glDisable(GL11.GL_NORMALIZE);
 		if(this.mc.options.showFPS) {
-			var4.drawStringWithShadow("Minecraft Indev (" + this.mc.debug + ")", 2, 2, 16777215);
+			var4.drawStringWithShadow("Minecraft Rubystoned (" + this.mc.debug + ")", 2, 2, 16777215);
 			Minecraft var23 = this.mc;
 			var4.drawStringWithShadow(var23.renderGlobal.getDebugInfoRenders(), 2, 12, 16777215);
 			var23 = this.mc;
@@ -169,8 +169,8 @@ public final class GuiIngame extends Gui {
 			var18 = "Allocated memory: " + var27 * 100L / var24 + "% (" + var27 / 1024L / 1024L + "MB)";
 			drawString(var4, var18, var3 - var4.getStringWidth(var18) - 2, 12, 14737632);
 		} else {
-			if (this.mc.options.showFramerate) var4.drawStringWithShadow("Minecraft Indev (" + this.mc.fps + " fps)", 2, 2, 16777215);
-			else var4.drawStringWithShadow("Minecraft Indev", 2, 2, 16777215);
+			if (this.mc.options.showFramerate) var4.drawStringWithShadow("Minecraft Rubystoned (" + this.mc.fps + " fps)", 2, 2, 16777215);
+			else var4.drawStringWithShadow("Minecraft Rubystoned", 2, 2, 16777215);
 			if (this.mc.options.showCoords) var4.drawStringWithShadow("x: " + (int) Math.floor(this.mc.thePlayer.posX) + ", y: " + (int) Math.floor(this.mc.thePlayer.posY) + ", z: " + (int) Math.floor(this.mc.thePlayer.posZ), 2, 12, 16777215);
 		}
 

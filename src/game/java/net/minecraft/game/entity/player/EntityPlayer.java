@@ -2,6 +2,9 @@ package net.minecraft.game.entity.player;
 
 import com.mojang.nbt.NBTTagCompound;
 import java.util.List;
+
+import net.lax1dude.eaglercraft.profile.EaglerProfile;
+import net.lax1dude.eaglercraft.profile.GuiScreenEditProfile;
 import net.minecraft.game.IInventory;
 import net.minecraft.game.entity.Entity;
 import net.minecraft.game.entity.EntityLiving;
@@ -36,7 +39,7 @@ public class EntityPlayer extends EntityLiving {
 		this.yOffset = 1.62F;
 		this.health = 20;
 		this.fireResistance = 20;
-		this.texture = "/char.png";
+		this.texture = GuiScreenEditProfile.defaultOptionsTextures[EaglerProfile.presetSkinId].getTextureName();
 	}
 
 	public final void preparePlayerToSpawn() {
@@ -159,6 +162,9 @@ public class EntityPlayer extends EntityLiving {
 	}
 
 	public void displayWorkbenchGUI() {
+	}
+
+	public void displayStonecutterGUI() {
 	}
 
 	public void onItemPickup(Entity var1) {

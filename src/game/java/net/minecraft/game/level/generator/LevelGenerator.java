@@ -39,7 +39,7 @@ public final class LevelGenerator {
 			var5 = (var4 - 64) / 48 + 1;
 		}
 
-		this.phases = 13 + var5 * 4;
+		this.phases = 17 + var5 * 4;
 		this.guiLoading.displayProgressMessage("Generating level");
 		World var6 = new World();
 		var6.waterLevel = this.waterLevel;
@@ -339,7 +339,8 @@ public final class LevelGenerator {
 		int var44 = this.populateOre(Block.oreIron.blockID, 800, 8, var4 * 3 / 5);
 		var45 = this.populateOre(Block.oreGold.blockID, 500, 6, (var4 << 1) / 5);
 		var5 = this.populateOre(Block.oreDiamond.blockID, 800, 2, var4 / 5);
-		System.out.println("Coal: " + var7 + ", Iron: " + var44 + ", Gold: " + var45 + ", Diamond: " + var5);
+		int ruby = this.populateOre(Block.oreRuby.blockID, 500, 2, var4 / 5);
+		System.out.println("Coal: " + var7 + ", Iron: " + var44 + ", Gold: " + var45 + ", Diamond: " + var5 + ", Ruby: " + ruby);
 		this.guiLoading.displayLoadingString("Melting..");
 		this.loadingBar();
 		this.lavaGen();
@@ -443,6 +444,14 @@ public final class LevelGenerator {
 		this.populateFlowersAndMushrooms(var6, Block.plantYellow, var43);
 		this.loadingBar();
 		this.populateFlowersAndMushrooms(var6, Block.plantRed, var43);
+		this.loadingBar();
+		this.populateFlowersAndMushrooms(var6, Block.plantCapri, var43);
+		this.loadingBar();
+		this.populateFlowersAndMushrooms(var6, Block.plantViolet, var43);
+		this.loadingBar();
+		this.populateFlowersAndMushrooms(var6, Block.plantBlue, var43);
+		this.loadingBar();
+		this.populateFlowersAndMushrooms(var6, Block.plantGrey, var43);
 		this.loadingBar();
 		this.populateFlowersAndMushrooms(var6, Block.mushroomBrown, 50);
 		this.loadingBar();

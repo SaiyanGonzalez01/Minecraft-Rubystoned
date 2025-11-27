@@ -53,6 +53,14 @@ public class EntitySkeleton extends EntityMob {
 		super.readEntityFromNBT(var1);
 	}
 
+	protected String getHurtSound() {
+		return "mob.skeletonhurt";
+	}
+
+	protected String getDeathSound() {
+		return "mob.skeletondeath";
+	}
+
 	protected final String getEntityString() {
 		return "Skeleton";
 	}

@@ -4,8 +4,8 @@ import net.minecraft.game.entity.player.EntityPlayer;
 import net.minecraft.game.level.World;
 
 public final class ItemSoup extends ItemFood {
-	public ItemSoup(int var1, int var2) {
-		super(26, 10);
+	public ItemSoup(int var1, int var2, String var3) {
+		super(26, 10, var3);
 	}
 
 	public final ItemStack onItemRightClick(ItemStack var1, World var2, EntityPlayer var3) {

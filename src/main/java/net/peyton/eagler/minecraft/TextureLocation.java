@@ -41,4 +41,8 @@ public class TextureLocation {
 		return textureID;
 	}
 
+	public String getTextureName() {
+		return this.textureName;
+	}
+
 }

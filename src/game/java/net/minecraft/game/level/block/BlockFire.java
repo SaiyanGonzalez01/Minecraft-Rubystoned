@@ -9,8 +9,8 @@ public final class BlockFire extends Block {
 	private int[] chanceToEncourageFire = new int[256];
 	private int[] abilityToCatchFire = new int[256];
 
-	protected BlockFire(int var1, int var2) {
-		super(51, 31, Material.fire);
+	protected BlockFire(int var1, int var2, String var3) {
+		super(51, 31, Material.fire, var3);
 		this.setBurnRate(Block.planks.blockID, 5, 20);
 		this.setBurnRate(Block.wood.blockID, 5, 5);
 		this.setBurnRate(Block.leaves.blockID, 30, 60);

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import net.lax1dude.eaglercraft.EagRuntime;
 import net.lax1dude.eaglercraft.internal.buffer.ByteBuffer;
@@ -16,11 +15,13 @@ import util.GLAllocation;
 
 import org.lwjgl.opengl.GL11;
 
+import dev.colbster937.eaglercraft.utils.ScuffedUtils;
+
 public class RenderEngine {
 	private HashMap textureMap = new HashMap();
 	private HashMap textureContentsMap = new HashMap();
 	private IntBuffer singleIntBuffer = GLAllocation.createIntBuffer(1);
-	private ByteBuffer imageData = GLAllocation.createDirectByteBuffer(262144);
+	private ByteBuffer imageData = GLAllocation.createDirectByteBuffer(4194304);
 	private List textureList = new ArrayList();
 	private GameSettings options;
 	private boolean clampTexture = false;
@@ -30,6 +31,7 @@ public class RenderEngine {
 	}
 
 	public final int getTexture(String var1) {
+		var1 = ScuffedUtils.getDarkGUI(var1);
 		Integer var2 = (Integer)this.textureMap.get(var1);
 		if(var2 != null) {
 			return var2.intValue();

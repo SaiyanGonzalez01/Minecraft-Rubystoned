@@ -6,8 +6,8 @@ import net.minecraft.game.level.World;
 import net.minecraft.game.level.material.Material;
 
 public final class BlockTNT extends Block {
-	public BlockTNT(int var1, int var2) {
-		super(46, 8, Material.tnt);
+	public BlockTNT(int var1, int var2, String var3) {
+		super(46, 8, Material.tnt, var3);
 	}
 
 	public final int getBlockTextureFromSide(int var1) {

@@ -11,7 +11,7 @@ public final class BlockFurnace extends BlockContainer {
 	private final boolean isActive;
 
 	protected BlockFurnace(int var1, boolean var2) {
-		super(var1, Material.rock);
+		super(var1, Material.rock, "Furnace");
 		this.isActive = var2;
 		this.blockIndexInTexture = 45;
 	}

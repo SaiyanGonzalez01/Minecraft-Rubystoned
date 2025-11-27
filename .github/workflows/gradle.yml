@@ -49,8 +49,8 @@ jobs:
           zip -r dist/dist.zip client
           mkdir -p dist/rel
           cp dist/dist.zip dist/rel/dist_${{ steps.vars.outputs.hash }}.zip
-          cp client/Eaglercraft_Offline_JS.html dist/rel/Eaglercraft_Offline_JS.html
-          cp client/Eaglercraft_Offline_WASM.html dist/rel/Eaglercraft_Offline_WASM.html
+          cp client/Rubystoned_Offline_JS.html dist/rel/Rubystoned_Offline_JS.html
+          cp client/Rubystoned_Offline_WASM.html dist/rel/Rubystoned_Offline_WASM.html
           mkdir -p dist/web
           cp client/index.html dist/web/index.html
           cp client/classes.js dist/web/classes.js
@@ -64,16 +64,16 @@ jobs:
           name: dist_${{ steps.vars.outputs.hash }}
           path: dist/dist.zip
 
-      - name: Create Release
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: ${{ steps.vars.outputs.hash }}
-          name: Release ${{ steps.vars.outputs.hash }}
-          files: dist/rel/*
-          generate_release_notes: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Create Release
+#        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+#        uses: softprops/action-gh-release@v2
+#        with:
+#          tag_name: ${{ steps.vars.outputs.hash }}
+#          name: Release ${{ steps.vars.outputs.hash }}
+#          files: dist/rel/*
+#          generate_release_notes: true
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy GitHub Pages
         if: github.event_name == 'push'

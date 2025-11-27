@@ -56,6 +56,14 @@ public class EntitySpider extends EntityMob {
 		super.readEntityFromNBT(var1);
 	}
 
+	protected String getHurtSound() {
+		return "mob.spider";
+	}
+
+	protected String getDeathSound() {
+		return "mob.spiderdeath";
+	}
+
 	protected final String getEntityString() {
 		return "Spider";
 	}

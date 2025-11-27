@@ -4,7 +4,7 @@ import net.minecraft.game.level.World;
 
 public final class BlockMushroom extends BlockFlower {
 	protected BlockMushroom(int var1, int var2) {
-		super(var1, var2);
+		super(var1, var2, "Mushroom");
 		this.setBlockBounds(0.3F, 0.0F, 0.3F, 0.7F, 0.4F, 0.7F);
 	}
 

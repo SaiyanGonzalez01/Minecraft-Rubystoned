@@ -8,8 +8,8 @@ import net.minecraft.game.physics.AxisAlignedBB;
 public final class ItemBlock extends Item {
 	private int blockID;
 
-	public ItemBlock(int var1) {
-		super(var1);
+	public ItemBlock(int var1, String var2) {
+		super(var1, var2);
 		this.blockID = var1 + 256;
 		this.setIconIndex(Block.blocksList[var1 + 256].getBlockTextureFromSide(2));
 	}

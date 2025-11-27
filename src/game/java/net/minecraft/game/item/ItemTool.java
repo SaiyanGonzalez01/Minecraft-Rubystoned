@@ -7,8 +7,8 @@ public class ItemTool extends Item {
 	private float efficiencyOnProperMaterial = 4.0F;
 	private int damageVsEntity;
 
-	public ItemTool(int var1, int var2, int var3, Block[] var4) {
-		super(var1);
+	public ItemTool(int var1, int var2, int var3, Block[] var4, String var5) {
+		super(var1, var5);
 		this.blocksEffectiveAgainst = var4;
 		this.maxStackSize = 1;
 		this.maxDamage = 32 << var3;

@@ -4,8 +4,8 @@ import net.minecraft.game.level.World;
 import net.minecraft.game.level.block.Block;
 
 public final class ItemFlintAndSteel extends Item {
-	public ItemFlintAndSteel(int var1) {
-		super(3);
+	public ItemFlintAndSteel(int var1, String var2) {
+		super(3, var2);
 		this.maxStackSize = 1;
 		this.maxDamage = 64;
 	}

@@ -7,8 +7,8 @@ import net.minecraft.game.level.block.StepSound;
 import net.minecraft.game.level.material.Material;
 
 public final class ItemHoe extends Item {
-	public ItemHoe(int var1, int var2) {
-		super(var1);
+	public ItemHoe(int var1, int var2, String var3) {
+		super(var1, var3);
 		this.maxStackSize = 1;
 		this.maxDamage = 32 << var2;
 	}

@@ -8,7 +8,7 @@ import net.minecraft.game.level.World;
 
 public final class BlockCrops extends BlockFlower {
 	protected BlockCrops(int var1, int var2) {
-		super(59, 88);
+		super(59, 88, "Crops");
 		this.blockIndexInTexture = 88;
 		this.setTickOnLoad(true);
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.25F, 1.0F);

@@ -6,8 +6,8 @@ import net.minecraft.game.level.World;
 public class ItemFood extends Item {
 	private int healAmount;
 
-	public ItemFood(int var1, int var2) {
-		super(var1);
+	public ItemFood(int var1, int var2, String var3) {
+		super(var1, var3);
 		this.healAmount = var2;
 		this.maxStackSize = 1;
 	}
