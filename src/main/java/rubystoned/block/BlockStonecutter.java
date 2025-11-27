@@ -12,7 +12,7 @@ public final class BlockStonecutter extends Block {
 	}
 
 	public final int getBlockTextureFromSide(int var1) {
-		return var1 == 1 ? this.blockIndexInTexture - 16 : (var1 == 0 ? Block.planks.getBlockTextureFromSide(0) : (var1 != 2 && var1 != 4 ? this.blockIndexInTexture : this.blockIndexInTexture + 1));
+		return var1 == 1 ? this.blockIndexInTexture - 16 : (var1 == 0 ? Block.planks.getBlockTextureFromSide(0) : (var1 != 2 && var1 != 4 ? this.blockIndexInTexture : this.blockIndexInTexture - 59));
 	}
 
 	public final boolean blockActivated(World var1, int var2, int var3, int var4, EntityPlayer var5) {
