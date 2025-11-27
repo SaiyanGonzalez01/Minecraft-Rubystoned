@@ -27,6 +27,7 @@ public final class CraftingManager {
 		this.addRecipe(new ItemStack(Block.crate), new Object[]{"###", "# #", "###", Character.valueOf('#'), Block.planks});
 		this.addRecipe(new ItemStack(Block.stoneOvenIdle), new Object[]{"###", "# #", "###", Character.valueOf('#'), Block.cobblestone});
 		this.addRecipe(new ItemStack(Block.workbench), new Object[]{"##", "##", Character.valueOf('#'), Block.planks});
+		this.addRecipe(new ItemStack(Block.stonecutter), new Object[]{"##", "##", Character.valueOf('#'), Block.cobblestone});
 		(new RecipesArmor()).addRecipes(this);
 		this.addRecipe(new ItemStack(Block.clothWhite, 1), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.silk});
 		this.addRecipe(new ItemStack(Block.tnt, 1), new Object[]{"X#X", "#X#", "X#X", Character.valueOf('X'), Item.gunpowder, Character.valueOf('#'), Block.sand});

@@ -99,6 +99,7 @@ public class Block {
 	public static final BlockFlower plantBlue;
 	public static final BlockFlower plantGrey;
 	public static final Block clay;
+	public static final Block stonecutter;
 	public int blockIndexInTexture;
 	public final int blockID;
 	private float hardness;
@@ -754,6 +755,11 @@ public class Block {
 		var0 = var10000;
 		var0.stepSound = var1;
 		clay = var0;
+		var10000 = (new BlockStoneCutter(70)).setHardness(2.5F);
+		var1 = soundStoneFootstep;
+		var0 = var10000;
+		var0.stepSound = var1;
+		stonecutter = var0;
 		for(int var2 = 0; var2 < 256; ++var2) {
 			if(blocksList[var2] != null) {
 				Item.itemsList[var2] = new ItemBlock(var2 - 256, blocksList[var2].name);
