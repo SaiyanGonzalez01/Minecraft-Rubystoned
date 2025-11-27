@@ -22,6 +22,14 @@ public class EntityZombie extends EntityMob {
 		super.onLivingUpdate();
 	}
 
+	protected String getHurtSound() {
+		return "mob.zombiehurt";
+	}
+
+	protected String getDeathSound() {
+		return "mob.zombiedeath";
+	}
+
 	protected final String getEntityString() {
 		return "Zombie";
 	}
