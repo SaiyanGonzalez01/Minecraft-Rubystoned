@@ -66,11 +66,12 @@ public final class GuiStonecutter extends GuiContainer {
 			}
 		}
 
-		this.iInventory.setInventorySlotContents(0, CraftingManager.getInstance().findMatchingRecipe(var1));
+
+		this.iInventory.setInventorySlotContents(0, CarvingManager.getInstance().findMatchingRecipe(var1));
 	}
 
 	protected final void drawGuiContainerForegroundLayer() {
-		this.fontRenderer.drawString("Crafting", 28, 6, 4210752);
+		this.fontRenderer.drawString("Carving", 28, 6, 4210752);
 		this.fontRenderer.drawString("Inventory", 8, this.ySize - 96 + 2, 4210752);
 	}
 
