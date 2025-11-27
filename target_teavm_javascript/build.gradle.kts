@@ -100,7 +100,7 @@ eaglercraftBuild {
 			sourceGeneratorOutput = file("$jsFolder/$jsFileName")
 			offlineDownloadTemplate = file("javascript/OfflineDownloadTemplate.txt")
 			mainOutput = file("$jsFolder/EaglercraftX_1.8_Offline_en_US.html")
-			internationalOutput = file("$jsFolder/Rubystoned_Offline_International.html")
+			internationalOutput = file("$jsFolder/EaglercraftX_1.8_Offline_International.html")
 		}.apply {
 			epkSources = file("../resources")
 			epkOutput = file("$jsFolder/assets.epk")
