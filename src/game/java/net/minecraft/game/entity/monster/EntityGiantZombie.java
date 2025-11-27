@@ -5,7 +5,7 @@ import net.minecraft.game.level.World;
 public class EntityGiantZombie extends EntityMob {
 	public EntityGiantZombie(World var1) {
 		super(var1);
-		this.texture = "/mob/zombie.png";
+		this.texture = "/mob/zombie_giant.png";
 		this.moveSpeed = 0.5F;
 		this.attackStrength = 50;
 		this.health *= 10;
