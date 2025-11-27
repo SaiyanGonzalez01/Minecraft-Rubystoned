@@ -67,6 +67,14 @@ public class EntityCreeper extends EntityMob {
 		return ((float)this.lastActiveTime + (float)(this.timeSinceIgnited - this.lastActiveTime) * var1) / (float)(this.fuseTime - 2);
 	}
 
+	protected String getHurtSound() {
+		return "mob.creeper";
+	}
+
+	protected String getDeathSound() {
+		return "mob.creeperdeath";
+	}
+
 	protected final int scoreValue() {
 		return Item.gunpowder.shiftedIndex;
 	}
