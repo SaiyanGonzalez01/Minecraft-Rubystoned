@@ -170,10 +170,6 @@ public final class GameSettings {
 						this.showCoords = var5[1].equals("true");
 					}
 
-					if(var5[0].equals("darkGUI")) {
-						this.darkGUI = var5[1].equals("true");
-					}
-
 					for(int var3 = 0; var3 < this.keyBindings.length; ++var3) {
 						if(var5[0].equals("key_" + this.keyBindings[var3].keyDescription)) {
 							this.keyBindings[var3].keyCode = Integer.parseInt(var5[1]);
@@ -201,7 +197,6 @@ public final class GameSettings {
 			var1.println("difficulty:" + this.difficulty);
 			var1.println("showFramerate:" + this.showFramerate);
 			var1.println("showCoords:" + this.showCoords);
-			var1.println("darkGUI:" + this.darkGUI);
 
 			for(int var2 = 0; var2 < this.keyBindings.length; ++var2) {
 				var1.println("key_" + this.keyBindings[var2].keyDescription + ":" + this.keyBindings[var2].keyCode);
