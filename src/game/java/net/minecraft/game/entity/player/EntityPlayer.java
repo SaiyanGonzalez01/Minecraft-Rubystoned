@@ -164,6 +164,9 @@ public class EntityPlayer extends EntityLiving {
 	public void displayWorkbenchGUI() {
 	}
 
+	public void displayStonecutterGUI() {
+	}
+
 	public void onItemPickup(Entity var1) {
 	}
 

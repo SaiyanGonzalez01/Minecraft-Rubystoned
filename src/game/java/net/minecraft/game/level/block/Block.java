@@ -12,6 +12,8 @@ import net.minecraft.game.level.material.Material;
 import net.minecraft.game.physics.AxisAlignedBB;
 import net.minecraft.game.physics.MovingObjectPosition;
 import net.minecraft.game.physics.Vec3D;
+import rubystoned.block.BlockClay;
+import rubystoned.block.BlockStonecutter;
 
 public class Block {
 	private static StepSound soundPowderFootstep = new StepSound("stone", 1.0F, 1.0F);
@@ -755,7 +757,7 @@ public class Block {
 		var0 = var10000;
 		var0.stepSound = var1;
 		clay = var0;
-		var10000 = (new BlockStoneCutter(70)).setHardness(2.5F);
+		var10000 = (new BlockStonecutter(70)).setHardness(2.5F);
 		var1 = soundStoneFootstep;
 		var0 = var10000;
 		var0.stepSound = var1;

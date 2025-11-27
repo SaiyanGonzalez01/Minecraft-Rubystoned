@@ -1,7 +1,8 @@
-package net.minecraft.game.level.block;
+package rubystoned.block;
 
 import net.lax1dude.eaglercraft.Random;
 import net.minecraft.game.item.Item;
+import net.minecraft.game.level.block.Block;
 import net.minecraft.game.level.material.Material;
 
 public final class BlockClay extends Block {
