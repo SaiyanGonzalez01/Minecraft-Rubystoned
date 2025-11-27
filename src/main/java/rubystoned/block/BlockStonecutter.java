@@ -8,7 +8,7 @@ import net.minecraft.game.level.material.Material;
 public final class BlockStonecutter extends Block {
 	public BlockStonecutter(int var1) {
 		super(70, Material.rock, "Stonecutter");
-		this.blockIndexInTexture = 59;
+		this.blockIndexInTexture = 104;
 	}
 
 	public final int getBlockTextureFromSide(int var1) {
