@@ -5,6 +5,8 @@
 :-:
 Minecraft Rubystoned title screen preview.
 
+The spritiual successor to Minecraft Old-School, Rubystoned provides a enhanced Indev experience for you to enjoy! It includes new features, gimmicks, and even Multiplayer (soon)!
+
 > [!WARNING]
 > This is not meant to be a pirated version of Minecraft, it is simply just some patches for Minecraft Indev 20100223 that enhances gameplay and allows it to be playable in the browser. If you haven't already, please go [Buy Minecraft](https://www.minecraft.net/en-us/store/minecraft-java-bedrock-edition-pc?tabs=%7B%22details%22%3A0%7D).
 
