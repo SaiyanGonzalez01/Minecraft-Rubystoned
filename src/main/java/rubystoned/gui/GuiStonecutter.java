@@ -9,7 +9,7 @@ import net.minecraft.client.render.RenderEngine;
 import net.minecraft.game.IInventory;
 import net.minecraft.game.entity.player.InventoryPlayer;
 import net.minecraft.game.item.ItemStack;
-import net.minecraft.game.item.recipe.CraftingManager;
+import net.minecraft.game.item.recipe.CarvingManager;
 import org.lwjgl.opengl.GL11;
 
 public final class GuiStonecutter extends GuiContainer {
