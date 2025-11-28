@@ -31,7 +31,6 @@ public final class CraftingManager {
 		(new RecipesArmor()).addRecipes(this);
 		this.addRecipe(new ItemStack(Block.clothWhite, 1), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.silk});
 		this.addRecipe(new ItemStack(Block.tnt, 1), new Object[]{"X#X", "#X#", "X#X", Character.valueOf('X'), Item.gunpowder, Character.valueOf('#'), Block.sand});
-		this.addRecipe(new ItemStack(Block.stairSingle, 3), new Object[]{"###", Character.valueOf('#'), Block.cobblestone});
 		this.addRecipe(new ItemStack(Block.planks, 4), new Object[]{"#", Character.valueOf('#'), Block.wood});
 		this.addRecipe(new ItemStack(Item.stick, 4), new Object[]{"#", "#", Character.valueOf('#'), Block.planks});
 		this.addRecipe(new ItemStack(Block.torch, 4), new Object[]{"X", "#", Character.valueOf('X'), Item.coal, Character.valueOf('#'), Item.stick});
@@ -70,8 +69,7 @@ public final class CraftingManager {
 		this.addRecipe(new ItemStack(Block.clothRose, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeRose, Character.valueOf('X'), Block.clothWhite});
 		this.addRecipe(new ItemStack(Item.dyeGrey, 2), new Object[]{"#", Character.valueOf('#'), Block.plantGrey});
 		this.addRecipe(new ItemStack(Block.clothGray, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeGrey, Character.valueOf('X'), Block.clothWhite});
-		this.addRecipe(new ItemStack(Block.brick, 1), new Object[]{"##", "##", Character.valueOf('#'), Item.brick});
-		this.addRecipe(new ItemStack(Block.stonecutter, 1), new Object[]{" I ", "SSS", "   ", Character.valueOf('I'), Item.ingotIron, Character.valueOf('S'), Block.stone});
+		this.addRecipe(new ItemStack(Block.stonecutter, 1), new Object[]{"XX", "XX", Character.valueOf('X'), Block.cobblestone});
 		this.addRecipe(new ItemStack(Block.stonecutter, 1), new Object[]{"   ", " I ", "SSS", Character.valueOf('I'), Item.ingotIron, Character.valueOf('S'), Block.stone});
 			
 		Collections.sort(this.recipes, new RecipeSorter(this));
