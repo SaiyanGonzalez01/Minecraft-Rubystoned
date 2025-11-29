@@ -8,13 +8,14 @@ public final class ItemStack {
 	public int animationsToGo;
 	public int itemID;
 	public int itemDamage;
+	public String itemName;
 
 	public ItemStack(Block var1) {
 		this((Block)var1, 1);
 	}
 
 	public ItemStack(Block var1, int var2) {
-		this(var1.blockID, var2);
+		this(var1.blockID, var2, var1.name);
 	}
 
 	public ItemStack(Item var1) {
@@ -22,24 +23,34 @@ public final class ItemStack {
 	}
 
 	public ItemStack(Item var1, int var2) {
-		this(var1.shiftedIndex, var2);
+		this(var1.shiftedIndex, var2, var1.name);
 	}
 
 	public ItemStack(int var1) {
-		this(var1, 1);
+		this(var1, 1, String.valueOf(var1));
 	}
 
 	public ItemStack(int var1, int var2) {
+		this(var1, var2, String.valueOf(var1));
+	}
+
+	public ItemStack(int var1, int var2, String var3) {
 		this.stackSize = 0;
 		this.itemID = var1;
 		this.stackSize = var2;
+		this.itemName = var3;
 	}
 
 	public ItemStack(int var1, int var2, int var3) {
+		this(var1, var2, var3, String.valueOf(var1));
+	}
+
+	public ItemStack(int var1, int var2, int var3, String var4) {
 		this.stackSize = 0;
 		this.itemID = var1;
 		this.stackSize = var2;
 		this.itemDamage = var3;
+		this.itemName = var4;
 	}
 
 	public ItemStack(NBTTagCompound var1) {
@@ -47,11 +58,12 @@ public final class ItemStack {
 		this.itemID = var1.getShort("id");
 		this.stackSize = var1.getByte("Count");
 		this.itemDamage = var1.getShort("Damage");
+		this.itemName = var1.getString("Name");
 	}
 
 	public final ItemStack splitStack(int var1) {
 		this.stackSize -= var1;
-		return new ItemStack(this.itemID, var1, this.itemDamage);
+		return new ItemStack(this.itemID, var1, this.itemDamage, this.itemName);
 	}
 
 	public final Item getItem() {

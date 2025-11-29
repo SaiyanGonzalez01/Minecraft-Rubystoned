@@ -22,9 +22,9 @@ public class GiveCommand extends Command {
         boolean exists = id < 256 ? block != null : item != null;
         if (exists) {
           int num = args.length >= 3 ? Integer.parseInt(args[2]) : 1;
-          ItemStack stack = new ItemStack(id, num, args.length == 4 ? Integer.parseInt(args[3]) : 0);
+          ItemStack stack = new ItemStack(id, num, args.length == 4 ? Integer.parseInt(args[3]) : 0, id < 256 ? block.name : item.name);
           this.mc.thePlayer.inventory.storePartialItemStack(stack);
-          SingleplayerCommands.showChat(HString.format("Gave the player %s '%s'", num, id));
+          SingleplayerCommands.showChat(HString.format("Gave the player %s '%s'", num, stack.itemName));
         } else {
           SingleplayerCommands
               .showChat(FormattingCodes.RED + HString.format("'%s' doesn't exist!", id));
