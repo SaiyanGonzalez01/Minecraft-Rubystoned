@@ -33,7 +33,7 @@ public final class GuiMainMenu extends GuiScreen {
 	public final void initGui() {
 		this.controlList.clear();
 		GuiButton b;
-		this.controlList.add(b = new GuiButton(1, this.width / 2 - 100, this.height / 4 + 48, "Singleplayer"));
+		this.controlList.add(b = new GuiButton(1, this.width / 2 - 100, this.height / 4 + 48, "Select Level"));
 		// this.controlList.add(b = new GuiButton(2, this.width / 2 - 100, this.height / 4 + 72, "Multiplayer"));
 		// b.enabled = false;
 		// this.controlList.add(b = new GuiButton(3, this.width / 2 - 100, this.height / 4 + 96, "Import level.."));
