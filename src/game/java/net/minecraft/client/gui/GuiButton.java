@@ -4,10 +4,10 @@ import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
 public class GuiButton extends Gui {
-	private int width;
+	public int width;
 	private int height;
-	private int xPosition;
-	private int yPosition;
+	public int xPosition;
+	public int yPosition;
 	public String displayString;
 	public int id;
 	public boolean enabled;

@@ -1,4 +1,4 @@
-package dev.colbster937.eaglercraft.utils;
+package dev.colbster937.eaglercraft.storage;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -9,22 +9,25 @@ import net.lax1dude.eaglercraft.internal.FileChooserResult;
 import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.PlayerLoader;
+import net.minecraft.client.gui.GuiNewLevel;
 import net.minecraft.game.level.World;
 
-public class LevelUtils {
+public class SaveUtils {
+  public static DirStorage i;
+  public static int loadedLevel = -1;
+  
   private static Minecraft mc;
   private static PlayerLoader pl;
   private static PlayerLoader pla;
-  private static VFile2 lf;
-
-  public static boolean levelSaved = false;
 
   public static void init(Minecraft imc) {
+    i = new DirStorage(imc, "saves");
     mc = imc;
     pl = new PlayerLoader(imc, imc.loadingScreen);
     pla = new PlayerLoader(imc, null);
-    lf = new VFile2(imc.mcDataDir, "level.mclevel");
   }
+
+  public static boolean levelSaved = false;
 
   public static void save(OutputStream os, boolean show) {
     try {
@@ -39,12 +42,12 @@ public class LevelUtils {
     }
   }
 
-  public static void save(boolean show) {
-    save(lf.getOutputStream(), show);
+  public static void save(int i, boolean show) {
+    save(getLF(i).getOutputStream(), show);
   }
 
-  public static void save() {
-    save(true);
+  public static void save(int i) {
+    save(i, true);
   }
 
   public static void export() {
@@ -59,11 +62,13 @@ public class LevelUtils {
     }
   }
 
-  public static void load(boolean upload) {
-    if (!upload && savedLevel())
-      loadLevel(lf.getAllBytes());
+  public static void load(int i, boolean upload) {
+    loadedLevel = i;
+    if (!upload && savedLevel(i))
+      loadLevel(getLF(i).getAllBytes());
     else if (upload)
       EagRuntime.displayFileChooser("minecraft/mclevel", ".mclevel");
+    else mc.displayGuiScreen(new GuiNewLevel(mc.currentScreen));
   }
 
   private static void loadLevel(byte[] data) {
@@ -83,7 +88,7 @@ public class LevelUtils {
     if (i == 1)
       levelSaved = false;
     else if (i == 20)
-      save(false);
+      save(loadedLevel, false);
     if (EagRuntime.fileChooserHasResult()) {
       FileChooserResult result = EagRuntime.getFileChooserResult();
       if (result.fileName.endsWith(".mclevel")) {
@@ -99,7 +104,11 @@ public class LevelUtils {
     tick(-1);
   }
 
-  public static boolean savedLevel() {
-    return lf.exists();
+  public static boolean savedLevel(int i) {
+    return getLF(i).exists();
+  }
+
+  private static VFile2 getLF(int i) {
+    return new VFile2(mc.mcDataDir, "level" + i + ".mclevel");
   }
 }

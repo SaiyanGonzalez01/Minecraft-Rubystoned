@@ -8,6 +8,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.TreeSet;
+
+import com.mojang.nbt.NBTTagCompound;
+
+import dev.colbster937.eaglercraft.utils.CompressedStreamTools;
+import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
 import net.minecraft.game.entity.Entity;
 import net.minecraft.game.entity.EntityLiving;
 import net.minecraft.game.level.block.Block;
@@ -64,6 +69,21 @@ public final class World {
 	private int[] coords = new int[1048576];
 	private int[] floodedBlocks = new int[1048576];
 	public int difficultySetting = 2;
+
+	public static NBTTagCompound func_629_a(VFile2 var0, int var1) {
+		VFile2 var2 = new VFile2(var0, "level" + var1 + ".mclevel");
+		if(var2.exists()) {
+			try {
+				NBTTagCompound var5 = CompressedStreamTools.readCompressed(var2.getInputStream());
+				NBTTagCompound var6 = var5.getCompoundTag("Data");
+				return var6;
+			} catch (Exception var7) {
+				var7.printStackTrace();
+			}
+		}
+
+		return null;
+	}
 
 	public final void load() {
 		if(this.blocks == null) {

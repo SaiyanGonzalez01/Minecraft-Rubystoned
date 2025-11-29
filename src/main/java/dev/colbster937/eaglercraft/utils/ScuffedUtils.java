@@ -1,5 +1,6 @@
 package dev.colbster937.eaglercraft.utils;
 
+import net.lax1dude.eaglercraft.EagRuntime;
 import net.lax1dude.eaglercraft.HString;
 import net.lax1dude.eaglercraft.Random;
 import net.minecraft.client.Minecraft;
@@ -37,5 +38,13 @@ public class ScuffedUtils {
       if (eagler && Minecraft.getMinecraft().options.darkGUI) path = "/gui_dark/" + path.substring(5);
     }
     return path;
+  }
+
+  public static boolean isStringEmpty(String str) {
+    return str == null || str.isEmpty() || str.isBlank() || str.length() < 1;
+  }
+
+  public static void showZipFileChooser() {
+    EagRuntime.displayFileChooser("application/zip", ".zip");
   }
 }

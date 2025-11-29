@@ -47,7 +47,7 @@ import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
 
-import dev.colbster937.eaglercraft.utils.LevelUtils;
+import dev.colbster937.eaglercraft.storage.SaveUtils;
 
 public final class Minecraft implements Runnable {
 	public PlayerController playerController = new PlayerControllerSP(this);
@@ -88,7 +88,7 @@ public final class Minecraft implements Runnable {
 	public boolean inGameHasFocus;
 
 	private static Minecraft mc;
-	private GuiMainMenu menu = new GuiMainMenu();
+	public GuiMainMenu menu = new GuiMainMenu();
 
 	public Minecraft() {
 		new ModelBiped(0.0F);
@@ -106,7 +106,6 @@ public final class Minecraft implements Runnable {
 		this.displayHeight = Display.getHeight();
 
 		this.session = new Session("Player", "");
-		LevelUtils.init(this);
 		mc = this;
 	}
 
@@ -186,6 +185,7 @@ public final class Minecraft implements Runnable {
 			GL11.glMatrixMode(GL11.GL_MODELVIEW);
 
 			this.mcDataDir = new VFile2("minecraft/");
+			SaveUtils.init(this);
 			this.options = new GameSettings(this, this.mcDataDir);
 			this.sndManager.loadSoundSettings(this.options);
 			this.renderEngine = new RenderEngine(this.options);

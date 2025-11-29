@@ -7,10 +7,14 @@ import net.minecraft.client.gui.GuiNewLevel;
 import net.minecraft.client.gui.GuiOptions;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.render.Tessellator;
+
+import rubystoned.gui.GuiSelectWorld;
+
 import org.lwjgl.opengl.GL11;
 
 import dev.colbster937.eaglercraft.EaglercraftVersion;
-import dev.colbster937.eaglercraft.utils.LevelUtils;
+import dev.colbster937.eaglercraft.storage.SaveUtils;
+
 import util.MathHelper;
 
 public final class GuiMainMenu extends GuiScreen {
@@ -20,7 +24,7 @@ public final class GuiMainMenu extends GuiScreen {
 
 	public final void updateScreen() {
 		this.updateCounter += 0.01F;
-		LevelUtils.tick();
+		SaveUtils.tick();
 	}
 
 	protected final void keyTyped(char var1, int var2) {
@@ -29,13 +33,17 @@ public final class GuiMainMenu extends GuiScreen {
 	public final void initGui() {
 		this.controlList.clear();
 		GuiButton b;
-		this.controlList.add(b = new GuiButton(1, this.width / 2 - 100, this.height / 4 + 48, "Generate new level..."));
-		this.controlList.add(b = new GuiButton(2, this.width / 2 - 100, this.height / 4 + 72, "Load level.."));
-		b.enabled = LevelUtils.savedLevel();
-		this.controlList.add(b = new GuiButton(3, this.width / 2 - 100, this.height / 4 + 96, "Import level.."));
+		this.controlList.add(b = new GuiButton(1, this.width / 2 - 100, this.height / 4 + 48, "Singleplayer"));
+		this.controlList.add(b = new GuiButton(2, this.width / 2 - 100, this.height / 4 + 72, "Multiplayer"));
+		b.enabled = false;
+		// this.controlList.add(b = new GuiButton(3, this.width / 2 - 100, this.height / 4 + 96, "Import level.."));
 		// b.enabled = false;
-		this.controlList.add(b = new GuiButton(0, this.width / 2 - 100, this.height / 4 + 120, 98, 20, "Options..."));
+		this.controlList.add(b = new GuiButton(0, this.width / 2 - 100, this.height / 4 + 120, 98, 20, "Options"));
+		b.width = 200;
+		b.yPosition = this.height / 4 + 96;
 		this.controlList.add(b = new GuiButton(4, this.width / 2 + 2, this.height / 4 + 120, 98, 20, "Edit Profile"));
+		b.width = 200;
+		b.xPosition = this.width / 2 - 100;
 		/* ((GuiButton)this.controlList.get(2)).enabled = false;
 		if(this.mc.session == null) {
 			((GuiButton)this.controlList.get(1)).enabled = false;
@@ -49,16 +57,16 @@ public final class GuiMainMenu extends GuiScreen {
 		}
 
 		if(var1.id == 1) {
-			this.mc.displayGuiScreen(new GuiNewLevel(this));
+			this.mc.displayGuiScreen(new GuiSelectWorld(this));
 		}
 
-		if(this.mc.session != null && var1.id == 2) {
+		/* if(this.mc.session != null && var1.id == 2) {
 			LevelUtils.load(false);
 		}
 
 		if(this.mc.session != null && var1.id == 3) {
 			LevelUtils.load(true);
-		}
+		} */
 
 		if(var1.id == 4) {
 			this.mc.displayGuiScreen(new GuiScreenEditProfile(this));
