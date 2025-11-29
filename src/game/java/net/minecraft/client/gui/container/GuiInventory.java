@@ -15,7 +15,7 @@ public final class GuiInventory extends GuiContainer {
 	private float ySize_lo;
 
 	public GuiInventory(IInventory var1) {
-		this.allowUserInput = true;
+		this.allowUserInput = false;
 		this.inventorySlots.add(new SlotCrafting(this, this.inventoryCrafting, this.iInventory, 0, 144, 36));
 
 		int var2;
