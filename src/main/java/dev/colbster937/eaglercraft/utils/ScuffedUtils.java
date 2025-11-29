@@ -1,5 +1,7 @@
 package dev.colbster937.eaglercraft.utils;
 
+import org.lwjgl.input.Keyboard;
+
 import net.lax1dude.eaglercraft.EagRuntime;
 import net.lax1dude.eaglercraft.HString;
 import net.lax1dude.eaglercraft.Random;
@@ -42,6 +44,10 @@ public class ScuffedUtils {
 
   public static boolean isStringEmpty(String str) {
     return str == null || str.isEmpty() || str.isBlank() || str.length() < 1;
+  }
+
+  public static boolean isCtrlKeyDown() {
+    return Keyboard.isKeyDown(Keyboard.KEY_LCONTROL) || Keyboard.isKeyDown(Keyboard.KEY_RCONTROL);
   }
 
   public static void showZipFileChooser() {
