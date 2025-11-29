@@ -19,8 +19,9 @@ public final class CarvingManager {
 
 	private CarvingManager() {
 		this.addRecipe(new ItemStack(Block.stairSingle, 6), new Object[]{"###", Character.valueOf('#'), Block.cobblestone});
-		this.addRecipe(new ItemStack(Block.brick), new Object[]{"##", "##", Character.valueOf('#'), Item.brick});
+		this.addRecipe(new ItemStack(Block.brick, 2), new Object[]{"##", "##", Character.valueOf('#'), Item.brick});
 		this.addRecipe(new ItemStack(Block.brickStone, 4), new Object[]{"##", "##", Character.valueOf('#'), Block.cobblestone});
+		this.addRecipe(new ItemStack(Block.brickObsidian, 4), new Object[]{"##", "##", Character.valueOf('#'), Block.cobblestone});
 			
 		Collections.sort(this.recipes, new CarvingSorter(this));
 		System.out.println(this.recipes.size() + " recipes");

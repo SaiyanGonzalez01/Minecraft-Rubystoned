@@ -436,22 +436,33 @@ public final class LevelGenerator {
 		}
 
 		short var43 = 100;
+		short var10001 = 50;
+		if(this.levelType == 1) {
+			var43 = 10;
+			var10001 = 5;
+		}
 		if(this.levelType == 2) {
 			var43 = 1000;
+			var10001 = 500;
 		}
+		if(this.levelType == 3) {
+			var43 = 200;
+			var10001 = 100;
+		}
+
 
 		this.loadingBar();
 		this.populateFlowersAndMushrooms(var6, Block.plantYellow, var43);
 		this.loadingBar();
 		this.populateFlowersAndMushrooms(var6, Block.plantRed, var43);
 		this.loadingBar();
-		this.populateFlowersAndMushrooms(var6, Block.plantCapri, var43);
+		this.populateFlowersAndMushrooms(var6, Block.plantCapri, var10001);
 		this.loadingBar();
-		this.populateFlowersAndMushrooms(var6, Block.plantViolet, var43);
+		this.populateFlowersAndMushrooms(var6, Block.plantViolet, var10001);
 		this.loadingBar();
-		this.populateFlowersAndMushrooms(var6, Block.plantBlue, var43);
+		this.populateFlowersAndMushrooms(var6, Block.plantBlue, var10001);
 		this.loadingBar();
-		this.populateFlowersAndMushrooms(var6, Block.plantGrey, var43);
+		this.populateFlowersAndMushrooms(var6, Block.plantGrey, var10001);
 		this.loadingBar();
 		this.populateFlowersAndMushrooms(var6, Block.mushroomBrown, 50);
 		this.loadingBar();

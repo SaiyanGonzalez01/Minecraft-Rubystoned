@@ -70,7 +70,6 @@ public final class CraftingManager {
 		this.addRecipe(new ItemStack(Item.dyeGrey, 2), new Object[]{"#", Character.valueOf('#'), Block.plantGrey});
 		this.addRecipe(new ItemStack(Block.clothGray, 1), new Object[]{"#X", Character.valueOf('#'), Item.dyeGrey, Character.valueOf('X'), Block.clothWhite});
 		this.addRecipe(new ItemStack(Block.stonecutter, 1), new Object[]{"XX", "XX", Character.valueOf('X'), Block.cobblestone});
-		this.addRecipe(new ItemStack(Block.stonecutter, 1), new Object[]{"   ", " I ", "SSS", Character.valueOf('I'), Item.ingotIron, Character.valueOf('S'), Block.stone});
 			
 		Collections.sort(this.recipes, new RecipeSorter(this));
 		System.out.println(this.recipes.size() + " recipes");
