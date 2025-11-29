@@ -23,7 +23,7 @@ public final class GameSettings {
 	public KeyBinding keyBindBack = new KeyBinding("Back", 31);
 	public KeyBinding keyBindRight = new KeyBinding("Right", 32);
 	public KeyBinding keyBindJump = new KeyBinding("Jump", 57);
-	public KeyBinding keyBindInventory = new KeyBinding("Inventory", 23);
+	public KeyBinding keyBindInventory = new KeyBinding("Inventory", Keyboard.KEY_E);
 	public KeyBinding keyBindDrop = new KeyBinding("Drop", 16);
 	public KeyBinding keyBindZoom = new KeyBinding("Zoom", Keyboard.KEY_C);
 	public KeyBinding[] keyBindings = new KeyBinding[]{this.keyBindForward, this.keyBindLeft, this.keyBindBack, this.keyBindRight, this.keyBindJump, this.keyBindDrop, this.keyBindInventory, this.keyBindZoom};
