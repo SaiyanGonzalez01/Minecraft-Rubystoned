@@ -34,16 +34,17 @@ public final class GuiMainMenu extends GuiScreen {
 		this.controlList.clear();
 		GuiButton b;
 		this.controlList.add(b = new GuiButton(1, this.width / 2 - 100, this.height / 4 + 48, "Singleplayer"));
-		this.controlList.add(b = new GuiButton(2, this.width / 2 - 100, this.height / 4 + 72, "Multiplayer"));
-		b.enabled = false;
+		// this.controlList.add(b = new GuiButton(2, this.width / 2 - 100, this.height / 4 + 72, "Multiplayer"));
+		// b.enabled = false;
 		// this.controlList.add(b = new GuiButton(3, this.width / 2 - 100, this.height / 4 + 96, "Import level.."));
 		// b.enabled = false;
 		this.controlList.add(b = new GuiButton(0, this.width / 2 - 100, this.height / 4 + 120, 98, 20, "Options"));
 		b.width = 200;
-		b.yPosition = this.height / 4 + 96;
+		b.yPosition = this.height / 4 + 72;
 		this.controlList.add(b = new GuiButton(4, this.width / 2 + 2, this.height / 4 + 120, 98, 20, "Edit Profile"));
 		b.width = 200;
 		b.xPosition = this.width / 2 - 100;
+		this.controlList.add(b = new GuiButton(5, this.width / 2 - 100, this.height / 4 + 96, "Github"));
 		/* ((GuiButton)this.controlList.get(2)).enabled = false;
 		if(this.mc.session == null) {
 			((GuiButton)this.controlList.get(1)).enabled = false;
@@ -70,6 +71,10 @@ public final class GuiMainMenu extends GuiScreen {
 
 		if(var1.id == 4) {
 			this.mc.displayGuiScreen(new GuiScreenEditProfile(this));
+		}
+
+		if(var1.id == 5) {
+			EagRuntime.openLink(EaglercraftVersion.PROJECT_GITHUB);
 		}
 
 	}
