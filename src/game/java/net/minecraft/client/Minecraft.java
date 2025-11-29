@@ -48,6 +48,7 @@ import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
 
 import dev.colbster937.eaglercraft.storage.SaveUtils;
+import dev.colbster937.eaglercraft.gui.GuiChat;
 
 public final class Minecraft implements Runnable {
 	public PlayerController playerController = new PlayerControllerSP(this);
@@ -583,6 +584,15 @@ public final class Minecraft implements Runnable {
 
 									if(Keyboard.getEventKey() == this.options.keyBindDrop.keyCode) {
 										this.thePlayer.dropPlayerItemWithRandomChoice(this.thePlayer.inventory.decrStackSize(this.thePlayer.inventory.currentItem, 1), false);
+									}
+
+									if(Keyboard.getEventKey() == this.options.keyBindChat.keyCode) {
+										this.displayGuiScreen(new GuiChat());
+									}
+
+									if(Keyboard.getEventKey() == this.options.keyBindCommand.keyCode) {
+										this.displayGuiScreen(new GuiChat());
+										if (this.currentScreen instanceof GuiChat) ((GuiChat) this.currentScreen).setMessage("/");
 									}
 								}
 
