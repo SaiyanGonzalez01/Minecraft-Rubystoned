@@ -1,6 +1,5 @@
 package net.minecraft.client.gui;
 
-import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
 import net.minecraft.client.player.EntityPlayerSP;
 import org.lwjgl.opengl.GL11;
 
@@ -10,8 +9,8 @@ import dev.colbster937.eaglercraft.storage.SaveUtils;
 public final class GuiGameOver extends GuiScreen {
 	public final void initGui() {
 		this.controlList.clear();
-		this.controlList.add(new GuiButton(1, this.width / 2 - 100, this.height / 4 + 72, "Generate new level..."));
-		this.controlList.add(new GuiButton(2, this.width / 2 - 100, this.height / 4 + 96, "Load level.."));
+		this.controlList.add(new GuiButton(0, this.width / 2 - 100, this.height / 4 + 72, "Respawn"));
+		this.controlList.add(new GuiButton(1, this.width / 2 - 100, this.height / 4 + 96, "Back to title screen"));
 		if (this.mc.session == null) {
 			((GuiButton) this.controlList.get(1)).enabled = false;
 		}
@@ -23,15 +22,15 @@ public final class GuiGameOver extends GuiScreen {
 
 	protected final void actionPerformed(GuiButton var1) {
 		if (var1.id == 0) {
-			this.mc.displayGuiScreen(new GuiOptions(this, this.mc.options));
+			this.mc.thePlayer.isDead = false;
+			this.mc.thePlayer.preparePlayerToSpawn();
+			this.mc.setIngameFocus();
 		}
 
 		if (var1.id == 1) {
-			this.mc.displayGuiScreen(new GuiNewLevel(this));
-		}
-
-		if(this.mc.session != null && var1.id == 2) {
-			LevelUtils.load(false);
+			SaveUtils.save(SaveUtils.loadedLevel, true);
+			this.mc.setLevel(null);
+			this.mc.displayGuiScreen(this.mc.menu);
 		}
 
 	}
@@ -40,7 +39,7 @@ public final class GuiGameOver extends GuiScreen {
 		drawGradientRect(0, 0, this.width, this.height, 1615855616, -1602211792);
 		GL11.glPushMatrix();
 		GL11.glScalef(2.0F, 2.0F, 2.0F);
-		drawCenteredString(this.fontRenderer, "Game over!", this.width / 2 / 2, 30, 16777215);
+		drawCenteredString(this.fontRenderer, "Game Over!", this.width / 2 / 2, 30, 16777215);
 		GL11.glPopMatrix();
 		FontRenderer var10000 = this.fontRenderer;
 		StringBuilder var10001 = (new StringBuilder()).append("Score: " + FormattingCodes.YELLOW);
