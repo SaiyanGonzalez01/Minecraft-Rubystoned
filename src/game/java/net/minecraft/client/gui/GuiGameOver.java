@@ -30,9 +30,8 @@ public final class GuiGameOver extends GuiScreen {
 			this.mc.displayGuiScreen(new GuiNewLevel(this));
 		}
 
-		if (this.mc.session != null && var1.id == 2) {
-			(new VFile2(this.mc.mcDataDir, "level" + SaveUtils.loadedLevel + ".mclevel")).delete();
-			SaveUtils.load(SaveUtils.loadedLevel, false);
+		if(this.mc.session != null && var1.id == 2) {
+			LevelUtils.load(false);
 		}
 
 	}
