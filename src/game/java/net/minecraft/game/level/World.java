@@ -1080,6 +1080,78 @@ public final class World {
 		}
 	}
 
+	public final boolean growAppleTrees(int var1, int var2, int var3) {
+		int var4 = this.random.nextInt(1) + 2;
+		boolean var5 = true;
+		if(var2 > 0 && var2 + var4 + 1 <= this.height) {
+			int var6;
+			int var8;
+			int var9;
+			int var10;
+			for(var6 = var2; var6 <= var2 + 1 + var4; ++var6) {
+				byte var7 = 1;
+				if(var6 == var2) {
+					var7 = 0;
+				}
+
+				if(var6 >= var2 + 1 + var4 - 2) {
+					var7 = 2;
+				}
+
+				for(var8 = var1 - var7; var8 <= var1 + var7 && var5; ++var8) {
+					for(var9 = var3 - var7; var9 <= var3 + var7 && var5; ++var9) {
+						if(var8 >= 0 && var6 >= 0 && var9 >= 0 && var8 < this.width && var6 < this.height && var9 < this.length) {
+							var10 = this.blocks[(var6 * this.length + var9) * this.width + var8] & 255;
+							if(var10 != 0) {
+								var5 = false;
+							}
+						} else {
+							var5 = false;
+						}
+					}
+				}
+			}
+
+			if(!var5) {
+				return false;
+			} else {
+				var6 = this.blocks[((var2 - 1) * this.length + var3) * this.width + var1] & 255;
+				if((var6 == Block.grass.blockID || var6 == Block.dirt.blockID) && var2 < this.height - var4 - 1) {
+					this.setBlockWithNotify(var1, var2 - 1, var3, Block.dirt.blockID);
+
+					int var13;
+					for(var13 = var2 - 3 + var4; var13 <= var2 + var4; ++var13) {
+						var8 = var13 - (var2 + var4);
+						var9 = 1 - var8 / 2;
+
+						for(var10 = var1 - var9; var10 <= var1 + var9; ++var10) {
+							int var12 = var10 - var1;
+
+							for(var6 = var3 - var9; var6 <= var3 + var9; ++var6) {
+								int var11 = var6 - var3;
+								if((Math.abs(var12) != var9 || Math.abs(var11) != var9 || this.random.nextInt(2) != 0 && var8 != 0) && !Block.opaqueCubeLookup[this.getBlockId(var10, var13, var6)]) {
+									this.setBlockWithNotify(var10, var13, var6, Block.leavesApple.blockID);
+								}
+							}
+						}
+					}
+
+					for(var13 = 0; var13 < var4; ++var13) {
+						if(!Block.opaqueCubeLookup[this.getBlockId(var1, var2 + var13, var3)]) {
+							this.setBlockWithNotify(var1, var2 + var13, var3, Block.wood.blockID);
+						}
+					}
+
+					return true;
+				} else {
+					return false;
+				}
+			}
+		} else {
+			return false;
+		}
+	}
+
 	public final Entity getPlayerEntity() {
 		return this.playerEntity;
 	}

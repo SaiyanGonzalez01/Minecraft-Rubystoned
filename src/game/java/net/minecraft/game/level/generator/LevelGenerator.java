@@ -39,7 +39,7 @@ public final class LevelGenerator {
 			var5 = (var4 - 64) / 48 + 1;
 		}
 
-		this.phases = 17 + var5 * 4;
+		this.phases = 18 + var5 * 4;
 		this.guiLoading.displayProgressMessage("Generating level");
 		World var6 = new World();
 		var6.waterLevel = this.waterLevel;
@@ -428,9 +428,11 @@ public final class LevelGenerator {
 		}
 
 		this.loadingBar();
+		this.growAppleTrees(var6);
 		this.growTrees(var6);
 		if(this.levelType == 3) {
 			for(var5 = 0; var5 < 50; ++var5) {
+				this.growAppleTrees(var6);
 				this.growTrees(var6);
 			}
 		}
@@ -561,6 +563,36 @@ public final class LevelGenerator {
 					var10 += this.rand.nextInt(12) - this.rand.nextInt(12);
 					if(var8 >= 0 && var9 >= 0 && var10 >= 0 && var8 < this.width && var9 < this.height && var10 < this.depth) {
 						var1.growTrees(var8, var9, var10);
+					}
+				}
+			}
+		}
+
+	}
+
+	private void growAppleTrees(World var1) {
+		int var2 = this.width * this.depth * this.height / 80000;
+
+		for(int var3 = 0; var3 < var2; ++var3) {
+			if(var3 % 100 == 0) {
+				this.setNextPhase((float)var3 * 100.0F / (float)(var2 - 1));
+			}
+
+			int var4 = this.rand.nextInt(this.width);
+			int var5 = this.rand.nextInt(this.height);
+			int var6 = this.rand.nextInt(this.depth);
+
+			for(int var7 = 0; var7 < 25; ++var7) {
+				int var8 = var4;
+				int var9 = var5;
+				int var10 = var6;
+
+				for(int var11 = 0; var11 < 20; ++var11) {
+					var8 += this.rand.nextInt(12) - this.rand.nextInt(12);
+					var9 += this.rand.nextInt(3) - this.rand.nextInt(6);
+					var10 += this.rand.nextInt(12) - this.rand.nextInt(12);
+					if(var8 >= 0 && var9 >= 0 && var10 >= 0 && var8 < this.width && var9 < this.height && var10 < this.depth) {
+						var1.growAppleTrees(var8, var9, var10);
 					}
 				}
 			}
