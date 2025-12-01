@@ -1,11 +1,14 @@
-package net.minecraft.game.level.block;
+package rubystoned.block;
 
-import java.util.Random;
+import net.lax1dude.eaglercraft.Random;
+import net.minecraft.game.item.Item;
 import net.minecraft.game.level.World;
+import net.minecraft.game.level.block.Block;
+import net.minecraft.game.level.block.BlockLeavesBase;
 import net.minecraft.game.level.material.Material;
 
 public final class BlockAppleLeaves extends BlockLeavesBase {
-	protected BlockAppleLeaves(int var1, int var2, String var3) {
+	public BlockAppleLeaves(int var1, int var2, String var3) {
 		super(73, 107, Material.leaves, true, var3);
 		this.setTickOnLoad(true);
 	}
@@ -32,6 +35,6 @@ public final class BlockAppleLeaves extends BlockLeavesBase {
 	}
 
 	public final int idDropped(int var1, Random var2) {
-		return Block.saplingApple.blockID;
+		return Item.apple.shiftedIndex;
 	}
 }

@@ -1,6 +1,6 @@
 package net.minecraft.game.item;
 
-import java.util.Random;
+import net.lax1dude.eaglercraft.Random;
 import net.minecraft.game.entity.player.EntityPlayer;
 import net.minecraft.game.level.World;
 import net.minecraft.game.level.block.Block;
@@ -92,6 +92,7 @@ public class Item {
 	public static Item dyeWhite;
 	public static Item clay;
 	public static Item brick;
+	public static Item apple;
 	public final int shiftedIndex;
 	protected int maxStackSize = 64;
 	protected int maxDamage = 32;
@@ -101,7 +102,7 @@ public class Item {
 	protected Item(int var1, String var2) {
 		this.shiftedIndex = var1 + 256;
 		this.name = var2;
-		if(itemsList[var1 + 256] != null) {
+		if (itemsList[var1 + 256] != null) {
 			System.out.println("CONFLICT @ " + var1);
 		}
 
@@ -576,6 +577,10 @@ public class Item {
 		var7 = var20;
 		var7.iconIndex = var1;
 		brick = var7;
-		
+		var18 = new ItemFood(85, 5, "Apple");
+		var1 = 10;
+		var5 = var18;
+		var5.iconIndex = var1;
+		apple = var5;
 	}
 }
