@@ -31,7 +31,7 @@ public final class BlockAppleLeaves extends BlockLeavesBase {
 	}
 
 	public final int quantityDropped(Random var1) {
-		return var1.nextInt(10) == 0 ? 1 : 0;
+		return var1.nextInt(1) == 0 ? 1 : 0;
 	}
 
 	public final int idDropped(int var1, Random var2) {
