@@ -44,15 +44,15 @@ public class GuiScreenEditProfile extends GuiScreen {
 		"Prisoner Steve",
 		"Scottish Steve",
 		"Developer Steve",
-		"Herobrine",
-		"Slime",
-		"Trump",
+		"Plastic Steve",
+		"Modern Steve",
+		"Mossy Steve",
+		"Glasses Steve",
+		"Festive Steve",
+		"Creeper Steve",
+		"Extentsion 05 Steve",
 		"Notch",
-		"Creeper",
-		"Zombie",
-		"Pig",
-		"Squid",
-		"Mooshroom"
+		"Herobrine"
 	};
 	
 	public static final TextureLocation[] defaultOptionsTextures = new TextureLocation[] {
@@ -65,15 +65,15 @@ public class GuiScreenEditProfile extends GuiScreen {
 			new TextureLocation("/eagler/skins/07.prisoner_steve.png"),
 			new TextureLocation("/eagler/skins/08.scottish_steve.png"),
 			new TextureLocation("/eagler/skins/09.dev_steve.png"),
-			new TextureLocation("/eagler/skins/10.herobrine.png"),
-			new TextureLocation("/eagler/skins/11.slime.png"),
-			new TextureLocation("/eagler/skins/12.trump.png"),
-			new TextureLocation("/eagler/skins/13.notch.png"),
-			new TextureLocation("/eagler/skins/14.creeper.png"),
-			new TextureLocation("/eagler/skins/15.zombie.png"),
-			new TextureLocation("/eagler/skins/16.pig.png"),
-			new TextureLocation("/eagler/skins/17.squid.png"),
-			new TextureLocation("/eagler/skins/18.mooshroom.png")
+			new TextureLocation("/eagler/skins/10.plastic_steve.png"),
+			new TextureLocation("/eagler/skins/11.modern_steve.png"),
+			new TextureLocation("/eagler/skins/12.mossy_steve.png"),
+			new TextureLocation("/eagler/skins/13.glasses_steve.png"),
+			new TextureLocation("/eagler/skins/14.festive_steve.png"),
+			new TextureLocation("/eagler/skins/15.creeper_steve.png"),
+			new TextureLocation("/eagler/skins/16.ext05_steve.png"),
+			new TextureLocation("/eagler/skins/17.notch.png"),
+			new TextureLocation("/eagler/skins/18.herobrine.png")
 	};
 	
 	protected String screenTitle = "Edit Profile";
