@@ -53,6 +53,12 @@ public class GuiScreenEditProfile extends GuiScreen {
 		"Extentsion 05 Steve",
 		"Notch",
 		"Herobrine"
+		// "Dwarf",
+		// "Doom Guy",
+		// "Mario",
+		// "Luigi",
+		// "Gordon Freeman",
+		// ":>"
 	};
 	
 	public static final TextureLocation[] defaultOptionsTextures = new TextureLocation[] {
@@ -74,6 +80,11 @@ public class GuiScreenEditProfile extends GuiScreen {
 			new TextureLocation("/eagler/skins/16.ext05_steve.png"),
 			new TextureLocation("/eagler/skins/17.notch.png"),
 			new TextureLocation("/eagler/skins/18.herobrine.png")
+			// new TextureLocation("/eagler/skins/19.dwarf.png"),
+			// new TextureLocation("/eagler/skins/20.doom_guy.png"),
+			// new TextureLocation("/eagler/skins/21.mario.png"),
+			// new TextureLocation("/eagler/skins/22.luigi.png"),
+			// new TextureLocation("/eagler/skins/23.freeman.png")
 	};
 	
 	protected String screenTitle = "Edit Profile";
