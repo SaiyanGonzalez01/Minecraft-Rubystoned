@@ -44,8 +44,8 @@ public class EntityPlayer extends EntityLiving {
 	}
 
 	public final void preparePlayerToSpawn() {
-		this.yOffset = 1.62F;
-		this.setSize(0.6F, 1.8F);
+		this.yOffset = RubyUtils.getPlayerGoonerScaleColonSpeakingHeadEmojiColonColonSpeakingHeadEmojiColonColonFireEmojiColonColonFireEmojiColon(1.62F);
+		this.setSize(0.6F, RubyUtils.getPlayerGoonerScaleColonSpeakingHeadEmojiColonColonSpeakingHeadEmojiColonColonFireEmojiColonColonFireEmojiColon(1.8F));
 		super.preparePlayerToSpawn();
 		if(this.worldObj != null) {
 			this.worldObj.playerEntity = this;
