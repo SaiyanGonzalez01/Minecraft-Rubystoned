@@ -58,6 +58,17 @@ public final class Session {
 		registeredBlocksList.add(Block.bookShelf);
 		registeredBlocksList.add(Block.tnt);
 		registeredBlocksList.add(Block.obsidian);
+		registeredBlocksList.add(Block.oreRuby);
+		registeredBlocksList.add(Block.rubystone);
+		registeredBlocksList.add(Block.plantCapri);
+		registeredBlocksList.add(Block.plantGrey);
+		registeredBlocksList.add(Block.plantBlue);
+		registeredBlocksList.add(Block.plantViolet);
+		registeredBlocksList.add(Block.stonecutter);
+		registeredBlocksList.add(Block.clay);
+		registeredBlocksList.add(Block.brickStone);
+		registeredBlocksList.add(Block.brickObsidian);
+		registeredBlocksList.add(Block.leavesApple);
 		System.out.println(registeredBlocksList.size());
 	}
 }
