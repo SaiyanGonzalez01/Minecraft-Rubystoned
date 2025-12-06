@@ -4,7 +4,7 @@ import net.minecraft.game.level.block.Block;
 import net.minecraft.game.level.material.Material;
 
 public final class ItemPickaxe extends ItemTool {
-	private static Block[] blocksEffectiveAgainst = new Block[]{Block.cobblestone, Block.stairDouble, Block.stairSingle, Block.stone, Block.cobblestoneMossy, Block.oreIron, Block.blockSteel, Block.oreCoal, Block.blockGold, Block.oreGold, Block.oreDiamond, Block.blockDiamond, Block.oreRuby, Block.stonecutter, Block.brickStone};
+	private static Block[] blocksEffectiveAgainst = new Block[]{Block.cobblestone, Block.stairDouble, Block.stairSingle, Block.stone, Block.cobblestoneMossy, Block.oreIron, Block.blockSteel, Block.oreCoal, Block.blockGold, Block.oreGold, Block.oreDiamond, Block.blockDiamond, Block.oreRuby, Block.stonecutter, Block.brickStone, Block.stoneOvenIdle, Block.stoneOvenActive};
 	private int harvestLevel;
 
 	public ItemPickaxe(int var1, int var2, String var3) {
