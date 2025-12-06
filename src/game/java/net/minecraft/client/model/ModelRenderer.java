@@ -21,6 +21,8 @@ public final class ModelRenderer {
 	public boolean showModel = true;
 	private boolean isHidden = false;
 
+  private float scale = -1.0F;
+
 	public ModelRenderer(int var1, int var2) {
 		this.textureOffsetX = var1;
 		this.textureOffsetY = var2;
@@ -89,7 +91,7 @@ public final class ModelRenderer {
 
 	public final void render(float var1) {
 		if(this.showModel) {
-			if(!this.compiled) {
+			if(!this.compiled || this.scale != var1) {
 				float var3 = var1;
 				ModelRenderer var2 = this;
 				this.displayList = GL11.glGenLists(1);
@@ -117,6 +119,7 @@ public final class ModelRenderer {
 
 				GL11.glEndList();
 				var2.compiled = true;
+				this.scale = var1;
 			}
 
 			if(this.rotateAngleX == 0.0F && this.rotateAngleY == 0.0F && this.rotateAngleZ == 0.0F) {

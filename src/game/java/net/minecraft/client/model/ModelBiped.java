@@ -1,5 +1,9 @@
 package net.minecraft.client.model;
 
+import org.lwjgl.opengl.GL11;
+
+import net.lax1dude.eaglercraft.profile.EaglerProfile;
+import rubystoned.utils.RubyUtils;
 import util.MathHelper;
 
 public class ModelBiped extends ModelBase {

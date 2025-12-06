@@ -18,6 +18,7 @@ import net.minecraft.game.level.World;
 import net.minecraft.game.level.block.Block;
 import net.minecraft.game.level.block.tileentity.TileEntityFurnace;
 import net.minecraft.game.level.material.Material;
+import rubystoned.utils.RubyUtils;
 import util.MathHelper;
 
 public class EntityPlayer extends EntityLiving {
@@ -171,7 +172,7 @@ public class EntityPlayer extends EntityLiving {
 	}
 
 	protected final float getEyeHeight() {
-		return 0.12F;
+		return RubyUtils.getPlayerGoonerScaleColonSpeakingHeadEmojiColonColonSpeakingHeadEmojiColonColonFireEmojiColonColonFireEmojiColon(0.12F);
 	}
 
 	public final boolean attackEntityFrom(Entity var1, int var2) {

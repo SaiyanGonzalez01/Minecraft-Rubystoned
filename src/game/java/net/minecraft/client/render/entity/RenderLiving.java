@@ -1,8 +1,12 @@
 package net.minecraft.client.render.entity;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.game.entity.Entity;
 import net.minecraft.game.entity.EntityLiving;
+import net.minecraft.game.entity.player.EntityPlayer;
+import rubystoned.utils.RubyUtils;
+
 import org.lwjgl.opengl.GL11;
 import util.MathHelper;
 
@@ -40,7 +44,9 @@ public class RenderLiving extends Render {
 				GL11.glRotatef(var3 * this.getDeathMaxRotation(var1), 0.0F, 0.0F, 1.0F);
 			}
 
-			GL11.glScalef(-(1.0F / 16.0F), -(1.0F / 16.0F), 1.0F / 16.0F);
+			float s = 1.0F / 16.0F;
+			if (var1 instanceof EntityPlayer && Minecraft.getMinecraft().options.thirdPersonView) s = RubyUtils.getPlayerGoonerScaleColonSpeakingHeadEmojiColonColonSpeakingHeadEmojiColonColonFireEmojiColonColonFireEmojiColon(s);
+			GL11.glScalef(-s, -s, s);
 			this.preRenderCallback(var1, var6);
 			GL11.glTranslatef(0.0F, -24.0F, 0.0F);
 			GL11.glEnable(GL11.GL_NORMALIZE);

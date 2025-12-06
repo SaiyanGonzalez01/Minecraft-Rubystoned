@@ -6,15 +6,14 @@ import dev.colbster937.eaglercraft.gui.GuiTextField;
 import net.lax1dude.eaglercraft.EagRuntime;
 import net.lax1dude.eaglercraft.Keyboard;
 import net.lax1dude.eaglercraft.Mouse;
-import net.lax1dude.eaglercraft.internal.FileChooserResult;
-import net.lax1dude.eaglercraft.opengl.ImageData;
-import net.lax1dude.eaglercraft.profile.EaglerProfile.EaglerProfileSkin;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.RenderHelper;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.model.ModelBiped;
+import net.minecraft.client.render.RenderEngine;
 import net.peyton.eagler.minecraft.TextureLocation;
+import rubystoned.utils.RubyUtils;
 
 public class GuiScreenEditProfile extends GuiScreen {
 	private GuiScreen parent;
@@ -206,7 +205,7 @@ public class GuiScreenEditProfile extends GuiScreen {
 		int id = selectedSlot - EaglerProfile.skins.size();
 		
 		if(id < 0) {
-			Minecraft.getMinecraft().renderEngine.bindTexture(EaglerProfile.skins.get(selectedSlot).glTex);
+			RenderEngine.bindTexture(EaglerProfile.skins.get(selectedSlot).glTex);
 		}else {
 			defaultOptionsTextures[id].bindTexture();
 		}
@@ -230,7 +229,7 @@ public class GuiScreenEditProfile extends GuiScreen {
 			playerModel = new ModelBiped(0.0f);
 		}
 		
-		playerModel.render(0.0f, 0.0f, (float)(System.currentTimeMillis() % 100000) / 50f, ((xx - mx) * 0.06f), ((yy - my) * -0.1f), 1.0F, 0.0625F);
+		playerModel.render(0.0f, 0.0f, (float)(System.currentTimeMillis() % 100000) / 50f, ((xx - mx) * 0.06f), ((yy - my) * -0.1f), 1.0F, RubyUtils.getPlayerGoonerScaleColonSpeakingHeadEmojiColonColonSpeakingHeadEmojiColonColonFireEmojiColonColonFireEmojiColon(0.0625F));
 
 		RenderHelper.disableStandardItemLighting();
 		
@@ -275,7 +274,7 @@ public class GuiScreenEditProfile extends GuiScreen {
 	protected void actionPerformed(GuiButton par1GuiButton) {
 		if(!dropDownOpen) {
 			if(par1GuiButton.id == 200) {
-				save();
+				this.save();
 				this.mc.displayGuiScreen(parent);
 			}else if(par1GuiButton.id == 2) {
 				EagRuntime.displayFileChooser("image/png", "png");
@@ -286,7 +285,7 @@ public class GuiScreenEditProfile extends GuiScreen {
 				EaglerProfile.skins.clear();
 				this.dropDownOptions = defaultOptions;
 				this.selectedSlot = 0;
-				save();
+				this.save();
 			}
 		}
 	}
@@ -336,6 +335,8 @@ public class GuiScreenEditProfile extends GuiScreen {
 			++selectedSlot;
 			scrollPos = selectedSlot - 2;
 		}
+
+		this.save();
 	}
 	
 	protected void drawSlotInventory(int par1, int par2, int par3) {
@@ -369,6 +370,7 @@ public class GuiScreenEditProfile extends GuiScreen {
 								selectedSlot = i + scrollPos;
 								dropDownOpen = false;
 								dragging = false;
+								this.save();
 							}
 						}
 					}
