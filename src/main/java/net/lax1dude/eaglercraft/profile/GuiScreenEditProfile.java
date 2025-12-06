@@ -52,17 +52,15 @@ public class GuiScreenEditProfile extends GuiScreen {
 		"Creeper Steve",
 		"Extentsion 05 Steve",
 		"Notch",
-		"Herobrine"
-		// "Ez",
-		// "Testvan",
-		// "Mezo",
-		// "Camo Mezo",
-		// "Dwarf",
-		// "Doom Guy",
-		// "Mario",
-		// "Luigi",
-		// "Gordon Freeman",
-		// ":>"
+		"Herobrine",
+		"Ez",
+		"Testvan",
+		"Mezo",
+		"Camo Mezo",
+		"Dwarf",
+		"Doom Guy",
+		"Mario",
+		"Luigi"
 	};
 	
 	public static final TextureLocation[] defaultOptionsTextures = new TextureLocation[] {
@@ -83,16 +81,15 @@ public class GuiScreenEditProfile extends GuiScreen {
 			new TextureLocation("/eagler/skins/15.creeper_steve.png"),
 			new TextureLocation("/eagler/skins/16.ext05_steve.png"),
 			new TextureLocation("/eagler/skins/17.notch.png"),
-			new TextureLocation("/eagler/skins/18.herobrine.png")
-			// new TextureLocation("/eagler/skins/19.ez.png"),
-			// new TextureLocation("/eagler/skins/20.testvan.png"),
-			// new TextureLocation("/eagler/skins/21.mezo.png"),
-			// new TextureLocation("/eagler/skins/22.camo_mezo.png"),
-			// new TextureLocation("/eagler/skins/23.dwarf.png"),
-			// new TextureLocation("/eagler/skins/24.doom_guy.png"),
-			// new TextureLocation("/eagler/skins/25.mario.png"),
-			// new TextureLocation("/eagler/skins/26.luigi.png"),
-			// new TextureLocation("/eagler/skins/27.freeman.png")
+			new TextureLocation("/eagler/skins/18.herobrine.png"),
+			new TextureLocation("/eagler/skins/19.ez.png"),
+			new TextureLocation("/eagler/skins/20.testvan.png"),
+			new TextureLocation("/eagler/skins/21.mezo.png"),
+			new TextureLocation("/eagler/skins/22.camo_mezo.png"),
+			new TextureLocation("/eagler/skins/23.dwarf.png"),
+			new TextureLocation("/eagler/skins/24.doom_guy.png"),
+			new TextureLocation("/eagler/skins/25.mario.png"),
+			new TextureLocation("/eagler/skins/26.luigi.png")
 	};
 	
 	protected String screenTitle = "Edit Profile";
