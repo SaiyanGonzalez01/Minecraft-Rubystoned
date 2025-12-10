@@ -445,14 +445,11 @@ public final class LevelGenerator {
 		}
 
 		short var43 = 100;
-<<<<<<< HEAD
 		short var10001 = 50;
 		if (this.levelType == 1) {
 			var43 = 10;
 			var10001 = 5;
 		}
-=======
->>>>>>> 82abaf8552aa45e8355877fdb10070bc66ca2896
 		if (this.levelType == 2) {
 			var43 = 1000;
 			var10001 = 500;

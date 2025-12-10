@@ -11,12 +11,8 @@ public final class BlockOre extends Block {
 
 	public final int idDropped(int var1, Random var2) {
 		return this.blockID == Block.oreCoal.blockID ? Item.coal.shiftedIndex
-<<<<<<< HEAD
 				: (this.blockID == Block.oreDiamond.blockID ? Item.diamond.shiftedIndex
 						: (this.blockID == Block.oreRuby.blockID ? Item.ruby.shiftedIndex : this.blockID));
-=======
-				: (this.blockID == Block.oreDiamond.blockID ? Item.diamond.shiftedIndex : this.blockID);
->>>>>>> 82abaf8552aa45e8355877fdb10070bc66ca2896
 	}
 
 	public final int quantityDropped(Random var1) {

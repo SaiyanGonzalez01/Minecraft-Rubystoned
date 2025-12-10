@@ -124,10 +124,7 @@ public class Block {
 	protected Block(int var1, Material var2, String var3) {
 		this.stepSound = soundPowderFootstep;
 		this.blockParticleGravity = 1.0F;
-<<<<<<< HEAD
 		this.name = var3;
-=======
->>>>>>> 82abaf8552aa45e8355877fdb10070bc66ca2896
 		if (blocksList[var1] != null) {
 			throw new IllegalArgumentException(
 					"Slot " + var1 + " is already occupied by " + blocksList[var1] + " when adding " + this);
@@ -453,11 +450,7 @@ public class Block {
 		var0 = var10000;
 		var0.stepSound = var1;
 		grass = (BlockGrass) var0;
-<<<<<<< HEAD
 		var10000 = (new BlockDirt(3, 2, "Dirt")).setHardness(0.5F);
-=======
-		var10000 = (new BlockDirt(3, 2)).setHardness(0.5F);
->>>>>>> 82abaf8552aa45e8355877fdb10070bc66ca2896
 		var1 = soundGravelFootstep;
 		var0 = var10000;
 		var0.stepSound = var1;
@@ -618,11 +611,7 @@ public class Block {
 		var0 = var10000;
 		var0.stepSound = var1;
 		plantYellow = (BlockFlower) var0;
-<<<<<<< HEAD
 		var10000 = (new BlockFlower(38, 12, "Rose")).setHardness(0.0F);
-=======
-		var10000 = (new BlockFlower(38, 12)).setHardness(0.0F);
->>>>>>> 82abaf8552aa45e8355877fdb10070bc66ca2896
 		var1 = soundGrassFootstep;
 		var0 = var10000;
 		var0.stepSound = var1;
@@ -637,11 +626,7 @@ public class Block {
 		var0 = var10000;
 		var0.stepSound = var1;
 		mushroomRed = (BlockFlower) var0;
-<<<<<<< HEAD
 		var10000 = (new BlockOreBlock(41, 39, "Block of Gold")).setHardness(3.0F).setResistance(10.0F);
-=======
-		var10000 = (new BlockOreBlock(41, 39)).setHardness(3.0F).setResistance(10.0F);
->>>>>>> 82abaf8552aa45e8355877fdb10070bc66ca2896
 		var1 = soundMetalFootstep;
 		var0 = var10000;
 		var0.stepSound = var1;
@@ -696,11 +681,7 @@ public class Block {
 		var0 = var10000;
 		var0.stepSound = var1;
 		fire = (BlockFire) var0;
-<<<<<<< HEAD
 		var10000 = (new BlockSource(52, waterMoving.blockID, "Water")).setHardness(0.0F);
-=======
-		var10000 = (new BlockSource(52, waterMoving.blockID)).setHardness(0.0F);
->>>>>>> 82abaf8552aa45e8355877fdb10070bc66ca2896
 		var1 = soundWoodFootstep;
 		var0 = var10000;
 		var0.stepSound = var1;
@@ -755,7 +736,6 @@ public class Block {
 		var0 = var10000;
 		var0.stepSound = var1;
 		stoneOvenActive = var0.setLightValue(14.0F / 16.0F);
-<<<<<<< HEAD
 		var10000 = (new BlockOre(63, 96, "Ruby Ore")).setHardness(3.0F).setResistance(5.0F);
 		var1 = soundStoneFootstep;
 		var0 = var10000;
@@ -814,12 +794,6 @@ public class Block {
 		for (int var2 = 0; var2 < 256; ++var2) {
 			if (blocksList[var2] != null) {
 				Item.itemsList[var2] = new ItemBlock(var2 - 256, blocksList[var2].name);
-=======
-
-		for (int var2 = 0; var2 < 256; ++var2) {
-			if (blocksList[var2] != null) {
-				Item.itemsList[var2] = new ItemBlock(var2 - 256);
->>>>>>> 82abaf8552aa45e8355877fdb10070bc66ca2896
 			}
 		}
 
