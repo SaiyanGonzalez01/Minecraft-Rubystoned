@@ -15,6 +15,7 @@ public class ItemFood extends Item {
 	public ItemStack onItemRightClick(ItemStack var1, World var2, EntityPlayer var3) {
 		--var1.stackSize;
 		var3.heal(this.healAmount);
+		var2.playSoundAtEntity(var3, "random.eat", 1.0F, 1.0F);
 		return var1;
 	}
 }

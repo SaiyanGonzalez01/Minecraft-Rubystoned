@@ -24,6 +24,6 @@ public class EntitySkinwalker extends EntityMob {
 	}
 
 	protected final int scoreValue() {
-		return Item.dyeRed.shiftedIndex;
+		return Item.monstermeat.shiftedIndex;
 	}
 }
