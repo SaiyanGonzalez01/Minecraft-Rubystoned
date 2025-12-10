@@ -101,8 +101,7 @@ public class Item {
 
 	protected Item(int var1, String var2) {
 		this.shiftedIndex = var1 + 256;
-		this.name = var2;
-		if (itemsList[var1 + 256] != null) {
+		if(itemsList[var1 + 256] != null) {
 			System.out.println("CONFLICT @ " + var1);
 		}
 

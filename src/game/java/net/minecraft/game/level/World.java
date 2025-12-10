@@ -1074,11 +1074,15 @@ public final class World {
 								int var11 = var6 - var3;
 								if ((Math.abs(var12) != var9 || Math.abs(var11) != var9 || this.random.nextInt(2) != 0 && var8 != 0)
 										&& !Block.opaqueCubeLookup[this.getBlockId(var10, var13, var6)]) {
+<<<<<<< HEAD
 									if (var8 < 0 && (Math.abs(var12) + Math.abs(var11)) >= 1 && this.random.nextInt(12) == 0) {
 										this.setBlockWithNotify(var10, var13, var6, Block.leavesApple.blockID);
 									} else {
 										this.setBlockWithNotify(var10, var13, var6, Block.leaves.blockID);
 									}
+=======
+									this.setBlockWithNotify(var10, var13, var6, Block.leaves.blockID);
+>>>>>>> 82abaf8552aa45e8355877fdb10070bc66ca2896
 								}
 							}
 						}

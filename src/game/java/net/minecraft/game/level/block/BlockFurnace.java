@@ -48,9 +48,15 @@ public final class BlockFurnace extends BlockContainer {
 
 	public final int getBlockTexture(World var1, int var2, int var3, int var4, int var5) {
 		if (var5 == 1) {
+<<<<<<< HEAD
 			return 224;
 		} else if (var5 == 0) {
 			return 224;
+=======
+			return Block.stone.blockIndexInTexture;
+		} else if (var5 == 0) {
+			return Block.stone.blockIndexInTexture;
+>>>>>>> 82abaf8552aa45e8355877fdb10070bc66ca2896
 		} else {
 			byte var6 = var1.getBlockMetadata(var2, var3, var4);
 			if (var6 == 0) {
@@ -90,7 +96,12 @@ public final class BlockFurnace extends BlockContainer {
 	}
 
 	public final int getBlockTextureFromSide(int var1) {
+<<<<<<< HEAD
 		return var1 == 1 ? 224 : (var1 == 0 ? 224 : (var1 == 3 ? this.blockIndexInTexture - 1 : this.blockIndexInTexture));
+=======
+		return var1 == 1 ? Block.stone.blockID
+				: (var1 == 0 ? Block.stone.blockID : (var1 == 3 ? this.blockIndexInTexture - 1 : this.blockIndexInTexture));
+>>>>>>> 82abaf8552aa45e8355877fdb10070bc66ca2896
 	}
 
 	public final boolean blockActivated(World var1, int var2, int var3, int var4, EntityPlayer var5) {
