@@ -93,6 +93,8 @@ public class Item {
 	public static Item clay;
 	public static Item brick;
 	public static Item apple;
+	public static Item monstermeat;
+	public static Item monstermeatCooked;
 	public final int shiftedIndex;
 	protected int maxStackSize = 64;
 	protected int maxDamage = 32;
@@ -581,5 +583,15 @@ public class Item {
 		var5 = var18;
 		var5.iconIndex = var1;
 		apple = var5;
+		var18 = new ItemFood(86, 6, "Monster Meat");
+		var1 = 103;
+		var5 = var18;
+		var5.iconIndex = var1;
+		monstermeat = var5;
+		var18 = new ItemFood(87, 9, "Cooked Monster Meat");
+		var1 = 104;
+		var5 = var18;
+		var5.iconIndex = var1;
+		monstermeatCooked = var5;
 	}
 }

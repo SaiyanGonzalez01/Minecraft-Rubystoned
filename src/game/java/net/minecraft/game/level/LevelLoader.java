@@ -23,6 +23,7 @@ import net.minecraft.game.entity.monster.EntityGiantZombie;
 import net.minecraft.game.entity.monster.EntitySkeleton;
 import net.minecraft.game.entity.monster.EntitySpider;
 import net.minecraft.game.entity.monster.EntityZombie;
+import net.minecraft.game.entity.monster.EntitySkinwalker;
 import net.minecraft.game.level.block.Block;
 import net.minecraft.game.level.block.tileentity.TileEntity;
 import net.minecraft.game.level.block.tileentity.TileEntityChest;
@@ -141,7 +142,8 @@ public abstract class LevelLoader {
 												: (var2.equals("Zombie") ? new EntityZombie(var1)
 														: (var2.equals("Giant") ? new EntityGiantZombie(var1)
 																: (var2.equals("Item") ? new EntityItem(var1)
-																		: (var2.equals("Painting") ? new EntityPainting(var1) : null)))))))));
+																		: (var2.equals("Painting") ? new EntityPainting(var1)
+																				: (var2.equals("Skinwalker") ? new EntitySkinwalker(var1) : null))))))))));
 	}
 
 	public final void save(World var1, OutputStream var2) throws IOException {

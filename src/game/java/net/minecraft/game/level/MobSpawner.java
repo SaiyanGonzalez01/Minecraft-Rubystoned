@@ -10,6 +10,7 @@ import net.minecraft.game.entity.monster.EntityMob;
 import net.minecraft.game.entity.monster.EntitySkeleton;
 import net.minecraft.game.entity.monster.EntitySpider;
 import net.minecraft.game.entity.monster.EntityZombie;
+import net.minecraft.game.entity.monster.EntitySkinwalker;
 
 public class MobSpawner {
 	private World worldObj;
@@ -116,6 +117,10 @@ public class MobSpawner {
 
 							if(var7 == 3) {
 								var23 = new EntityZombie(var22.worldObj);
+							}
+
+							if(var7 == 3) {
+								var23 = new EntitySkinwalker(var22.worldObj);
 							}
 
 							if(var23 instanceof EntityMob && var22.worldObj.difficultySetting == 0) {

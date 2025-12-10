@@ -22,6 +22,7 @@ import net.minecraft.game.entity.monster.EntityGiantZombie;
 import net.minecraft.game.entity.monster.EntitySkeleton;
 import net.minecraft.game.entity.monster.EntitySpider;
 import net.minecraft.game.entity.monster.EntityZombie;
+import net.minecraft.game.entity.monster.EntitySkinwalker;
 import net.minecraft.game.entity.player.EntityPlayer;
 import net.minecraft.game.entity.projectile.EntityArrow;
 import net.minecraft.game.level.World;
@@ -46,6 +47,7 @@ public final class RenderManager {
 		this.entityRenderMap.put(EntityZombie.class, new RenderLiving(new ModelZombie(), 0.5F));
 		this.entityRenderMap.put(EntityPlayer.class, new RenderPlayer());
 		this.entityRenderMap.put(EntityGiantZombie.class, new RenderGiantZombie(new ModelZombie(), 0.5F, 6.0F));
+		this.entityRenderMap.put(EntitySkinwalker.class, new RenderLiving(new ModelBiped(), 0.5F));
 		this.entityRenderMap.put(EntityLiving.class, new RenderLiving(new ModelBiped(), 0.5F));
 		this.entityRenderMap.put(Entity.class, new RenderEntity());
 		this.entityRenderMap.put(EntityPainting.class, new RenderPainting());
