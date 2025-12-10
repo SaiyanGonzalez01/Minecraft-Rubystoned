@@ -162,7 +162,7 @@ public final class Minecraft implements Runnable {
 		this.running = true;
 
 		try {
-			Display.setTitle("Minecraft Indev");
+			Display.setTitle("Minecraft Rubystoned");
 
 			IntBuffer var24;
 
