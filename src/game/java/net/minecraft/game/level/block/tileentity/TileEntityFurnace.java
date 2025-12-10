@@ -178,7 +178,7 @@ public final class TileEntityFurnace extends TileEntity implements IInventory {
 	}
 
 	private static int smeltItem(int var0) {
-		return var0 == Block.oreIron.blockID ? Item.ingotIron.shiftedIndex : (var0 == Block.oreGold.blockID ? Item.ingotGold.shiftedIndex : (var0 == Block.oreDiamond.blockID ? Item.diamond.shiftedIndex : (var0 == Block.sand.blockID ? Block.glass.blockID : (var0 == Item.porkRaw.shiftedIndex ? Item.porkCooked.shiftedIndex : (var0 == Block.cobblestone.blockID ? Block.stone.blockID : (var0 == Block.oreRuby.blockID ? Item.ruby.shiftedIndex : (var0 == Item.clay.shiftedIndex ? Item.brick.shiftedIndex : (var0 == Item.monstermeat.shiftedIndex ? Item.monstermeatCooked.shiftedIndex : -1)))))));
+		return var0 == Block.oreIron.blockID ? Item.ingotIron.shiftedIndex : (var0 == Block.oreGold.blockID ? Item.ingotGold.shiftedIndex : (var0 == Block.oreDiamond.blockID ? Item.diamond.shiftedIndex : (var0 == Block.sand.blockID ? Block.glass.blockID : (var0 == Item.porkRaw.shiftedIndex ? Item.porkCooked.shiftedIndex : (var0 == Block.cobblestone.blockID ? Block.stone.blockID : (var0 == Block.oreRuby.blockID ? Item.ruby.shiftedIndex : (var0 == Item.clay.shiftedIndex ? Item.brick.shiftedIndex : (var0 == Item.monstermeat.shiftedIndex ? Item.monstermeatCooked.shiftedIndex : -1))))))));
 	}
 
 	private static int getItemBurnTime(ItemStack var0) {
