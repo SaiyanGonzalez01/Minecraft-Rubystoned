@@ -106,6 +106,7 @@ public class Block {
 	public static final Block brickStone;
 	public static final Block brickObsidian;
 	public static final Block leavesApple;
+	public static final Block stoneSand;
 	public int blockIndexInTexture;
 	public final int blockID;
 	private float hardness;
@@ -791,6 +792,11 @@ public class Block {
 		var0 = var10000;
 		var0.stepSound = var1;
 		leavesApple = var0;
+		var10000 = (new Block(74, 111, Material.rock, "Sandstone")).setHardness(2.0F).setResistance(10.0F);
+		var1 = soundStoneFootstep;
+		var0 = var10000;
+		var0.stepSound = var1;
+		stoneSand = var0;
 		for (int var2 = 0; var2 < 256; ++var2) {
 			if (blocksList[var2] != null) {
 				Item.itemsList[var2] = new ItemBlock(var2 - 256, blocksList[var2].name);
