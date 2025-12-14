@@ -217,7 +217,7 @@ public final class LevelGenerator {
 						}
 
 						if (var9.floatingGen && var35 < var76) {
-							var37 = 0;
+							var37 = Block.wood.blockID;
 						}
 
 						if (var9.blocksByteArray[var79] == 0) {
