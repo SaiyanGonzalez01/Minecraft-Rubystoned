@@ -6,7 +6,7 @@ public final class GuiNewLevel extends GuiScreen {
 	private String[] worldShape = new String[]{"Square", "Long", "Deep"};
 	private String[] worldSize = new String[]{"Small", "Normal", "Huge"};
 	private String[] worldTheme = new String[]{"Normal", "Hell", "Paradise", "Woods"};
-	private int selectedWorldType = 1;
+	private int selectedWorldType = 2;
 	private int selectedWorldShape = 0;
 	private int selectedWorldSize = 1;
 	private int selectedWorldTheme = 0;
