@@ -95,6 +95,11 @@ public class Item {
 	public static Item apple;
 	public static Item monstermeat;
 	public static Item monstermeatCooked;
+	public static Item swordLitestone;
+	public static Item shovelLitestone;
+	public static Item pickaxeLitestone;
+	public static Item axeLitestone;
+	public static Item hoeLitestone;
 	public final int shiftedIndex;
 	protected int maxStackSize = 64;
 	protected int maxDamage = 32;
@@ -594,5 +599,30 @@ public class Item {
 		var5 = var18;
 		var5.iconIndex = var1;
 		monstermeatCooked = var5;
+		var21 = new ItemSword(88, 1, "Litestone Sword");
+		var1 = 69;
+		var8 = var21;
+		var8.iconIndex = var1;
+		swordLitestone = var8;
+		var10000 = new ItemSpade(89, 1, "Litestone Shovel");
+		var1 = 85;
+		var0 = var10000;
+		var0.iconIndex = var1;
+		shovelLitestone = var0;
+		var15 = new ItemPickaxe(90, 1, "Litestone Pickaxe");
+		var1 = 101;
+		var2 = var15;
+		var2.iconIndex = var1;
+		pickaxeLitestone = var2;
+		var16 = new ItemAxe(91, 1, "Litestone Axe");
+		var1 = 117;
+		var3 = var16;
+		var3.iconIndex = var1;
+		axeLitestone = var3;
+		var23 = new ItemHoe(35, 1, "Litestone Hoe");
+		var11 = 133;
+		var10 = var23;
+		var10.iconIndex = var11;
+		hoeLitestone = var10;
 	}
 }

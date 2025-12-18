@@ -6,7 +6,7 @@ import net.minecraft.game.level.block.Block;
 
 public final class RecipesWeapons {
 	private String[][] recipePatterns = new String[][]{{"X", "X", "#"}};
-	private Object[][] recipeItems = new Object[][]{{Block.planks, Block.cobblestone, Item.ingotIron, Item.diamond, Item.ingotGold}, {Item.swordWood, Item.swordStone, Item.swordSteel, Item.swordDiamond, Item.swordGold}};
+	private Object[][] recipeItems = new Object[][]{{Block.planks, Block.cobblestone, Block.cobblestoneLite, Item.ingotIron, Item.diamond, Item.ingotGold}, {Item.swordWood, Item.swordStone, Item.swordLitestone, Item.swordSteel, Item.swordDiamond, Item.swordGold}};
 
 	public final void addRecipes(CraftingManager var1) {
 		for(int var2 = 0; var2 < this.recipeItems[0].length; ++var2) {
