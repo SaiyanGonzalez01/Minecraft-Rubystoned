@@ -14,6 +14,7 @@ import net.minecraft.game.physics.MovingObjectPosition;
 import net.minecraft.game.physics.Vec3D;
 import rubystoned.block.BlockAppleLeaves;
 import rubystoned.block.BlockClay;
+import rubystoned.block.BlockLiteStone;
 import rubystoned.block.BlockStonecutter;
 
 public class Block {

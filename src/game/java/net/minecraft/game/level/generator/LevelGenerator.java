@@ -213,10 +213,8 @@ public final class LevelGenerator {
 						}
 
 						if (var35 <= var31) {
-							var37 = Block.stone.blockID;
-								if (var9.floatingGen && var35 < var31) {
-								var37 = Block.stoneLite.blockID;
-							}
+							if (!var9.floatingGen) var37 = Block.stone.blockID;
+							else var37 = Block.stoneLite.blockID;
 						}
 
 						if (var9.floatingGen && var35 < var76) {
@@ -346,20 +344,31 @@ public final class LevelGenerator {
 			}
 		}
 
-		var7 = this.populateOre(Block.oreCoal.blockID, 1000, 10, (var4 << 2) / 5);
-		int var44 = this.populateOre(Block.oreIron.blockID, 800, 8, var4 * 3 / 5);
-		var45 = this.populateOre(Block.oreGold.blockID, 500, 6, (var4 << 1) / 5);
-		var5 = this.populateOre(Block.oreDiamond.blockID, 800, 2, var4 / 5);
-		int ruby = this.populateOre(Block.oreRuby.blockID, 500, 2, var4 / 5);
-		if (this.floatingGen) {
-			var7 = this.populateOre(Block.oreLiteCoal.blockID, 1000, 10, (var4 << 2) / 5);
-			var44 = this.populateOre(Block.oreLiteIron.blockID, 800, 8, var4 * 3 / 5);
-			var45 = this.populateOre(Block.oreLiteGold.blockID, 500, 6, (var4 << 1) / 5);
-			var5 = this.populateOre(Block.oreLiteDiamond.blockID, 800, 2, var4 / 5);
-			ruby = this.populateOre(Block.oreLiteRuby.blockID, 500, 2, var4 / 5);
+		int c;
+		int i;
+		int g;
+		int d;
+		int r;
 
+		if (!var9.floatingGen) {
+			c = Block.oreCoal.blockID;
+			i = Block.oreIron.blockID;
+			g = Block.oreGold.blockID;
+			d = Block.oreDiamond.blockID;
+			r = Block.oreRuby.blockID;
+		} else {
+			c = Block.oreLiteCoal.blockID;
+			i = Block.oreLiteIron.blockID;
+			g = Block.oreLiteGold.blockID;
+			d = Block.oreLiteDiamond.blockID;
+			r = Block.oreLiteRuby.blockID;
 		}
 
+		var7 = this.populateOre(c, 1000, 10, (var4 << 2) / 5);
+		int var44 = this.populateOre(i, 800, 8, var4 * 3 / 5);
+		var45 = this.populateOre(g, 500, 6, (var4 << 1) / 5);
+		var5 = this.populateOre(d, 800, 2, var4 / 5);
+		int ruby = this.populateOre(r, 500, 2, var4 / 5);
 		System.out
 				.println("Coal: " + var7 + ", Iron: " + var44 + ", Gold: " + var45 + ", Diamond: " + var5 + ", Ruby: " + ruby);
 		this.guiLoading.displayLoadingString("Melting..");
@@ -665,7 +674,7 @@ public final class LevelGenerator {
 								if (var23 < var19 * var19 && var20 > 0 && var21 > 0 && var22 > 0 && var20 < this.width - 1
 										&& var21 < this.height - 1 && var22 < this.depth - 1) {
 									int var27 = (var21 * this.depth + var22) * this.width + var20;
-									if (this.blocksByteArray[var27] == Block.stone.blockID) {
+									if (this.blocksByteArray[var27] == Block.stone.blockID || this.blocksByteArray[var27] == Block.stoneLite.blockID) {
 										this.blocksByteArray[var27] = var26;
 										++var5;
 									}
