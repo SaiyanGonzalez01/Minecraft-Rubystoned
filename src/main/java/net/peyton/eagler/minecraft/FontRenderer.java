@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.lwjgl.opengl.GL11;
 
+import dev.colbster937.eaglercraft.rp.TexturePack;
 import net.lax1dude.eaglercraft.EagRuntime;
 import net.lax1dude.eaglercraft.Random;
 
@@ -115,7 +116,7 @@ public class FontRenderer {
 	}
 
 	private void readFontTexture() {
-		ImageData bufferedimage = ImageData.loadImageFile(EagRuntime.getResourceStream(this.locationFontTexture));
+		ImageData bufferedimage = ImageData.loadImageFile(TexturePack.getResourceAsStream(this.locationFontTexture));
 
 		int i = bufferedimage.width;
 		int j = bufferedimage.height;

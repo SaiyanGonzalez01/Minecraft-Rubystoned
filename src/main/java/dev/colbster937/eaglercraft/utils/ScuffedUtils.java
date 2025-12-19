@@ -46,6 +46,10 @@ public class ScuffedUtils {
     return str == null || str.isEmpty() || str.isBlank() || str.length() < 1;
   }
 
+  public static boolean isShiftKeyDown() {
+    return Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT);
+  }
+
   public static boolean isCtrlKeyDown() {
     return Keyboard.isKeyDown(Keyboard.KEY_LCONTROL) || Keyboard.isKeyDown(Keyboard.KEY_RCONTROL);
   }

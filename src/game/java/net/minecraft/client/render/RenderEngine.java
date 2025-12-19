@@ -15,6 +15,7 @@ import util.GLAllocation;
 
 import org.lwjgl.opengl.GL11;
 
+import dev.colbster937.eaglercraft.rp.TexturePack;
 import dev.colbster937.eaglercraft.utils.ScuffedUtils;
 
 public class RenderEngine {
@@ -30,6 +31,13 @@ public class RenderEngine {
 		this.options = var1;
 	}
 
+	public int allocateAndSetupTexture(ImageData var1) {
+		this.singleIntBuffer.clear();
+		int var2 = this.singleIntBuffer.get(0);
+		this.setupTexture(var1, var2);
+		return var2;
+	}
+
 	public final int getTexture(String var1) {
 		var1 = ScuffedUtils.getDarkGUI(var1);
 		Integer var2 = (Integer)this.textureMap.get(var1);
@@ -40,13 +48,13 @@ public class RenderEngine {
 			GL11.glGenTextures(this.singleIntBuffer);
 			int var4 = this.singleIntBuffer.get(0);
 			if(var1.startsWith("##")) {
-				this.setupTexture(unwrapImageByColumns(ImageData.loadImageFile(EagRuntime.getResourceStream(var1.substring(2)))), var4);
+				this.setupTexture(unwrapImageByColumns(ImageData.loadImageFile(TexturePack.getResourceAsStream(var1.substring(2)))), var4);
 			} else if(var1.startsWith("%%")) {
 				this.clampTexture = true;
-				this.setupTexture(ImageData.loadImageFile(EagRuntime.getResourceStream(var1.substring(2))), var4);
+				this.setupTexture(ImageData.loadImageFile(TexturePack.getResourceAsStream(var1.substring(2))), var4);
 				this.clampTexture = false;
 			} else {
-				this.setupTexture(ImageData.loadImageFile(EagRuntime.getResourceStream(var1)), var4);
+				this.setupTexture(ImageData.loadImageFile(TexturePack.getResourceAsStream(var1)), var4);
 			}
 
 			this.textureMap.put(var1, Integer.valueOf(var4));
@@ -119,6 +127,13 @@ public class RenderEngine {
 		GL11.glTexImage2D(GL11.GL_TEXTURE_2D, 0, GL11.GL_RGBA, var2, var3, 0, GL11.GL_RGBA, GL11.GL_UNSIGNED_BYTE, (ByteBuffer)this.imageData);
 	}
 
+	public void deleteTexture(int var1) {
+		this.singleIntBuffer.clear();
+		this.singleIntBuffer.put(var1);
+		this.singleIntBuffer.flip();
+		GL11.glDeleteTextures(this.singleIntBuffer);
+	}
+
 
 	public int getTextureForDownloadableImage(String var1, String var2) {
 		return getTexture(var2);
@@ -176,13 +191,13 @@ public class RenderEngine {
 			String var6 = (String)var1.next();
 
 			if(var6.startsWith("##")) {
-				var3 = unwrapImageByColumns(ImageData.loadImageFile(EagRuntime.getResourceStream(var6.substring(2))));
+				var3 = unwrapImageByColumns(ImageData.loadImageFile(TexturePack.getResourceAsStream(var6.substring(2))));
 			} else if(var6.startsWith("%%")) {
 				this.clampTexture = true;
-				var3 = ImageData.loadImageFile(EagRuntime.getResourceStream(var6.substring(2)));
+				var3 = ImageData.loadImageFile(TexturePack.getResourceAsStream(var6.substring(2)));
 				this.clampTexture = false;
 			} else {
-				var3 = ImageData.loadImageFile(EagRuntime.getResourceStream(var6));
+				var3 = ImageData.loadImageFile(TexturePack.getResourceAsStream(var6));
 			}
 
 			var2 = ((Integer)this.textureMap.get(var6)).intValue();

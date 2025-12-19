@@ -1,7 +1,5 @@
 package dev.colbster937.eaglercraft;
 
-import net.lax1dude.eaglercraft.EagRuntime;
-
 public class EaglercraftVersion {
 	public static final String STORAGE_KEY = "_minecraft_rubystoned_";
 	public static final String EAGLER_VERSION = "1.0.0";
@@ -11,7 +9,7 @@ public class EaglercraftVersion {
 	public static final String PROJECT_BRAND = "colbster";
 	public static final String[] getTitleString() {
 		return new String[] {
-			"Minecraft Rubystoned " + EAGLER_VERSION + " [" + EagRuntime.getPlatformType() + "]",
+			"Minecraft Rubystoned " + EAGLER_VERSION,
 			"Made by " + PROJECT_AUTHOR
 		};
 	}

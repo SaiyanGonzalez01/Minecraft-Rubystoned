@@ -5,7 +5,6 @@ import com.mojang.nbt.NBTTagCompound;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.zip.GZIPInputStream;
 
 import net.lax1dude.eaglercraft.EaglerZLIB;
 import net.minecraft.client.gui.ScaledResolution;

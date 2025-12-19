@@ -40,6 +40,7 @@ import net.minecraft.game.level.World;
 import net.minecraft.game.level.block.Block;
 import net.minecraft.game.level.generator.LevelGenerator;
 import net.minecraft.game.physics.MovingObjectPosition;
+import rubystoned.utils.RubyUtils;
 import util.GLAllocation;
 
 import org.lwjgl.input.Keyboard;
@@ -625,6 +626,7 @@ public final class Minecraft implements Runnable {
 
 			if(this.currentScreen != null) {
 				this.currentScreen.updateScreen();
+				RubyUtils.tick();
 			}
 		}
 

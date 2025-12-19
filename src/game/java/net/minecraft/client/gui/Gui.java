@@ -4,7 +4,7 @@ import net.minecraft.client.render.Tessellator;
 import org.lwjgl.opengl.GL11;
 
 public class Gui {
-	protected float zLevel = 0.0F;
+	public float zLevel = 0.0F;
 
 	protected static void drawRect(int var0, int var1, int var2, int var3, int var4) {
 		float var5 = (float)(var4 >>> 24) / 255.0F;

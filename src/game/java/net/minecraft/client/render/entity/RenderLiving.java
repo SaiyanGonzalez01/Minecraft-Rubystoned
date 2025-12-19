@@ -32,12 +32,12 @@ public class RenderLiving extends Render {
 			float var7 = var1.prevRotationYaw + (var1.rotationYaw - var1.prevRotationYaw) * var6;
 			float var8 = var1.prevRotationPitch + (var1.rotationPitch - var1.prevRotationPitch) * var6;
 			GL11.glTranslatef(var2, var3, var4);
-			var2 = (float)var1.ticksExisted + var6;
+			var2 = (float) var1.ticksExisted + var6;
 			GL11.glRotatef(180.0F - var5, 0.0F, 1.0F, 0.0F);
-			if(var1.deathTime > 0) {
-				var3 = ((float)var1.deathTime + var6 - 1.0F) / 20.0F * 1.6F;
+			if (var1.deathTime > 0) {
+				var3 = ((float) var1.deathTime + var6 - 1.0F) / 20.0F * 1.6F;
 				var3 = MathHelper.sqrt_float(var3);
-				if(var3 > 1.0F) {
+				if (var3 > 1.0F) {
 					var3 = 1.0F;
 				}
 
@@ -45,14 +45,15 @@ public class RenderLiving extends Render {
 			}
 
 			float s = 1.0F / 16.0F;
-			if (var1 instanceof EntityPlayer && Minecraft.getMinecraft().options.thirdPersonView) s = RubyUtils.getPlayerGoonerScaleColonSpeakingHeadEmojiColonColonSpeakingHeadEmojiColonColonFireEmojiColonColonFireEmojiColon(s);
+			if (var1 instanceof EntityPlayer && Minecraft.getMinecraft().options.thirdPersonView)
+				s = RubyUtils.getPlayerScale(s);
 			GL11.glScalef(-s, -s, s);
 			this.preRenderCallback(var1, var6);
 			GL11.glTranslatef(0.0F, -24.0F, 0.0F);
 			GL11.glEnable(GL11.GL_NORMALIZE);
 			var3 = var1.prevLimbYaw + (var1.limbYaw - var1.prevLimbYaw) * var6;
 			var4 = var1.limbSwing - var1.limbYaw * (1.0F - var6);
-			if(var3 > 1.0F) {
+			if (var3 > 1.0F) {
 				var3 = 1.0F;
 			}
 
@@ -60,8 +61,8 @@ public class RenderLiving extends Render {
 			GL11.glEnable(GL11.GL_ALPHA_TEST);
 			this.mainModel.render(var4, var3, var2, var7 - var5, var8, 1.0F);
 
-			for(int var9 = 0; var9 < 4; ++var9) {
-				if(this.shouldRenderPass(var1, var9)) {
+			for (int var9 = 0; var9 < 4; ++var9) {
+				if (this.shouldRenderPass(var1, var9)) {
 					this.renderPassModel.render(var4, var3, var2, var7 - var5, var8, 1.0F);
 					GL11.glDisable(GL11.GL_BLEND);
 					GL11.glEnable(GL11.GL_ALPHA_TEST);
@@ -70,34 +71,34 @@ public class RenderLiving extends Render {
 
 			float var15 = var1.getEntityBrightness(var6);
 			int var14 = this.getColorMultiplier(var1, var15, var6);
-			if(var14 >>> 24 > 0 || var1.hurtTime > 0 || var1.deathTime > 0) {
+			if (var14 >>> 24 > 0 || var1.hurtTime > 0 || var1.deathTime > 0) {
 				GL11.glDisable(GL11.GL_TEXTURE_2D);
 				GL11.glDisable(GL11.GL_ALPHA_TEST);
 				GL11.glEnable(GL11.GL_BLEND);
 				GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
 				GL11.glDepthFunc(GL11.GL_EQUAL);
-				if(var1.hurtTime > 0 || var1.deathTime > 0) {
+				if (var1.hurtTime > 0 || var1.deathTime > 0) {
 					GL11.glColor4f(var15, 0.0F, 0.0F, 0.4F);
 					this.mainModel.render(var4, var3, var2, var7 - var5, var8, 1.0F);
 
-					for(int var10 = 0; var10 < 4; ++var10) {
-						if(this.shouldRenderPass(var1, var10)) {
+					for (int var10 = 0; var10 < 4; ++var10) {
+						if (this.shouldRenderPass(var1, var10)) {
 							GL11.glColor4f(var15, 0.0F, 0.0F, 0.4F);
 							this.renderPassModel.render(var4, var3, var2, var7 - var5, var8, 1.0F);
 						}
 					}
 				}
 
-				if(var14 >>> 24 > 0) {
-					float var16 = (float)(var14 >> 16 & 255) / 255.0F;
-					var15 = (float)(var14 >> 8 & 255) / 255.0F;
-					float var11 = (float)(var14 & 255) / 255.0F;
-					var6 = (float)(var14 >>> 24) / 255.0F;
+				if (var14 >>> 24 > 0) {
+					float var16 = (float) (var14 >> 16 & 255) / 255.0F;
+					var15 = (float) (var14 >> 8 & 255) / 255.0F;
+					float var11 = (float) (var14 & 255) / 255.0F;
+					var6 = (float) (var14 >>> 24) / 255.0F;
 					GL11.glColor4f(var16, var15, var11, var6);
 					this.mainModel.render(var4, var3, var2, var7 - var5, var8, 1.0F);
 
-					for(int var12 = 0; var12 < 4; ++var12) {
-						if(this.shouldRenderPass(var1, var12)) {
+					for (int var12 = 0; var12 < 4; ++var12) {
+						if (this.shouldRenderPass(var1, var12)) {
 							GL11.glColor4f(var16, var15, var11, var6);
 							this.renderPassModel.render(var4, var3, var2, var7 - var5, var8, 1.0F);
 						}
@@ -135,6 +136,6 @@ public class RenderLiving extends Render {
 	}
 
 	public void doRender(Entity var1, float var2, float var3, float var4, float var5, float var6) {
-		this.a((EntityLiving)var1, var2, var3, var4, var5, var6);
+		this.a((EntityLiving) var1, var2, var3, var4, var5, var6);
 	}
 }

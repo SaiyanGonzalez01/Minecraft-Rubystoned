@@ -1,5 +1,6 @@
 package net.minecraft.client.render.texture;
 
+import dev.colbster937.eaglercraft.rp.TexturePack;
 import net.lax1dude.eaglercraft.EagRuntime;
 import net.lax1dude.eaglercraft.opengl.ImageData;
 import net.minecraft.game.level.block.Block;
@@ -16,9 +17,9 @@ public class TextureGearsFX extends TextureFX {
 		this.gearRotationDir = (var1 << 1) - 1;
 		this.gearRotation = 2;
 
-		ImageData var3 = ImageData.loadImageFile(EagRuntime.getResourceStream("/misc/gear.png"));
+		ImageData var3 = ImageData.loadImageFile(TexturePack.getResourceAsStream("/misc/gear.png"));
 		var3.getRGB(0, 0, 32, 32, this.gearColor, 0, 32);
-		var3 = ImageData.loadImageFile(EagRuntime.getResourceStream("/misc/gearmiddle.png"));
+		var3 = ImageData.loadImageFile(TexturePack.getResourceAsStream("/misc/gearmiddle.png"));
 		var3.getRGB(0, 0, 16, 16, this.gearMiddleColor, 0, 16);
 	}
 

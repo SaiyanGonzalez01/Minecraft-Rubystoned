@@ -1,6 +1,7 @@
 package net.minecraft.client.gui;
 
 import net.minecraft.client.GameSettings;
+import rubystoned.gui.GuiTexturePacks;
 
 public final class GuiOptions extends GuiScreen {
 	private GuiScreen parentScreen;
@@ -14,12 +15,13 @@ public final class GuiOptions extends GuiScreen {
 
 	public final void initGui() {
 		int i = 0;
+		GuiButton b;
 		for(int var1 = 0; var1 < this.options.numberOfOptions; ++var1) {
 			if (var1 == 6) continue;
 
-			GuiButton b = new GuiSmallButton(var1, this.width / 2 - 155 + i % 2 * 160, this.height / 6 + 24 * (i >> 1), this.options.setOptionString(var1));
+			b = new GuiSmallButton(var1, this.width / 2 - 155 + i % 2 * 160, this.height / 6 + 24 * (i >> 1), this.options.setOptionString(var1));
 			
-			if (var1 == 0) b.enabled = false;
+			if (var1 == 12) b.enabled = false;
 			else if (((var1 + 1) == this.options.numberOfOptions) && ((var1 & 1) == 1)) b = new GuiButton(var1, this.width / 2 - 100, this.height / 6 + 24 * (i >> 1), this.options.setOptionString(var1));
 
 			this.controlList.add(b);
@@ -27,8 +29,10 @@ public final class GuiOptions extends GuiScreen {
 			++i;
 		}
 
-		this.controlList.add(new GuiButton(100, this.width / 2 - 100, this.height / 6 + 132 + 12, "Controls..."));
-		this.controlList.add(new GuiButton(200, this.width / 2 - 100, this.height / 6 + 168, "Done"));
+		this.controlList.add(b = new GuiSmallButton(100, this.width / 2 - 155 + i++ % 2 * 160, this.height / 6 + 132 + 12, "Controls..."));
+		this.controlList.add(b = new GuiSmallButton(101, this.width / 2 - 155 + i++ % 2 * 160, this.height / 6 + 132 + 12, "Texture Packs..."));
+		b.enabled = false;
+		this.controlList.add(b = new GuiButton(200, this.width / 2 - 100, this.height / 6 + 168, "Done"));
 	}
 
 	protected final void actionPerformed(GuiButton var1) {
@@ -40,6 +44,10 @@ public final class GuiOptions extends GuiScreen {
 
 			if(var1.id == 100) {
 				this.mc.displayGuiScreen(new GuiControls(this, this.options));
+			}
+
+			if(var1.id == 101) {
+				this.mc.displayGuiScreen(new GuiTexturePacks(this));
 			}
 
 			if(var1.id == 200) {

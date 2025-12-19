@@ -6,6 +6,8 @@ import java.util.List;
 import net.lax1dude.eaglercraft.Display;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.render.Tessellator;
+import rubystoned.utils.RubyUtils;
+
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
@@ -96,19 +98,26 @@ public class GuiScreen extends Gui {
 		if(this.mc.theWorld != null) {
 			drawGradientRect(0, 0, this.width, this.height, 1610941696, -1607454624);
 		} else {
-			GL11.glDisable(GL11.GL_LIGHTING);
-			GL11.glDisable(GL11.GL_FOG);
-			Tessellator var2 = Tessellator.instance;
-			GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.mc.renderEngine.getTexture("/options_background.png"));
-			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-			var2.startDrawingQuads();
-			var2.setColorOpaque_I(4210752);
-			var2.addVertexWithUV(0.0F, (float)this.height, 0.0F, 0.0F, (float)this.height / 32.0F);
-			var2.addVertexWithUV((float)this.width, (float)this.height, 0.0F, (float)this.width / 32.0F, (float)this.height / 32.0F);
-			var2.addVertexWithUV((float)this.width, 0.0F, 0.0F, (float)this.width / 32.0F, 0.0F);
-			var2.addVertexWithUV(0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
-			var2.draw();
+			if (this.mc.options.panorama) {
+				RubyUtils.renderPanorama();
+			} else {
+				GL11.glDisable(GL11.GL_LIGHTING);
+				GL11.glDisable(GL11.GL_FOG);
+				Tessellator var2 = Tessellator.instance;
+				GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.mc.renderEngine.getTexture("/options_background.png"));
+				GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+				var2.startDrawingQuads();
+				var2.setColorOpaque_I(4210752);
+				var2.addVertexWithUV(0.0F, (float)this.height, 0.0F, 0.0F, (float)this.height / 32.0F);
+				var2.addVertexWithUV((float)this.width, (float)this.height, 0.0F, (float)this.width / 32.0F, (float)this.height / 32.0F);
+				var2.addVertexWithUV((float)this.width, 0.0F, 0.0F, (float)this.width / 32.0F, 0.0F);
+				var2.addVertexWithUV(0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+				var2.draw();
+			}
 		}
+	}
+
+	public void confirmClicked(boolean var1, int var2) {
 	}
 
 	public boolean doesGuiPauseGame() {
