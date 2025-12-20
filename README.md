@@ -27,4 +27,4 @@ You are free to fork this project as long as you properly credit both [SaiyanGon
 
 SaiyanGonzalez01 - Project Owner (Created most of the modded additions)
 
-Colbster937 - Original Indev Porter & Contributer (Added the more complex additions, like the Profile GUI & Inventory Tooltips)
+Colbster937 - Original Indev Porter & Contributer (Added the more complex additions, like the Profile GUI, Inventory Tooltips, & Texture Packs)
