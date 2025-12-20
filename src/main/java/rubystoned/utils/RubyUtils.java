@@ -5,12 +5,15 @@ import util.MathHelper;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.glu.GLU;
 
+import dev.colbster937.eaglercraft.rp.TexturePack;
 import net.lax1dude.eaglercraft.opengl.ImageData;
 import net.lax1dude.eaglercraft.profile.EaglerProfile;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.render.Tessellator;
 
 public class RubyUtils {
+  private static final String[] darkGUIs = new String[] { "gui", "inventory", "furnace", "container", "crafting" };
+
   private static int panoramaTick = 0;
   private static int panoramaTex = -1;
 
@@ -20,6 +23,21 @@ public class RubyUtils {
 
   public static float getPlayerScale(float scale) {
     return ((EaglerProfile.presetSkinId == 22) ? (scale *= 0.75F) : scale);
+  }
+
+  public static String getDarkGUI(String path) {
+    if (path.startsWith("/gui/")) {
+      boolean dark = false;
+      for (String gui : darkGUIs) {
+        if (path.endsWith(gui + ".png"))
+          dark = true;
+        else
+          continue;
+      }
+      if (dark && Minecraft.getMinecraft().options.darkGUI && TexturePack.getSelectedPack().supportsDarkGUI())
+        path = "/gui_dark/" + path.substring(5);
+    }
+    return path;
   }
 
   private static void renderPanoramaBox(Tessellator tessellator, Minecraft mc) {
@@ -154,6 +172,6 @@ public class RubyUtils {
     tessellator.draw();
 
     GuiAccessor.drawGradientRect(0, 0, w, h, -1426063361, 16777215);
-		GuiAccessor.drawGradientRect(0, 0, w, h, 0, -1442840576);
+    GuiAccessor.drawGradientRect(0, 0, w, h, 0, -1442840576);
   }
 }

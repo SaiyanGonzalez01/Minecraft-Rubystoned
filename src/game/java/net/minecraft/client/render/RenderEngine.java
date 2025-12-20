@@ -5,18 +5,17 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-import net.lax1dude.eaglercraft.EagRuntime;
 import net.lax1dude.eaglercraft.internal.buffer.ByteBuffer;
 import net.lax1dude.eaglercraft.internal.buffer.IntBuffer;
 import net.lax1dude.eaglercraft.opengl.ImageData;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.render.texture.TextureFX;
+import rubystoned.utils.RubyUtils;
 import util.GLAllocation;
 
 import org.lwjgl.opengl.GL11;
 
 import dev.colbster937.eaglercraft.rp.TexturePack;
-import dev.colbster937.eaglercraft.utils.ScuffedUtils;
 
 public class RenderEngine {
 	private HashMap textureMap = new HashMap();
@@ -33,13 +32,14 @@ public class RenderEngine {
 
 	public int allocateAndSetupTexture(ImageData var1) {
 		this.singleIntBuffer.clear();
+		GL11.glGenTextures(this.singleIntBuffer);
 		int var2 = this.singleIntBuffer.get(0);
 		this.setupTexture(var1, var2);
 		return var2;
 	}
 
 	public final int getTexture(String var1) {
-		var1 = ScuffedUtils.getDarkGUI(var1);
+		var1 = RubyUtils.getDarkGUI(var1);
 		Integer var2 = (Integer)this.textureMap.get(var1);
 		if(var2 != null) {
 			return var2.intValue();

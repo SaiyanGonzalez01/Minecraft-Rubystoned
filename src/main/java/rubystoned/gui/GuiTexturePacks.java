@@ -216,7 +216,7 @@ public class GuiTexturePacks extends GuiScreen {
 
 	public void func_6452_a(int var1, int var2, int var3, int var4) {
 		Tessellator var5 = Tessellator.instance;
-		GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.mc.renderEngine.getTexture("/gui/background.png"));
+		GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.mc.renderEngine.getTexture("/options_background.png"));
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 		float var6 = 32.0F;
 		var5.startDrawingQuads();

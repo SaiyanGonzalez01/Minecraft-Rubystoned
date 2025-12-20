@@ -6,6 +6,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import org.lwjgl.input.Keyboard;
 
+import dev.colbster937.eaglercraft.rp.TexturePack;
 import net.lax1dude.eaglercraft.internal.vfs2.VFile2;
 
 public final class GameSettings {
@@ -118,7 +119,7 @@ public final class GameSettings {
 	}
 
 	public final String setOptionString(int var1) {
-		return var1 == 0 ? "Music: " + (this.music ? "ON" : "OFF") : (var1 == 1 ? "Sound: " + (this.sound ? "ON" : "OFF") : (var1 == 2 ? "Invert mouse: " + (this.invertMouse ? "ON" : "OFF") : (var1 == 3 ? "Debug Info: " + (this.showFPS ? "ON" : "OFF") : (var1 == 4 ? "Render distance: " + RENDER_DISTANCES[this.renderDistance] : (var1 == 5 ? "View bobbing: " + (this.fancyGraphics ? "ON" : "OFF") : (var1 == 6 ? "3d anaglyph: " + (this.anaglyph ? "ON" : "OFF") : (var1 == 7 ? "Use VSync: " + (this.vsync ? "ON" : "OFF") : (var1 == 8 ? "Difficulty: " + DIFFICULTIES[this.difficulty] : (var1 == 9 ? "Show FPS: " + (this.showFramerate ? "ON" : "OFF") : (var1 == 10 ? "Show Coordinates: " + (this.showCoords ? "ON" : "OFF") : (var1 == 11 ? "Dark GUI: " + (this.darkGUI ? "ON" : "OFF") : (var1 == 12 ? "Menu Panorama: " + (this.panorama ? "ON" : "OFF") : ""))))))))))));
+		return var1 == 0 ? "Music: " + (this.music ? "ON" : "OFF") : (var1 == 1 ? "Sound: " + (this.sound ? "ON" : "OFF") : (var1 == 2 ? "Invert mouse: " + (this.invertMouse ? "ON" : "OFF") : (var1 == 3 ? "Debug Info: " + (this.showFPS ? "ON" : "OFF") : (var1 == 4 ? "Render distance: " + RENDER_DISTANCES[this.renderDistance] : (var1 == 5 ? "View bobbing: " + (this.fancyGraphics ? "ON" : "OFF") : (var1 == 6 ? "3d anaglyph: " + (this.anaglyph ? "ON" : "OFF") : (var1 == 7 ? "Use VSync: " + (this.vsync ? "ON" : "OFF") : (var1 == 8 ? "Difficulty: " + DIFFICULTIES[this.difficulty] : (var1 == 9 ? "Show FPS: " + (this.showFramerate ? "ON" : "OFF") : (var1 == 10 ? "Show Coordinates: " + (this.showCoords ? "ON" : "OFF") : (var1 == 11 ? "Dark GUI: " + ((this.darkGUI && TexturePack.getSelectedPack().supportsDarkGUI()) ? "ON" : "OFF") : (var1 == 12 ? "Menu Panorama: " + (this.panorama ? "ON" : "OFF") : ""))))))))))));
 	}
 
 	private void loadOptions() {

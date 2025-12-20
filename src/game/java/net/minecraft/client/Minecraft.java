@@ -50,6 +50,7 @@ import org.lwjgl.opengl.GL11;
 
 import dev.colbster937.eaglercraft.storage.SaveUtils;
 import dev.colbster937.eaglercraft.gui.GuiChat;
+import dev.colbster937.eaglercraft.rp.TexturePack;
 
 public final class Minecraft implements Runnable {
 	public PlayerController playerController = new PlayerControllerSP(this);
@@ -187,8 +188,9 @@ public final class Minecraft implements Runnable {
 			GL11.glMatrixMode(GL11.GL_MODELVIEW);
 
 			this.mcDataDir = new VFile2("minecraft/");
-			SaveUtils.init(this);
 			this.options = new GameSettings(this, this.mcDataDir);
+			SaveUtils.init(this);
+			TexturePack.init(this);
 			this.sndManager.loadSoundSettings(this.options);
 			this.renderEngine = new RenderEngine(this.options);
 			this.renderEngine.registerTextureFX(this.textureLavaFX);

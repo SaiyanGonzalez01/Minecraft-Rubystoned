@@ -95,12 +95,20 @@ public class TexturePack {
     return this.id;
   }
 
+  public boolean supportsDarkGUI() {
+    return this.getResourceExists("dark_gui_support.txt");
+  }
+
   public InputStream getResourceStream(String path) {
     VFile2 file = new VFile2(this.pack, path);
     if (file.exists())
       return file.getInputStream();
     else
       return EagRuntime.getResourceStream(path);
+  }
+
+  public boolean getResourceExists(String path) {
+    return (new VFile2(this.pack, path)).exists();
   }
 
   public void bindIconTexture() {
@@ -173,7 +181,7 @@ public class TexturePack {
     mc.options.skin = pack.getName();
     mc.options.saveOptions();
     mc.renderEngine.refreshTextures();
-    mc.renderGlobal.loadRenderers();
+    try { mc.renderGlobal.loadRenderers(); } catch (Throwable t) { }
     // updateProgress(prog, "Refreshing Texture Pack");
   }
 
@@ -243,6 +251,11 @@ public class TexturePack {
     @Override
     public ImageData getIcon() {
       return this.icon;
+    }
+
+    @Override
+    public boolean supportsDarkGUI() {
+      return true;
     }
 
     @Override

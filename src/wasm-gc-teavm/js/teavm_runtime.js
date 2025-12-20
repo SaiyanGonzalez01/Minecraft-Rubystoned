@@ -373,6 +373,9 @@ function jsoImports(imports, context) {
         )(c);
     }
     imports["teavmJso"] = {
+        "stringFromCharCode": code => String.fromCharCode(code),
+        "emptyString": () => "",
+        "concatStrings": (a, b) => a + b,
         "stringBuiltinsSupported": () => hasStringBuiltins(),
         "isUndefined": o => typeof o === "undefined",
         "emptyArray": () => [],
