@@ -39,7 +39,7 @@ public class RenderEngine {
 	}
 
 	public final int getTexture(String var1) {
-		var1 = RubyUtils.getDarkGUI(var1);
+		var1 = RubyUtils.getModifiedTexturePath(var1);
 		Integer var2 = (Integer)this.textureMap.get(var1);
 		if(var2 != null) {
 			return var2.intValue();

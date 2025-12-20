@@ -25,8 +25,11 @@ public class RubyUtils {
     return ((EaglerProfile.presetSkinId == 22) ? (scale *= 0.75F) : scale);
   }
 
-  public static String getDarkGUI(String path) {
-    if (path.startsWith("/gui/")) {
+  public static String getModifiedTexturePath(String path) {
+    TexturePack pack = TexturePack.getSelectedPack();
+    String[] file = path.split("\\.(?!.*\\.)", 2);
+    String ruby = file[0] + ".ruby." + file[1];
+    if (path.startsWith("/gui/") && Minecraft.getMinecraft().options.darkGUI && pack.supportsDarkGUI()) {
       boolean dark = false;
       for (String gui : darkGUIs) {
         if (path.endsWith(gui + ".png"))
@@ -34,9 +37,9 @@ public class RubyUtils {
         else
           continue;
       }
-      if (dark && Minecraft.getMinecraft().options.darkGUI && TexturePack.getSelectedPack().supportsDarkGUI())
-        path = "/gui_dark/" + path.substring(5);
+      if (dark) path = "/gui_dark/" + path.substring(5);
     }
+    if (!pack.isDefaultPack() && pack.getResourceExists(ruby)) path = ruby;
     return path;
   }
 
