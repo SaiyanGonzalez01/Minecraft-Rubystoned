@@ -22,7 +22,7 @@ public final class GuiOptions extends GuiScreen {
 
 			b = new GuiSmallButton(var1, this.width / 2 - 155 + i % 2 * 160, this.height / 6 + 24 * (i >> 1), this.options.setOptionString(var1));
 			
-			if ((var1 == 11 && !TexturePack.getSelectedPack().supportsDarkGUI()) || var1 == 12) b.enabled = false;
+			if (var1 == 11 && !TexturePack.getSelectedPack().supportsDarkGUI()) b.enabled = false;
 			else if (((var1 + 1) == this.options.numberOfOptions) && ((var1 & 1) == 1)) b = new GuiButton(var1, this.width / 2 - 100, this.height / 6 + 24 * (i >> 1), this.options.setOptionString(var1));
 
 			this.controlList.add(b);

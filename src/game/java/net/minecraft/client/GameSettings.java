@@ -41,7 +41,7 @@ public final class GameSettings {
 	public boolean showCoords = true;
 	
 	public boolean darkGUI = true;
-	public boolean panorama = false;
+	public boolean panorama = true;
 	public String skin = "Default";
 
 	public GameSettings(Minecraft var1, VFile2 var2) {
@@ -183,7 +183,7 @@ public final class GameSettings {
 						this.darkGUI = var5[1].equals("true");
 					}
 
-					if(var5[0].equals("panorama")) {
+					if(var5[0].equals("panoramaNew")) {
 						this.panorama = var5[1].equals("true");
 					}
 
@@ -219,7 +219,7 @@ public final class GameSettings {
 			var1.println("showFramerate:" + this.showFramerate);
 			var1.println("showCoords:" + this.showCoords);
 			var1.println("darkGUI:" + this.darkGUI);
-			var1.println("panorama:" + this.panorama);
+			var1.println("panoramaNew:" + this.panorama);
 			var1.println("skin:" + this.skin);
 
 			for(int var2 = 0; var2 < this.keyBindings.length; ++var2) {
