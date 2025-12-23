@@ -115,6 +115,7 @@ public class Block {
 	public static final Block oreLiteGold;
 	public static final Block oreLiteDiamond;
 	public static final Block oreLiteRuby;
+	public static final Block brickLitestone;
 	public int blockIndexInTexture;
 	public final int blockID;
 	private float hardness;
@@ -825,21 +826,26 @@ public class Block {
 		var0 = var10000;
 		var0.stepSound = var1;
 		oreLiteIron = var0;
-		var10000 = (new BlockOre(79, 115, "Lite Gold Ore")).setHardness(3.0F).setResistance(5.0F);
+		var10000 = (new BlockOre(79, 116, "Lite Gold Ore")).setHardness(3.0F).setResistance(5.0F);
 		var1 = soundStoneFootstep;
 		var0 = var10000;
 		var0.stepSound = var1;
 		oreLiteGold = var0;
-		var10000 = (new BlockOre(80, 115, "Lite Diamond Ore")).setHardness(3.0F).setResistance(5.0F);
+		var10000 = (new BlockOre(80, 117, "Lite Diamond Ore")).setHardness(3.0F).setResistance(5.0F);
 		var1 = soundStoneFootstep;
 		var0 = var10000;
 		var0.stepSound = var1;
 		oreLiteDiamond = var0;
-		var10000 = (new BlockOre(81, 115, "Lite Ruby Ore")).setHardness(3.0F).setResistance(5.0F);
+		var10000 = (new BlockOre(81, 118, "Lite Ruby Ore")).setHardness(3.0F).setResistance(5.0F);
 		var1 = soundStoneFootstep;
 		var0 = var10000;
 		var0.stepSound = var1;
 		oreLiteRuby = var0;
+		var10000 = (new Block(82, 119, Material.rock, "Litestone Bricks")).setHardness(2.0F).setResistance(10.0F);
+		var1 = soundStoneFootstep;
+		var0 = var10000;
+		var0.stepSound = var1;
+		brickLitestone = var0;
 		for (int var2 = 0; var2 < 256; ++var2) {
 			if (blocksList[var2] != null) {
 				Item.itemsList[var2] = new ItemBlock(var2 - 256, blocksList[var2].name);
