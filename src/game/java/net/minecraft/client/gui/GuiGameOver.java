@@ -24,6 +24,7 @@ public final class GuiGameOver extends GuiScreen {
 		if (var1.id == 0) {
 			this.mc.thePlayer.isDead = false;
 			this.mc.thePlayer.preparePlayerToSpawn();
+			this.mc.displayGuiScreen(null);
 			this.mc.setIngameFocus();
 		}
 
