@@ -17,6 +17,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.render.RenderEngine;
 
 public class TexturePack {
+  private static final List<DefaultCustomTexturePack> DEFAULT_TEXTURE_PACKS = new ArrayList<>();
+
   public static DirStorage i;
 
   private static Minecraft mc = null;
@@ -96,7 +98,7 @@ public class TexturePack {
   }
 
   public boolean supportsDarkGUI() {
-    return this.getResourceExists("dark_gui_support.txt");
+    return this.isDefaultPack() || this.getResourceExists("dark_gui_support.txt");
   }
 
   public InputStream getResourceStream(String path) {
@@ -162,6 +164,8 @@ public class TexturePack {
           pack.dispose();
       List<TexturePack> lst = new ArrayList<>();
       lst.add(DefaultTexturePack.instance);
+      for (DefaultCustomTexturePack pack : DEFAULT_TEXTURE_PACKS)
+        lst.add(pack);
       for (String pack : i.getFilesInManifest())
         lst.add(new TexturePack(pack));
       return texturePacksCache = lst;
@@ -181,7 +185,10 @@ public class TexturePack {
     mc.options.skin = pack.getName();
     mc.options.saveOptions();
     mc.renderEngine.refreshTextures();
-    try { mc.renderGlobal.loadRenderers(); } catch (Throwable t) { }
+    try {
+      mc.renderGlobal.loadRenderers();
+    } catch (Throwable t) {
+    }
     // updateProgress(prog, "Refreshing Texture Pack");
   }
 
@@ -230,7 +237,7 @@ public class TexturePack {
   }
 
   public static boolean isDefaultPack(TexturePack pack) {
-    return pack instanceof DefaultTexturePack;
+    return pack instanceof DefaultTexturePack || pack instanceof DefaultCustomTexturePack;
   }
 
   private static String truncateDescLine(String var1) {
@@ -245,7 +252,7 @@ public class TexturePack {
     private final ImageData icon = ImageData.loadImageFile(this.getResourceStream("pack.png"));
 
     protected DefaultTexturePack() {
-      super("Default", new String[] { "The default look of Minecraft" });
+      super("Default", EagRuntime.getResourceLines("pack.txt").toArray(new String[0]));
     }
 
     @Override
@@ -261,6 +268,26 @@ public class TexturePack {
     @Override
     public InputStream getResourceStream(String path) {
       return EagRuntime.getResourceStream(path);
+    }
+  }
+
+  private static class DefaultCustomTexturePack extends TexturePack {
+    private static final String root = "/default_packs";
+
+    protected DefaultCustomTexturePack(String name) {
+      super(name);
+    }
+
+    private String getPath(String path) {
+      return root + "/" + this.getName() + "/" + path;
+    }
+
+    public InputStream getResourceStream(String path) {
+      return EagRuntime.getResourceStream(this.getPath(path));
+    }
+    
+    public boolean getResourceExists(String path) {
+      return EagRuntime.getResourceExists(this.getPath(path));
     }
   }
 }
