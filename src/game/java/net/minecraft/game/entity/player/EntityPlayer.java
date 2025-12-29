@@ -170,6 +170,9 @@ public class EntityPlayer extends EntityLiving {
 	public void displayStonecutterGUI() {
 	}
 
+	public void displayRubystoneGUI() {
+	}
+
 	public void onItemPickup(Entity var1) {
 	}
 

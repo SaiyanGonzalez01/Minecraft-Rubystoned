@@ -11,7 +11,7 @@ public final class BlockRubystone extends Block {
 	}
 
 	public final boolean blockActivated(World var1, int var2, int var3, int var4, EntityPlayer var5) {
-		var5.displayWorkbenchGUI();
+		var5.displayRubystoneGUI();
 		return true;
 	}
 }

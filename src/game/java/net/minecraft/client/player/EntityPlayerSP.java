@@ -16,6 +16,7 @@ import net.minecraft.game.item.ItemStack;
 import net.minecraft.game.level.World;
 import net.minecraft.game.level.block.tileentity.TileEntityFurnace;
 import rubystoned.gui.GuiStonecutter;
+import net.minecraft.client.gui.GuiIngameMenu;
 
 public class EntityPlayerSP extends EntityPlayer {
 	public MovementInput movementInput;
@@ -96,6 +97,10 @@ public class EntityPlayerSP extends EntityPlayer {
 
 	protected final String getEntityString() {
 		return "LocalPlayer";
+	}
+
+	public final void displayRubystoneGUI() {
+		this.mc.displayGuiScreen(new GuiIngameMenu());
 	}
 
 	public final void displayGUIChest(IInventory var1) {
