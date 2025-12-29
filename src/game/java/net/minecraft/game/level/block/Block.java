@@ -751,7 +751,7 @@ public class Block {
 		var0 = var10000;
 		var0.stepSound = var1;
 		oreRuby = var0;
-		var10000 = (new Block(64, 84, Material.rock, "Rubystone")).setHardness(3.0F).setResistance(5.0F);
+		var10000 = (new BlockRubystone(64)).setHardness(3.0F).setResistance(5.0F);
 		var1 = soundStoneFootstep;
 		var0 = var10000;
 		var0.stepSound = var1;
