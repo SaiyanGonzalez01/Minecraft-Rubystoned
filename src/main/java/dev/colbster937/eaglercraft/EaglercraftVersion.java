@@ -5,6 +5,7 @@ public class EaglercraftVersion {
 	public static final String EAGLER_VERSION = "1.0.0";
 	public static final String MINECRAFT_VERSION = "in-20100223";
 	public static final String PROJECT_GITHUB = "https://github.com/SaiyanGonzalez01/Minecraft-Rubystoned/";
+	public static final String OLD_SCHOOL = "https://saiyangonzalez01.github.io/Minecraft-Old-School-DX/web/";
 	public static final String PROJECT_AUTHOR = "Saiyan Gonzalez & Colbster937";
 	public static final String PROJECT_BRAND = "colbster";
 	public static final String[] getTitleString() {
