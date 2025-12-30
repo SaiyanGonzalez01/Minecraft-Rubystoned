@@ -1,20 +1,18 @@
 package net.minecraft.client.gui;
 
-import dev.colbster937.eaglercraft.storage.SaveUtils;
 import dev.colbster937.eaglercraft.EaglercraftVersion;
 import util.MathHelper;
 import net.lax1dude.eaglercraft.EagRuntime;
 
 public final class GuiRubystone extends GuiScreen {
-	private int updateCounter = 0;
 
 	public final void initGui() {
 		this.controlList.clear();
 		this.controlList.add(new GuiButton(0, this.width / 2 - 100, this.height / 4, "Visit Rubydung"));
-		this.controlList.add(new GuiButton(1, this.width / 2 - 100, this.height / 4 + 24, "Visit Nuvila"));
-		this.controlList.add(new GuiButton(2, this.width / 2 - 100, this.height / 4 + 48, "Visit Bovinux"));
-		this.controlList.add(new GuiButton(3, this.width / 2 - 100, this.height / 4 + 72, "Visit Neo-Ruby"));
-		this.controlList.add(new GuiButton(4, this.width / 2 - 100, this.height / 4 + 120, "Connect To World"));
+		//this.controlList.add(new GuiButton(1, this.width / 2 - 100, this.height / 4 + 24, "Visit Nuvila"));
+		//this.controlList.add(new GuiButton(2, this.width / 2 - 100, this.height / 4 + 48, "Visit Bovinux"));
+		//this.controlList.add(new GuiButton(3, this.width / 2 - 100, this.height / 4 + 72, "Visit Neo-Ruby"));
+		this.controlList.add(new GuiButton(4, this.width / 2 - 100, this.height / 4 + 120, "Realms"));
 		this.controlList.add(new GuiButton(5, this.width / 2 - 100, this.height / 4 + 144, "Cancel"));
 
 	}
@@ -40,8 +38,7 @@ public final class GuiRubystone extends GuiScreen {
 		}
 
 		if (var1.id == 4) {
-			this.mc.displayGuiScreen((GuiScreen) null);
-			this.mc.setIngameFocus();
+			this.mc.displayGuiScreen(new GuiRealmSelect());
 		}
 
 		if (var1.id == 5) {
@@ -57,7 +54,4 @@ public final class GuiRubystone extends GuiScreen {
 		super.drawScreen(var1, var2, var3);
 	}
 
-	public void updateScreen() {
-		SaveUtils.tick(++this.updateCounter);
-	}
 }
