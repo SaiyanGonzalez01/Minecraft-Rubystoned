@@ -374,7 +374,7 @@ public final class LevelGenerator {
 		this.guiLoading.displayLoadingString("Melting..");
 		this.loadingBar();
 		this.lavaGen();
-		var6.cloudHeight = var4 + 2;
+		var6.cloudHeight = var4 + 100;
 		if (this.floatingGen) {
 			this.groundLevel = -128;
 			this.waterLevel = this.groundLevel + 1;
