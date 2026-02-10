@@ -25,10 +25,29 @@ public class SoundManager {
 	
 	private IAudioHandle musicHandle;
 	
-	private String[] newMusic = new String[]{"calm1.ogg", "calm2.ogg", "calm3.ogg", "hal1.ogg", "hal2.ogg", "hal3.ogg", "hal4.ogg", "nuance1.ogg", "nuance2.ogg", "piano1.ogg", "piano2.ogg", "piano3.ogg"};
+	private String[][] themeMusic = new String[][] {
+		new String[]{"calm1.ogg", "calm2.ogg", "calm3.ogg"},
+		new String[]{"hell1.ogg", "hell2.ogg", "hell3.ogg"},
+		new String[]{"paradise1.ogg", "paradise2.ogg"},
+		new String[]{"hal1.ogg", "hal2.ogg", "hal3.ogg", "hal4.ogg"},
+	};
+	
+	private int currentTheme = 0;
+	private String[] currentMusicPool;
 
 	public void loadSoundSettings(GameSettings var1) {
 		this.options = var1;
+		setWorldTheme(0);
+	}
+
+	public void setWorldTheme(int theme) {
+		if (theme >= 0 && theme < this.themeMusic.length) {
+			this.currentTheme = theme;
+			this.currentMusicPool = this.themeMusic[theme];
+		} else {
+			this.currentTheme = 0;
+			this.currentMusicPool = this.themeMusic[0];
+		}
 	}
 
 	public void onSoundOptionsChanged() {
@@ -55,9 +74,13 @@ public class SoundManager {
 					return;
 				}
 
-				int var1 = rand.nextInt(newMusic.length);
+				if(this.currentMusicPool == null || this.currentMusicPool.length == 0) {
+					return;
+				}
+				
+				int var1 = rand.nextInt(this.currentMusicPool.length);
 				this.field_583_i = this.rand.nextInt(12000) + 12000;
-				String name = "/music/" + newMusic[var1];
+				String name = "/music/" + this.currentMusicPool[var1];
 				
 				IAudioResource trk = this.music.get(name);
 				if (trk == null) {

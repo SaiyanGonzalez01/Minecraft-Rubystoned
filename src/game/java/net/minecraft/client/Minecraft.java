@@ -684,6 +684,7 @@ public final class Minecraft implements Runnable {
 
 		World var7 = var6.generate(var5, var1, var3, var8);
 		this.setLevel(var7);
+		this.sndManager.setWorldTheme(var4);
 	}
 
 	public final void setLevel(World var1) {
