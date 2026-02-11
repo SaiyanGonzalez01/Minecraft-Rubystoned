@@ -119,7 +119,7 @@ public class MobSpawner {
 								var23 = new EntityZombie(var22.worldObj);
 							}
 
-							if(var7 == 3) {
+							if(var7 == 4) {
 								var23 = new EntitySkinwalker(var22.worldObj);
 							}
 

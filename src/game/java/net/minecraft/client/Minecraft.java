@@ -666,13 +666,14 @@ public final class Minecraft implements Runnable {
 		System.gc();
 		String var5 = this.session != null ? this.session.username : "anonymous";
 		LevelGenerator var6 = new LevelGenerator(this.loadingScreen);
+		int worldType = var3;
 		var6.islandGen = var3 == 1;
 		var6.floatingGen = var3 == 2;
 		var6.flatGen = var3 == 3;
 		var6.levelType = var4;
 		var1 = 128 << var1;
 		var3 = var1;
-		short var8 = 64;
+		short var8 = 128;
 		if(var2 == 1) {
 			var1 /= 2;
 			var3 <<= 1;
@@ -681,6 +682,9 @@ public final class Minecraft implements Runnable {
 			var3 = var1;
 			var8 = 256;
 		}
+		//if(worldType == 1 || worldType == 3) {
+		//	var8 = 128;
+		//}
 
 		World var7 = var6.generate(var5, var1, var3, var8);
 		this.setLevel(var7);
