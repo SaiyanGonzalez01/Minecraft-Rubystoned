@@ -119,6 +119,10 @@ public class Block {
 	public static final Block pillarStone;
 	public static final Block pillarLitestone;
 	public static final Block woodBlock;
+	public static final Block oreLapis;
+	public static final Block blockLapis;
+	public static final Block oreLiteLapis;
+	public static final Block obsidianCrying;
 	public int blockIndexInTexture;
 	public final int blockID;
 	private float hardness;
@@ -864,6 +868,26 @@ public class Block {
 		var0 = var10000;
 		var0.stepSound = var1;
 		woodBlock = var0;
+		var10000 = (new BlockOre(86, 126, "Lapis Lazuli Ore")).setHardness(3.0F).setResistance(5.0F);
+		var1 = soundStoneFootstep;
+		var0 = var10000;
+		var0.stepSound = var1;
+		oreLapis = var0;
+		var10000 = (new BlockOreBlock(87, 144, "Block of Lapis Lazuli")).setHardness(5.0F).setResistance(10.0F);
+		var1 = soundMetalFootstep;
+		var0 = var10000;
+		var0.stepSound = var1;
+		blockLapis = var0;
+		var10000 = (new BlockOre(88, 127, "Lite Lapis Lazuli Ore")).setHardness(3.0F).setResistance(5.0F);
+		var1 = soundStoneFootstep;
+		var0 = var10000;
+		var0.stepSound = var1;
+		oreLiteLapis = var0;
+		var10000 = (new BlockCryingObsidian(89)).setHardness(3.0F).setResistance(5.0F);
+		var1 = soundStoneFootstep;
+		var0 = var10000;
+		var0.stepSound = var1;
+		obsidianCrying = var0;
 		for (int var2 = 0; var2 < 256; ++var2) {
 			if (blocksList[var2] != null) {
 				Item.itemsList[var2] = new ItemBlock(var2 - 256, blocksList[var2].name);

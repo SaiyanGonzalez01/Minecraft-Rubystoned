@@ -102,6 +102,7 @@ public class Item {
 	public static Item hoeLitestone;
 	public static Item appleGolden;
 	public static Item appleIron;
+	public static Item lapis;
 	public final int shiftedIndex;
 	protected int maxStackSize = 64;
 	protected int maxDamage = 32;
@@ -636,5 +637,10 @@ public class Item {
 		var5 = var18;
 		var5.iconIndex = var1;
 		appleIron = var5;
+		var20 = new Item(95, "Lapis Lazuli");
+		var1 = 22;
+		var7 = var20;
+		var7.iconIndex = var1;
+		lapis = var7;
 	}
 }

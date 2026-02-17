@@ -349,6 +349,7 @@ public final class LevelGenerator {
 		int g;
 		int d;
 		int r;
+		int l;
 
 		if (!var9.floatingGen) {
 			c = Block.oreCoal.blockID;
@@ -356,12 +357,14 @@ public final class LevelGenerator {
 			g = Block.oreGold.blockID;
 			d = Block.oreDiamond.blockID;
 			r = Block.oreRuby.blockID;
+			l = Block.oreLapis.blockID;
 		} else {
 			c = Block.oreLiteCoal.blockID;
 			i = Block.oreLiteIron.blockID;
 			g = Block.oreLiteGold.blockID;
 			d = Block.oreLiteDiamond.blockID;
 			r = Block.oreLiteRuby.blockID;
+			l = Block.oreLiteLapis.blockID;
 		}
 
 		var7 = this.populateOre(c, 1000, 10, (var4 << 2) / 5);
@@ -369,8 +372,9 @@ public final class LevelGenerator {
 		var45 = this.populateOre(g, 500, 6, (var4 << 1) / 5);
 		var5 = this.populateOre(d, 800, 2, var4 / 5);
 		int ruby = this.populateOre(r, 500, 2, var4 / 5);
+		int lapis = this.populateOre(l, 800, 2, var4 / 5);
 		System.out
-				.println("Coal: " + var7 + ", Iron: " + var44 + ", Gold: " + var45 + ", Diamond: " + var5 + ", Ruby: " + ruby);
+				.println("Coal: " + var7 + ", Iron: " + var44 + ", Gold: " + var45 + ", Diamond: " + var5 + ", Ruby: " + ruby + ", Lapis" + lapis);
 		this.guiLoading.displayLoadingString("Melting..");
 		this.loadingBar();
 		this.lavaGen();
