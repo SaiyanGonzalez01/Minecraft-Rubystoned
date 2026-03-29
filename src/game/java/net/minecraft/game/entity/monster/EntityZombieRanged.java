@@ -66,6 +66,6 @@ public class EntityZombieRanged extends EntityMob {
 	}
 
 	protected final int scoreValue() {
-		return Item.flesh.shiftedIndex;
+		return Item.flint.shiftedIndex;
 	}
 }
