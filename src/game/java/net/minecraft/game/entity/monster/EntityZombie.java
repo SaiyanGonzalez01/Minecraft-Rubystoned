@@ -35,6 +35,6 @@ public class EntityZombie extends EntityMob {
 	}
 
 	protected final int scoreValue() {
-		return Item.flesh.shiftedIndex;
+		return Item.feather.shiftedIndex;
 	}
 }
