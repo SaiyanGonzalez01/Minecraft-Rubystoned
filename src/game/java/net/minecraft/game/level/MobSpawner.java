@@ -5,12 +5,15 @@ import net.minecraft.game.entity.EntityLiving;
 import net.minecraft.game.entity.animal.EntityAnimal;
 import net.minecraft.game.entity.animal.EntityPig;
 import net.minecraft.game.entity.animal.EntitySheep;
+import net.minecraft.game.entity.animal.EntityChicken;
 import net.minecraft.game.entity.monster.EntityCreeper;
 import net.minecraft.game.entity.monster.EntityMob;
 import net.minecraft.game.entity.monster.EntitySkeleton;
 import net.minecraft.game.entity.monster.EntitySpider;
 import net.minecraft.game.entity.monster.EntityZombie;
 import net.minecraft.game.entity.monster.EntitySkinwalker;
+import net.minecraft.game.entity.monster.EntitySkeletonMelee;
+import net.minecraft.game.entity.monster.EntityZombieRanged;
 
 public class MobSpawner {
 	private World worldObj;
@@ -66,7 +69,7 @@ public class MobSpawner {
 				var5 = this.worldObj.playerEntity;
 				var22 = this;
 				var6 = 0;
-				var7 = this.worldObj.random.nextInt(5);
+				var7 = this.worldObj.random.nextInt(6);
 				var8 = this.worldObj.random.nextInt(this.worldObj.width);
 				var9 = (int)(Math.min(this.worldObj.random.nextFloat(), this.worldObj.random.nextFloat()) * (float)this.worldObj.height);
 				var10 = this.worldObj.random.nextInt(this.worldObj.length);
@@ -120,7 +123,11 @@ public class MobSpawner {
 							}
 
 							if(var7 == 4) {
-								var23 = new EntitySkinwalker(var22.worldObj);
+								var23 = new EntitySkeletonMelee(var22.worldObj);
+							}
+
+							if(var7 == 5) {
+								var23 = new EntityZombieRanged(var22.worldObj);
 							}
 
 							if(var23 instanceof EntityMob && var22.worldObj.difficultySetting == 0) {
@@ -148,7 +155,7 @@ public class MobSpawner {
 				var5 = this.worldObj.playerEntity;
 				var22 = this;
 				var6 = 0;
-				var7 = this.worldObj.random.nextInt(2);
+				var7 = this.worldObj.random.nextInt(3);
 				var8 = this.worldObj.random.nextInt(this.worldObj.width);
 				var9 = this.worldObj.random.nextInt(this.worldObj.height);
 				var10 = this.worldObj.random.nextInt(this.worldObj.length);
@@ -191,6 +198,10 @@ public class MobSpawner {
 
 							if(var7 == 1) {
 								var23 = new EntitySheep(var22.worldObj);
+							}
+
+							if(var7 == 2) {
+								var23 = new EntityChicken(var22.worldObj);
 							}
 
 							if(var23 != null && !var22.worldObj.isBlockNormalCube(var12, var13, var14) && var22.worldObj.isBlockNormalCube(var12, var13 - 1, var14) && ((EntityLiving)var23).getCanSpawnHere(var16, var17, var18)) {

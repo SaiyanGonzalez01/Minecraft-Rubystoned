@@ -103,6 +103,8 @@ public class Item {
 	public static Item appleGolden;
 	public static Item appleIron;
 	public static Item lapis;
+	public static Item flesh;
+	public static Item leather;
 	public final int shiftedIndex;
 	protected int maxStackSize = 64;
 	protected int maxDamage = 32;
@@ -641,6 +643,15 @@ public class Item {
 		var1 = 22;
 		var7 = var20;
 		var7.iconIndex = var1;
-		lapis = var7;
+		var20 = new Item(96, "Rotten Flesh");
+		var11 = 135;
+		var7 = var20;
+		var7.iconIndex = var11;
+		flesh = var7;
+		var20 = new Item(97, "Leather");
+		var11 = 136;
+		var7 = var20;
+		var7.iconIndex = var11;
+		leather = var7;
 	}
 }

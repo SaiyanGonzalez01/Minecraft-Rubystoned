@@ -3,12 +3,12 @@ package net.minecraft.game.entity.monster;
 import net.minecraft.game.item.Item;
 import net.minecraft.game.level.World;
 
-public class EntityZombie extends EntityMob {
-	public EntityZombie(World var1) {
+public class EntitySkeletonMelee extends EntityMob {
+	public EntitySkeletonMelee(World var1) {
 		super(var1);
-		this.texture = "/mob/zombie.png";
-		this.moveSpeed = 0.5F;
-		this.attackStrength = 5;
+		this.texture = "/mob/skeletonmelee.png";
+		this.moveSpeed = 1.0F;
+		this.attackStrength = 4;
 	}
 
 	public final void onLivingUpdate() {
@@ -23,18 +23,18 @@ public class EntityZombie extends EntityMob {
 	}
 
 	protected String getHurtSound() {
-		return "mob.zombiehurt";
+		return "mob.skeletonhurt";
 	}
 
 	protected String getDeathSound() {
-		return "mob.zombiedeath";
+		return "mob.skeletondeath";
 	}
 
 	protected final String getEntityString() {
-		return "Zombie";
+		return "Melee Skeleton";
 	}
 
 	protected final int scoreValue() {
-		return Item.flesh.shiftedIndex;
+		return Item.feather.shiftedIndex;
 	}
 }
